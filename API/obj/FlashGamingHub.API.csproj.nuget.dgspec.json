@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj": {}
+  },
+  "projects": {
+    "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj",
+        "projectName": "FlashGamingHub.API",
+        "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj": {
+                "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj"
+              },
+              "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
+                "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj",
+        "projectName": "FlashGamingHub.Business",
+        "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\FlashGamingHub.Data.csproj": {
+                "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\FlashGamingHub.Data.csproj"
+              },
+              "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
+                "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\FlashGamingHub.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\FlashGamingHub.Data.csproj",
+        "projectName": "FlashGamingHub.Data",
+        "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\FlashGamingHub.Data.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
+                "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj",
+        "projectName": "FlashGamingHub.Models",
+        "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

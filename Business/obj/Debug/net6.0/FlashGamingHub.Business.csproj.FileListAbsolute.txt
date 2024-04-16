@@ -1,0 +1,17 @@
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Business.deps.json
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Business.dll
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Business.pdb
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Data.dll
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Models.dll
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Models.pdb
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\bin\Debug\net6.0\FlashGamingHub.Data.pdb
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.csproj.AssemblyReference.cache
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.AssemblyInfoInputs.cache
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.AssemblyInfo.cs
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.csproj.CoreCompileInputs.cache
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.csproj.CopyComplete
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.dll
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\refint\FlashGamingHub.Business.dll
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\FlashGamingHub.Business.pdb
+D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Business\obj\Debug\net6.0\ref\FlashGamingHub.Business.dll
