@@ -10,3 +10,15 @@ D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Models\obj\Debug\net6.0\FlashGa
 D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Models\obj\Debug\net6.0\refint\FlashGamingHub.Models.dll
 D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Models\obj\Debug\net6.0\FlashGamingHub.Models.pdb
 D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\Models\obj\Debug\net6.0\ref\FlashGamingHub.Models.dll
+D:\TFGDAW\Backend\Models\bin\Debug\net6.0\FlashGamingHub.Models.deps.json
+D:\TFGDAW\Backend\Models\bin\Debug\net6.0\FlashGamingHub.Models.dll
+D:\TFGDAW\Backend\Models\bin\Debug\net6.0\FlashGamingHub.Models.pdb
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.csproj.AssemblyReference.cache
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.AssemblyInfoInputs.cache
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.AssemblyInfo.cs
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.csproj.CoreCompileInputs.cache
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.dll
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\refint\FlashGamingHub.Models.dll
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\FlashGamingHub.Models.pdb
+D:\TFGDAW\Backend\Models\obj\Debug\net6.0\ref\FlashGamingHub.Models.dll
