@@ -25,5 +25,8 @@ namespace FlashGamingHub.Models
 
         [ForeignKey("StudioID")]
         public Studio Studio { get; set; }
+
+         [ForeignKey("StoreID")]
+        public List<GameShop>  StoresAvailableAt { get; set; }
     }
 }

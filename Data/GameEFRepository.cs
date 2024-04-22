@@ -27,6 +27,7 @@ namespace FlashGamingHub.Data
         public List<GameDTO> GetAll()
         {
             var userRepository= new UserEFRepository(_context);
+            var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gamesDTO=games.Select(g=>new GameDTO{
                 GameID=g.GameID,
@@ -35,21 +36,22 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=g.Studio,
-                users=userRepository.getUserGameId(g.GameID)
+                Studio=studioRepository.GetStudio(g.Studio.StudioID),
+                users=userRepository.getUsersGameId(g.GameID)
             }).ToList();
             return gamesDTO;
         }
 
         public Game GetGame(int id)
         {
-            var game=_context.Games.Find(id);
+            var game=_context.Games.Include(g=>g.Studio).FirstOrDefault(g=>g.GameID==id);
             return game;
         }
 
         public GameDTO GetGameDTO(int id)
         {
             var userRepository= new UserEFRepository(_context);
+            var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gameDTO=games.Select(g=>new GameDTO{
                 GameID=g.GameID,
@@ -58,8 +60,8 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=g.Studio,
-                users=userRepository.getUserGameId(g.GameID)
+                Studio=studioRepository.GetStudio(g.Studio.StudioID),
+                users=userRepository.getUsersGameId(g.GameID)
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;
         }
@@ -69,9 +71,56 @@ namespace FlashGamingHub.Data
             _context.Entry(game).State=EntityState.Modified;
             SaveChanges();
         }
+
          public void SaveChanges()
         {
             _context.SaveChanges();
         }
+        public List<GameDTO> getGameShopGames(int storeId)
+        {
+            var games = _context.Games.Where(g => g.StoresAvailableAt.Any(s => s.StoreID == storeId)).Select(g => new GameDTO
+                {
+                    Name = g.Name,
+                    Description = g.Description,
+                    Price = g.Price,
+                    ReleaseDate = g.ReleaseDate,
+                    Available = g.Available,
+                    StudioID = g.StudioID,
+                    Studio = new StudioDTO
+                    {
+                       Name= g.Studio.Name,
+                       Fundation=g.Studio.Fundation,
+                       Country=g.Studio.Country,
+                       EmailContact=g.Studio.EmailContact,
+                       Website=g.Studio.Website,
+                       Active=g.Studio.Active
+                    }
+                    }).ToList();
+
+            return games;
+        }
+          public List<GameDTO> getGamesStudio(int studioId){
+             var games = _context.Games.Where(g => g.Studio.StudioID==studioId).Select(gd => new GameDTO
+                {
+                    Name = gd.Name,
+                    Description = gd.Description,
+                    Price = gd.Price,
+                    ReleaseDate = gd.ReleaseDate,
+                    Available = gd.Available,
+                    StudioID = gd.StudioID,
+                    StoresAvailableAt = gd.StoresAvailableAt.Select(s => new GameShopDTO
+                        {
+                            Price = s.Price,
+                            Discount = s.Discount,
+                            Stock = s.Stock,
+                            AnnualSales = s.AnnualSales,
+                            LastUpdated = s.LastUpdated,
+                            Categories = s.Categories,
+                            Origin = s.Origin
+                        }).ToList()
+                }).ToList();
+            return games;
+        }
+
     }
-}
+    }

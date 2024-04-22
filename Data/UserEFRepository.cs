@@ -27,8 +27,6 @@ namespace FlashGamingHub.Data
 
         public List<UserDTO> GetAll()
         {
-            //falta posible include en linea 33 para games y messages
-            var gamesRepository=new GameEFRepository(_context);
             var messagesRepository=new CommunityEFRepository(_context);
             var users=_context.Users.ToList();
             var usersDTO=users.Select(u=>new UserDTO{
@@ -40,7 +38,6 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                games=gamesRepository.GetGamesUser(u.UserID),
                 messages=messagesRepository.GetMessagesUser(u.UserID)
             }).ToList();
             return usersDTO;
@@ -48,16 +45,15 @@ namespace FlashGamingHub.Data
 
         public User GetUser(int id)
         {
-            var user = _context.Users.Find(id);
+            var user = _context.Users.FirstOrDefault(u => u.UserID == id);
             return user;
         }
 
         public UserDTO GetUserDTO(int id)
         {
-           var gamesRepository=new GameEFRepository(_context);
            var messagesRepository=new CommunityEFRepository(_context);
            var users=_context.Users.ToList();
-            var userDTO=users.Select(u=>new UserDTO{
+           var userDTO=users.Select(u=>new UserDTO{
                 UserID=u.UserID,
                 Name = u.Name,
                 Surname=u.Surname,
@@ -66,36 +62,26 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                games=gamesRepository.GetGamesUser(u.UserID),
                 messages=messagesRepository.GetMessagesUser(u.UserID)
             }).FirstOrDefault(user=>user.UserID==id);
             return userDTO;
         }
 
-        //necesito de alguna forma acceder a los juegos de UserDTO pero este actualmente en el context es User y no tiene games
-        // public List<UserDTO> getUsersGame(int id){
+        public List<UserDTO> getUsersGameId(int gameId)
+            {
+                var libraryGameUsers = _context.LibraryGameUsers;
+                var usersDTO = libraryGameUsers.Where(l=>l.Game.GameID==gameId).Select(u=>new UserDTO{
+                    Name=u.User.Name,
+                    Surname=u.User.Surname,
+                    Password=u.User.Password,
+                    Age=u.User.Age,
+                    Email=u.User.Email,
+                    RegisterDate=u.User.RegisterDate,
+                    Active=u.User.Active
+                }).ToList();   
+                return usersDTO;      
+            }
 
-        //     var users = _context.Users
-        //     .Where(u => u.games.Any(g => g.GameID == id))
-        //     .Select(u => new UserDTO
-        //     {
-        //         UserID = u.UserID,
-        //         Name = u.Name,
-        //         Surname = u.Surname,
-        //         Password = u.Password,
-        //         Age = u.Age,
-        //         Email = u.Email,
-        //         RegisterDate = u.RegisterDate,
-        //         Active = u.Active,
-        //         games = u.Games.Select(g => new GameDTO
-        //         {
-        //             // Asigna las propiedades del juego según sea necesario
-        //         }).ToList()
-        //     })
-        //     .ToList();
-
-        //     return users;
-        // }
 
         public void UpdateUser(User user)
         {

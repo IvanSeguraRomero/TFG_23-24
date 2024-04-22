@@ -19,7 +19,6 @@ public class UserDTO
 
         public bool Active { get; set; }
 
-        public List<GameDTO> games { get; set; } = new List<GameDTO>();
         public List<CommunityDTO> messages { get; set; } = new List<CommunityDTO>();
     
 }

@@ -40,10 +40,18 @@ namespace FlashGamingHub.Data
             return studiosDTO;
         }
 
-        public Studio GetStudio(int id)
+        public StudioDTO GetStudio(int id)
         {
-            var studio=_context.Studios.Find(id);
-            return studio;
+            var  studio =_context.Studios;
+            var studioDTO=studio.Select(s=>new StudioDTO{
+                Name=s.Name,
+                Fundation=s.Fundation,
+                Country=s.Country,
+                EmailContact=s.EmailContact,
+                Website=s.Website,
+                Active=s.Active
+            }).FirstOrDefault(s=>s.StudioID==id);
+            return studioDTO;
         }
 
         public StudioDTO GetStudioDTO(int id)
@@ -75,7 +83,7 @@ namespace FlashGamingHub.Data
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
                 StudioID=g.StudioID,
-                users=usersGameRepository.getUsersGame(g.GameID)
+                users=usersGameRepository.getUsersGameId(g.GameID)
             }).ToList();
             return gamesForStudioDTO;
         }

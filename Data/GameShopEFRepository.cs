@@ -79,7 +79,6 @@ namespace FlashGamingHub.Data
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
                 StudioID=g.StudioID
-                //users?
             }).ToList();
             return gamesForGameShopDTO;
         }
@@ -93,6 +92,5 @@ namespace FlashGamingHub.Data
         {
             _context.SaveChanges();
         }
-
     }
 }

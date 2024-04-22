@@ -35,14 +35,14 @@ namespace FlashGamingHub.Data
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
                 LikesCount=c.LikesCount,
-                User=userRepository.GetUser(c.UserID)
+                User=userRepository.GetUserDTO(c.UserID)
             }).ToList();
             return communitiesDTO;
         }
 
         public Community GetCommunity(int id)
         {
-            var community=_context.Communities.Find(id);
+            var community=_context.Communities.Include(c=>c.User).FirstOrDefault(c=>c.MessageID==id);
             return community;
         }
 
@@ -56,7 +56,7 @@ namespace FlashGamingHub.Data
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
                 LikesCount=c.LikesCount,
-                User=userRepository.GetUser(c.UserID)
+                User=userRepository.GetUserDTO(c.UserID)
             }).FirstOrDefault(community=>community.MessageID == id);
 
             return communitieDTO;
@@ -72,5 +72,17 @@ namespace FlashGamingHub.Data
         {
             _context.SaveChanges();
         }
+        public List<CommunityDTO> GetMessagesUser(int userId)
+            {
+                var messagesDTO = _context.Communities.Where(c => c.UserID == userId).Select(c => new CommunityDTO
+                    {
+                        Message = c.Message,
+                        PublicationDate = c.PublicationDate,
+                        ActiveMember = c.ActiveMember,
+                        LikesCount = c.LikesCount
+                        }).ToList();
+                return messagesDTO;
+            }
+
     }
 }

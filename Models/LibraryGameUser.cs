@@ -9,8 +9,6 @@ namespace FlashGamingHub.Models
         [Column(Order = 1)]
         public int UserID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
         public int GameID { get; set; }
 
         public DateTime AddedDate { get; set; }
