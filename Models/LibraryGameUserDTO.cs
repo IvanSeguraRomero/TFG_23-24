@@ -11,7 +11,7 @@ namespace FlashGamingHub.Models
 
         public DateTime LastPlayed { get; set; }
 
-        public List<UserDTO> Users { get; set; } = new List<UserDTO>();
+        public UserDTO User { get; set; } = new UserDTO();
 
         public List<GameDTO> Games { get; set; } = new List<GameDTO>();
     }

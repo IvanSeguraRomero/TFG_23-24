@@ -1,7 +1,21 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using FlashGamingHub.Data;
+using FlashGamingHub.Business;
+using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication.CreateBuilder(args);
+    var connectionString = builder.Configuration.GetConnectionString("ServerDB");
+
+    builder.Services.AddDbContext<Context>(options =>
+        options.UseSqlServer(connectionString));
+
+    // Scoped Services
+    //Community
+    //  builder.Services.AddScoped<ICommunityRepository, C>(); 
+    // builder.Services.AddScoped<ITicketRepository, TicketEFRepository>();
+
+
+
+
 
 // Add services to the container.
 builder.Services.AddControllers();

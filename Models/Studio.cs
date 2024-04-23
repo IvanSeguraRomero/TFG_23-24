@@ -24,5 +24,7 @@ namespace FlashGamingHub.Models
         public string Website { get; set; }
 
         public bool Active { get; set; }
+
+       public List<Game> Games { get; set; } = new List<Game>();
     }
 }

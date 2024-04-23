@@ -27,5 +27,15 @@ public class User
         public DateTime RegisterDate { get; set; }
 
         public bool Active { get; set; }
+
+        [ForeignKey("UserID")]
+         public int LibraryGameUserID { get; set; }
+
+         public LibraryGameUser libraryGameUser{ get; set; }
+
+         [ForeignKey("MessageID")]
+         public int MessageID { get; set; }
+
+         public Community community{ get; set; }
     
 }
