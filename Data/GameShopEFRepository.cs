@@ -68,7 +68,7 @@ namespace FlashGamingHub.Data
             return gameShopDTO;
         }
 
-        public List<GameDTO> GetGamesShop(int id)
+        public List<GameDTO> GetGameShopGames(int id)
         {
             var gamesGameShop=_context.Games.Where(gs=>gs.GameID==id).ToList();
             var gamesForGameShopDTO=gamesGameShop.Select(g=>new GameDTO{

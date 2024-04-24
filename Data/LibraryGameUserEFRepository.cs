@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlashGamingHub.Data
 {
-    public class LibraryGameUserEFRepository : ILibraryGameUser
+    public class LibraryGameUserEFRepository : ILibraryGameUserRepository
     {
         public readonly Context _context;
 
