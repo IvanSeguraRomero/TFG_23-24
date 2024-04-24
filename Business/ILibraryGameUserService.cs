@@ -1,8 +1,6 @@
 using FlashGamingHub.Models;
-
-namespace FlashGamingHub.Data
-{
-    public interface ILibraryGameUser{
+namespace FlashGamingHub.Business;
+    public interface ILibraryGameUserService{
         void AddLibraryGameUser(LibraryGameUser libraryGameUser);
         LibraryGameUser GetLibraryGameUser(int id);
         LibraryGameUserDTO GetLibraryGameUserDTO(int id);
@@ -10,5 +8,3 @@ namespace FlashGamingHub.Data
         void DeleteLibraryGameUser(int id);
         List<LibraryGameUserDTO> GetAll();
     }
-    
-}

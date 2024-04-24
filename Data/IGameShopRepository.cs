@@ -10,6 +10,6 @@ namespace FlashGamingHub.Data
         void UpdateGameShop(GameShop gameShop);
         void DeleteGameShop(int id);
         List<GameShopDTO> GetAll();
-        List<GameDTO> GetGamesShop(int id);
+        List<GameDTO> GetGameShopGames(int id);
     }
 }
