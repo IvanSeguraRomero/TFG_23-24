@@ -7,9 +7,7 @@ namespace FlashGamingHub.Models
     {
         [Key]
         [Column(Order = 1)]
-        public int UserID { get; set; }
-
-        public int GameID { get; set; }
+        public int LibraryGameUserId { get; set; }
 
         public DateTime AddedDate { get; set; }
 
@@ -20,9 +18,11 @@ namespace FlashGamingHub.Models
         public DateTime LastPlayed { get; set; }
 
         [ForeignKey("UserID")]
+        public int UserID { get; set; }
         public User User { get; set; }
 
         [ForeignKey("GameID")]
+        public int GameID { get; set; }
         public Game Game { get; set; }
 
         public List<Game> Games { get; set; }

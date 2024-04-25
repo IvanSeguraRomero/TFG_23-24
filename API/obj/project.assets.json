@@ -932,6 +932,19 @@
           "bin/placeholder/FlashGamingHub.Business.dll": {}
         }
       },
+      "FlashGamingHub.common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.1.0"
+        },
+        "compile": {
+          "bin/placeholder/FlashGamingHub.common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FlashGamingHub.common.dll": {}
+        }
+      },
       "FlashGamingHub.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2644,6 +2657,11 @@
       "path": "../Business/FlashGamingHub.Business.csproj",
       "msbuildProject": "../Business/FlashGamingHub.Business.csproj"
     },
+    "FlashGamingHub.common/1.0.0": {
+      "type": "project",
+      "path": "../common/FlashGamingHub.common.csproj",
+      "msbuildProject": "../common/FlashGamingHub.common.csproj"
+    },
     "FlashGamingHub.Data/1.0.0": {
       "type": "project",
       "path": "../Data/FlashGamingHub.Data.csproj",
@@ -2659,6 +2677,7 @@
     "net6.0": [
       "FlashGamingHub.Business >= 1.0.0",
       "FlashGamingHub.Models >= 1.0.0",
+      "FlashGamingHub.common >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -2690,6 +2709,9 @@
           "projectReferences": {
             "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj": {
               "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj"
+            },
+            "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\common\\FlashGamingHub.common.csproj": {
+              "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\common\\FlashGamingHub.common.csproj"
             },
             "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
               "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj"
