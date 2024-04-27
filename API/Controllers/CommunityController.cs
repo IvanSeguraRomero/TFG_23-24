@@ -19,9 +19,19 @@ public class CommunityController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<CommunityDTO>> GetAll() {
+    public ActionResult<List<CommunityDTO>> GetAll(int? likesCount) {
     try{
-            return _communityService.GetAll();
+            var query = _communityService.GetAll().AsQueryable();
+            if(likesCount.HasValue){
+                query = query.Where(community => community.LikesCount> likesCount.Value)
+                .OrderByDescending(community => community.LikesCount);
+            }
+
+            var community = query.ToList();
+            if(community.Count==0){
+                return NotFound();
+            }
+            return community;
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los mensajes");

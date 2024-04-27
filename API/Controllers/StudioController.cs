@@ -19,9 +19,20 @@ public class StudioController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<StudioDTO>> GetAll() {
+    public ActionResult<List<StudioDTO>> GetAll(string? name, string? country) {
     try{
-            return _studioService.GetAll();
+            var query =  _studioService.GetAll().AsQueryable();
+            if(!string.IsNullOrEmpty(name)){
+                query = query.Where(studio => studio.Name.ToLower().Contains(name.ToLower()));
+            }
+            if(!string.IsNullOrEmpty(country)){
+                query = query.Where(studio => studio.Country.ToLower().Contains(country.ToLower()));
+            }
+            var studios = query.ToList();
+            if(studios.Count==0){
+                return NotFound();
+            }
+            return studios;
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los estudios");
@@ -77,4 +88,21 @@ public class StudioController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
+
+    [HttpGet("{id}/games")]
+    public ActionResult<List<GameDTO>> GetStudioGames(int id){
+        try{
+            var games = _studioService.GetStudioGames(id);
+            if(games == null || games.Count == 0){
+                _logError.LogErrorMethod(new Exception($"No se encontraron juegos en el estudio con ID {id}"), "Error al intentar obtener los juegos");
+                return NotFound();
+            }else{
+                return games;
+            }
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al obtener los juegos");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
 }

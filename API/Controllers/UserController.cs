@@ -19,9 +19,22 @@ public class UserController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<UserDTO>> GetAll() {
+    public ActionResult<List<UserDTO>> GetAll(bool? active) {
     try{
-            return _userService.GetAll();
+            var query = _userService.GetAll().AsQueryable();
+            if(active.HasValue){
+                if(active.Value){
+                    query=query.Where(u => u.Active);
+                }else{
+                    query=query.Where(u => !u.Active);
+                }
+            }
+
+            var users = query.ToList();
+            if(users.Count==0){
+                return NotFound();
+            }
+            return users;
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los usuarios");

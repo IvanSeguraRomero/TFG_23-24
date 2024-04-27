@@ -19,9 +19,17 @@ public class GameShopController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<GameShopDTO>> GetAll() {
+    public ActionResult<List<GameShopDTO>> GetAll(string? categorie) {
     try{
-            return _gameShopService.GetAll();
+            var query =  _gameShopService.GetAll().AsQueryable();
+            if(!string.IsNullOrEmpty(categorie)){
+                query = query.Where(gameShop => gameShop.Categories.ToLower().Contains(categorie.ToLower()));
+            }
+            var gameShops = query.ToList();
+            if(gameShops.Count==0){
+                return NotFound();
+            }
+            return gameShops;
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de las tiendas");
@@ -74,6 +82,22 @@ public class GameShopController : ControllerBase{
         return NoContent();
         }catch(Exception ex){
                 _logError.LogErrorMethod(ex, "Error al eliminar la tienda");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
+    [HttpGet("{id}/games")]
+    public ActionResult<List<GameDTO>> GetGameShopGames(int id){
+        try{
+            var games = _gameShopService.GetGameShopGames(id);
+            if(games == null || games.Count == 0){
+                _logError.LogErrorMethod(new Exception($"No se encontraron juegos en la tienda con ID {id}"), "Error al intentar obtener los juegos");
+                return NotFound();
+            }else{
+                return games;
+            }
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al obtener los juegos");
                 return StatusCode(500, "Error interno del servidor");
         }
     }

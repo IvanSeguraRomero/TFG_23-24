@@ -8,8 +8,6 @@ namespace FlashGamingHub.Models
         [Key]
         public int MessageID { get; set; }
 
-        public int UserID { get; set; }
-
         [Column(TypeName = "nvarchar(1000)")]
         public string Message { get; set; }
 
@@ -20,6 +18,7 @@ namespace FlashGamingHub.Models
         public int LikesCount { get; set; }
 
         [ForeignKey("UserID")]
+        public int UserID { get; set; }
         public User User { get; set; }
     }
 }

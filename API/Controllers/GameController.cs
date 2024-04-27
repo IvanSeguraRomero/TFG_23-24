@@ -19,9 +19,20 @@ public class GameController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<GameDTO>> GetAll() {
+    public ActionResult<List<GameDTO>> GetAll(string? name, int? price) {
     try{
-            return _gameService.GetAll();
+            var query = _gameService.GetAll().AsQueryable();
+            if(!string.IsNullOrEmpty(name)){
+                query = query.Where(game => game.Name.ToLower().Contains(name.ToLower()));
+            }
+            if(price.HasValue){
+                query = query.Where(game => game.Price<price.Value);
+            }
+            var games = query.ToList();
+            if(games.Count==0){
+                return NotFound();
+            }
+            return games;
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los juegos");
