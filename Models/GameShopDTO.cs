@@ -1,5 +1,4 @@
-namespace FlashGamingHub.Models
-{
+namespace FlashGamingHub.Models;
     public class GameShopDTO
     {
         public int StoreID { get; set; }
@@ -22,4 +21,3 @@ namespace FlashGamingHub.Models
 
         public List<GameDTO> Game { get; set; } = new List<GameDTO>();
     }
-}
