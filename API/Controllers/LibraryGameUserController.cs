@@ -49,11 +49,72 @@ public class LibraryGameUserController : ControllerBase{
         }
     }
 
-    // POST action -- REALIZAR CUANDO HAYA CREATE DTO
+    // POST action
+    [HttpPost]
+    public IActionResult Create([FromBody] LibraryGameUserCreateDTO libraryGameUserCreateDTO)
+    {
+        try{            
+        if (!ModelState.IsValid)
+        {
+            _logError.LogErrorMethod(new Exception("No se pudo crear la biblioteca"), $"Error al almacenar la información de la biblioteca {ModelState}");
+            return BadRequest(ModelState);
+        }
+
+        var libraryGameUserDTO = new LibraryGameUser
+        {
+            AddedDate=libraryGameUserCreateDTO.AddedDate,
+            Rating=libraryGameUserCreateDTO.Rating,
+            HoursPlayed=libraryGameUserCreateDTO.HoursPlayed,
+            LastPlayed=libraryGameUserCreateDTO.LastPlayed,
+        };
+
+        _libraryGameUserService.AddLibraryGameUser(libraryGameUserDTO);
+
+        // Devolver la respuesta CreatedAtAction con el nuevo DTO
+        return CreatedAtAction(nameof(Get), new { id = libraryGameUserDTO.LibraryGameUserId }, libraryGameUserCreateDTO);
+        }catch(Exception ex){
+                _logError.LogErrorMethod(ex, "Error al crear una nueva biblioteca");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
 
 
-    // PUT action -- REALIZAR CUANDO HAYA UPDATE DTO
+    // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] LibraryGameUserUpdateDTO libraryGameUserUpdateDTO)
+        {
+            try{
+            var existingLibraryGameUser = _libraryGameUserService.GetLibraryGameUser(id);
+
+            if (existingLibraryGameUser == null)
+            {
+                 _logError.LogErrorMethod(new Exception("No se encontró la biblioteca"), $"Error al intentar acutalizar la biblioteca con el id {id}");
+                return NotFound();
+            }
+
+            if(libraryGameUserUpdateDTO.AddedDate!=null){
+                existingLibraryGameUser.AddedDate=(DateTime)libraryGameUserUpdateDTO.AddedDate;
+            }
+            if(libraryGameUserUpdateDTO.Rating!=null){
+                existingLibraryGameUser.Rating=(int)libraryGameUserUpdateDTO.Rating;
+            }
+            if(libraryGameUserUpdateDTO.HoursPlayed!=null){
+                existingLibraryGameUser.HoursPlayed=(int)libraryGameUserUpdateDTO.HoursPlayed;
+            }
+            if(libraryGameUserUpdateDTO.LastPlayed!=null){
+                existingLibraryGameUser.LastPlayed=(DateTime)libraryGameUserUpdateDTO.LastPlayed;
+            }
+            
+            
+            _libraryGameUserService.UpdateLibraryGameUser(existingLibraryGameUser);
+
+            return NoContent();
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al actualizar la biblioteca");
+                return StatusCode(500, "Error interno del servidor");
+        }
+        }
 
 
 

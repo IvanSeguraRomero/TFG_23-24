@@ -3,7 +3,7 @@ namespace FlashGamingHub.Business;
     public interface IStudioService
     {
         void AddStudio(Studio studio);
-        StudioDTO GetStudio(int id);
+        Studio GetStudio(int id);
         StudioDTO GetStudioDTO(int id);
         void UpdateStudio(Studio studio);
         void DeleteStudio(int id);

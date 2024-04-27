@@ -57,11 +57,83 @@ public class GameShopController : ControllerBase{
         }
     }
 
-    // POST action -- REALIZAR CUANDO HAYA CREATE DTO
+    // POST action
+    [HttpPost]
+    public IActionResult Create([FromBody] GameShopCreateDTO gameShopCreateDTO)
+    {
+        try{            
+        if (!ModelState.IsValid)
+        {
+            _logError.LogErrorMethod(new Exception("No se pudo crear la tienda"), $"Error al almacenar la información de la tienda {ModelState}");
+            return BadRequest(ModelState);
+        }
+
+        var gameShopDTO = new GameShop
+        {
+            Price= gameShopCreateDTO.Price,
+            Discount= gameShopCreateDTO.Discount,
+            Stock= gameShopCreateDTO.Stock,
+            AnnualSales= gameShopCreateDTO.AnnualSales,
+            LastUpdated=gameShopCreateDTO.LastUpdated,
+            Categories=gameShopCreateDTO.Categories,
+            Origin=gameShopCreateDTO.Origin
+        };
+
+        _gameShopService.AddGameShop(gameShopDTO);
+
+        // Devolver la respuesta CreatedAtAction con el nuevo DTO
+        return CreatedAtAction(nameof(Get), new { id = gameShopDTO.StoreID }, gameShopCreateDTO);
+        }catch(Exception ex){
+                _logError.LogErrorMethod(ex, "Error al crear una nueva tienda");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
 
 
-    // PUT action -- REALIZAR CUANDO HAYA UPDATE DTO
+    // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] GameShopUpdateDTO gameShopUpdateDTO)
+        {
+            try{
+            var existingGameShop = _gameShopService.GetGameShop(id);
+
+            if (existingGameShop == null)
+            {
+                 _logError.LogErrorMethod(new Exception("No se encontró la tienda"), $"Error al intentar acutalizar la tienda con el id {id}");
+                return NotFound();
+            }
+
+            if(gameShopUpdateDTO.Price!=null){
+                existingGameShop.Price=(decimal)gameShopUpdateDTO.Price;
+            }
+            if(gameShopUpdateDTO.Discount!=null){
+                existingGameShop.Discount=(decimal)gameShopUpdateDTO.Discount;
+            }
+            if(gameShopUpdateDTO.Stock!=null){
+                existingGameShop.Stock=(int)gameShopUpdateDTO.Stock;
+            }
+            if(gameShopUpdateDTO.AnnualSales!=null){
+                existingGameShop.AnnualSales=(int)gameShopUpdateDTO.AnnualSales;
+            }
+            if(gameShopUpdateDTO.LastUpdated!=null){
+                existingGameShop.LastUpdated=(DateTime)gameShopUpdateDTO.LastUpdated;
+            }
+            if(gameShopUpdateDTO.Categories!=null){
+                existingGameShop.Categories=gameShopUpdateDTO.Categories;
+            }
+            if(gameShopUpdateDTO.Origin!=null){
+                existingGameShop.Origin=gameShopUpdateDTO.Origin;
+            }
+            
+            _gameShopService.UpdateGameShop(existingGameShop);
+
+            return NoContent();
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al actualizar la tienda");
+                return StatusCode(500, "Error interno del servidor");
+        }
+        }
 
 
 

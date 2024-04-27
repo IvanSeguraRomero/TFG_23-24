@@ -59,11 +59,70 @@ public class CommunityController : ControllerBase{
         }
     }
 
-    // POST action -- REALIZAR CUANDO HAYA CREATE DTO
+    // POST action
+    [HttpPost]
+    public IActionResult Create([FromBody] CommunityCreateDTO communityCreateDTO)
+    {
+        try{            
+        if (!ModelState.IsValid)
+        {
+            _logError.LogErrorMethod(new Exception("No se pudo crear la comunidad"), $"Error al almacenar la información de la comunidad {ModelState}");
+            return BadRequest(ModelState);
+        }
+
+        var communityDTO = new Community
+        {
+            Message= communityCreateDTO.Message,
+            PublicationDate= communityCreateDTO.PublicationDate,
+            ActiveMember= communityCreateDTO.ActiveMember,
+            LikesCount= communityCreateDTO.LikesCount
+        };
+
+        _communityService.AddCommunity(communityDTO);
+
+        // Devolver la respuesta CreatedAtAction con el nuevo DTO
+        return CreatedAtAction(nameof(Get), new { id = communityDTO.MessageID }, communityCreateDTO);
+        }catch(Exception ex){
+                _logError.LogErrorMethod(ex, "Error al crear una nueva comunidad");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
 
+     // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] CommunityUpdateDTO communityUpdateDTO)
+        {
+            try{
+            var existingCommunity = _communityService.GetCommunity(id);
 
-    // PUT action -- REALIZAR CUANDO HAYA UPDATE DTO
+            if (existingCommunity == null)
+            {
+                 _logError.LogErrorMethod(new Exception("No se encontró la comunidad"), $"Error al intentar acutalizar la comunidad con el id {id}");
+                return NotFound();
+            }
+
+            if(communityUpdateDTO.Message!=null){
+                existingCommunity.Message=communityUpdateDTO.Message;
+            }
+            if(communityUpdateDTO.PublicationDate!=null){
+                existingCommunity.PublicationDate=(DateTime)communityUpdateDTO.PublicationDate;
+            }
+            if(communityUpdateDTO.ActiveMember!=null){
+                existingCommunity.ActiveMember= (bool)communityUpdateDTO.ActiveMember;
+            }
+            if(communityUpdateDTO.LikesCount!=null){
+                existingCommunity.LikesCount= (int)communityUpdateDTO.LikesCount;
+            }
+            
+            _communityService.UpdateCommunity(existingCommunity);
+
+            return NoContent();
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al actualizar la comunidad");
+                return StatusCode(500, "Error interno del servidor");
+        }
+        }
 
 
 

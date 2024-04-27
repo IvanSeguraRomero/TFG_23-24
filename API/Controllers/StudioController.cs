@@ -60,11 +60,81 @@ public class StudioController : ControllerBase{
         }
     }
 
-    // POST action -- REALIZAR CUANDO HAYA CREATE DTO
+    // POST action
+    [HttpPost]
+    public IActionResult Create([FromBody] StudioCreateDTO studioCreateDTO)
+    {
+        try{            
+        if (!ModelState.IsValid)
+        {
+            _logError.LogErrorMethod(new Exception("No se pudo crear el estudio"), $"Error al almacenar la información del estudio {ModelState}");
+            return BadRequest(ModelState);
+        }
+
+        var studioDTO = new Studio
+        {
+            Name=studioCreateDTO.Name,
+            Fundation=studioCreateDTO.Fundation,
+            Country=studioCreateDTO.Country,
+            EmailContact=studioCreateDTO.EmailContact,
+            Website=studioCreateDTO.Website,
+            Active=studioCreateDTO.Active
+        };
+
+        _studioService.AddStudio(studioDTO);
+
+        // Devolver la respuesta CreatedAtAction con el nuevo DTO
+        return CreatedAtAction(nameof(Get), new { id = studioDTO.StudioID }, studioCreateDTO);
+        }catch(Exception ex){
+                _logError.LogErrorMethod(ex, "Error al crear un nuevo estudio");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
 
 
-    // PUT action -- REALIZAR CUANDO HAYA UPDATE DTO
+   // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] StudioUpdateDTO studioUpdateDTO)
+        {
+            try{
+            var existingStudio = _studioService.GetStudio(id);
+
+            if (existingStudio == null)
+            {
+                 _logError.LogErrorMethod(new Exception("No se encontró el estudio"), $"Error al intentar acutalizar el estudio con el id {id}");
+                return NotFound();
+            }
+
+            if(studioUpdateDTO.Name!=null){
+                existingStudio.Name=studioUpdateDTO.Name;
+            }
+            if(studioUpdateDTO.Fundation!=null){
+                existingStudio.Fundation=(DateTime)studioUpdateDTO.Fundation;
+            }
+            if(studioUpdateDTO.Country!=null){
+                existingStudio.Country=studioUpdateDTO.Country;
+            }
+            if(studioUpdateDTO.EmailContact!=null){
+                existingStudio.EmailContact=studioUpdateDTO.EmailContact;
+            }
+            if(studioUpdateDTO.Website!=null){
+                existingStudio.Website=studioUpdateDTO.Website;
+            }
+            if(studioUpdateDTO.Active!=null){
+                existingStudio.Active=(bool)studioUpdateDTO.Active;
+            }
+            
+            
+            
+            _studioService.UpdateStudio(existingStudio);
+
+            return NoContent();
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al actualizar el estudio");
+                return StatusCode(500, "Error interno del servidor");
+        }
+        }
 
 
 

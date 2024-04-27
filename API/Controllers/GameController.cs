@@ -60,11 +60,75 @@ public class GameController : ControllerBase{
         }
     }
 
-    // POST action -- REALIZAR CUANDO HAYA CREATE DTO
+    // POST action
+    [HttpPost]
+    public IActionResult Create([FromBody] GameCreateDTO gameCreateDTO)
+    {
+        try{            
+        if (!ModelState.IsValid)
+        {
+            _logError.LogErrorMethod(new Exception("No se pudo crear el juego"), $"Error al almacenar la información del juego {ModelState}");
+            return BadRequest(ModelState);
+        }
+
+        var gameDTO = new Game
+        {
+            Name=gameCreateDTO.Name,
+            Description=gameCreateDTO.Description,
+            Price=gameCreateDTO.Price,
+            ReleaseDate=gameCreateDTO.ReleaseDate,
+            Available=gameCreateDTO.Available
+        };
+
+        _gameService.AddGame(gameDTO);
+
+        // Devolver la respuesta CreatedAtAction con el nuevo DTO
+        return CreatedAtAction(nameof(Get), new { id = gameDTO.GameID }, gameCreateDTO);
+        }catch(Exception ex){
+                _logError.LogErrorMethod(ex, "Error al crear un nuevo juego");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
 
 
-    // PUT action -- REALIZAR CUANDO HAYA UPDATE DTO
+    // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] GameUpdateDTO gameUpdateDTO)
+        {
+            try{
+            var existingGame = _gameService.GetGame(id);
+
+            if (existingGame == null)
+            {
+                 _logError.LogErrorMethod(new Exception("No se encontró el juego"), $"Error al intentar acutalizar el juego con el id {id}");
+                return NotFound();
+            }
+
+            if(gameUpdateDTO.Name!=null){
+                existingGame.Name=gameUpdateDTO.Name;
+            }
+            if(gameUpdateDTO.Description!=null){
+                existingGame.Description=gameUpdateDTO.Description;
+            }
+           if(gameUpdateDTO.Price!=null){
+                existingGame.Price=(decimal)gameUpdateDTO.Price;
+            }
+            if(gameUpdateDTO.ReleaseDate!=null){
+                existingGame.ReleaseDate=(DateTime)gameUpdateDTO.ReleaseDate;
+            }
+            if(gameUpdateDTO.Available!=null){
+                existingGame.Available=(bool)gameUpdateDTO.Available;
+            }
+            
+            _gameService.UpdateGame(existingGame);
+
+            return NoContent();
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al actualizar el juego");
+                return StatusCode(500, "Error interno del servidor");
+        }
+        }
 
 
 
