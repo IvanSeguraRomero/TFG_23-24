@@ -4,7 +4,7 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Data;
 using System.Collections.Generic;
 
-public class CommunityService : IGameService{
+public class CommunityService : ICommunityService{
     private readonly ICommunityRepository _repository;
 
     public CommunityService(ICommunityRepository repository){
@@ -40,5 +40,10 @@ public class CommunityService : IGameService{
     public void UpdateCommunity(Community community)
     {
         _repository.UpdateCommunity(community);
+    }
+
+    public List<CommunityDTO> GetMessagesUser(int id)
+    {
+        return _repository.GetMessagesUser(id);
     }
 }

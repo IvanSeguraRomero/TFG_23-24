@@ -138,4 +138,19 @@ public class LibraryGameUserController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
+    [HttpGet("{id}/games")]
+    public ActionResult<List<GameDTO>> GetLibraryGameUserGames(int id){
+        try{
+            var games = _libraryGameUserService.GetLibraryGameUserGames(id);
+            if(games == null || games.Count == 0){
+                _logError.LogErrorMethod(new Exception($"No se encontraron juegos en el usuario con ID {id}"), "Error al intentar obtener los juegos");
+                return NotFound();
+            }else{
+                return games;
+            }
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al obtener los juegos");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }

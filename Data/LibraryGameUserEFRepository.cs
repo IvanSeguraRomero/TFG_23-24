@@ -42,7 +42,7 @@ namespace FlashGamingHub.Data
                     Price=g.Price,
                     ReleaseDate=g.ReleaseDate,
                     Available=g.Available,
-                    Studio=studioRepository.GetStudio(g.StudioID)
+                    Studio=studioRepository.GetStudioDTO(g.StudioID)
                 }).ToList()
            }).ToList();
            return libraryGameUsersDto;
@@ -71,10 +71,27 @@ namespace FlashGamingHub.Data
                     Price=g.Price,
                     ReleaseDate=g.ReleaseDate,
                     Available=g.Available,
-                    Studio=studioRepository.GetStudio(g.StudioID)
+                    Studio=studioRepository.GetStudioDTO(g.StudioID)
                 }).ToList()
            }).FirstOrDefault(l=>l.User.UserID==id);
            return libraryGameUsersDto;
+        }
+
+        public List<GameDTO> GetLibraryGameUserGames(int id){
+                var studioRepository= new StudioEFRepository(_context);
+                var libraryGameUsersDto = _context.LibraryGameUsers.Where(l => l.UserID == id).SelectMany(l => l.Games)
+                .Select(g => new GameDTO
+                {
+                    Name = g.Name,
+                    Description = g.Description,
+                    Price = g.Price,
+                    ReleaseDate = g.ReleaseDate,
+                    Available = g.Available,
+                    Studio = studioRepository.GetStudioDTO(g.StudioID)
+                })
+                .ToList();
+
+            return libraryGameUsersDto;
         }
 
         public void SaveChanges()

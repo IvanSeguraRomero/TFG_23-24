@@ -35,6 +35,11 @@ public class LibraryGameUserService : ILibraryGameUserService{
         return _repository.GetLibraryGameUserDTO(id);
     }
 
+    public List<GameDTO> GetLibraryGameUserGames(int id)
+    {
+         return _repository.GetLibraryGameUserGames(id);
+    }
+
     public void UpdateLibraryGameUser(LibraryGameUser libraryGameUser)
     {
         _repository.UpdateLibraryGameUser(libraryGameUser);

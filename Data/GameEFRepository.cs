@@ -36,7 +36,7 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudio(g.Studio.StudioID),
+                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
                 users=userRepository.getUsersGameId(g.GameID)
             }).ToList();
             return gamesDTO;
@@ -60,7 +60,7 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudio(g.Studio.StudioID),
+                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
                 users=userRepository.getUsersGameId(g.GameID)
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;

@@ -146,4 +146,19 @@ public class CommunityController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
+    [HttpGet("{id}/messages")]
+    public ActionResult<List<CommunityDTO>> GetMessagesUser(int id){
+        try{
+            var messages = _communityService.GetMessagesUser(id);
+            if(messages == null || messages.Count == 0){
+                _logError.LogErrorMethod(new Exception($"No se encontraron mensajes en el usuario con ID {id}"), "Error al intentar obtener los mensajes");
+                return NotFound();
+            }else{
+                return messages;
+            }
+        }catch(Exception ex){
+                 _logError.LogErrorMethod(ex, "Error al obtener los mensajes");
+                return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }

@@ -26,7 +26,7 @@ public class StudioService : IStudioService{
         return _repository.GetAll();
     }
 
-    public StudioDTO GetStudio(int id)
+    public Studio GetStudio(int id)
     {
         return _repository.GetStudio(id);
     }

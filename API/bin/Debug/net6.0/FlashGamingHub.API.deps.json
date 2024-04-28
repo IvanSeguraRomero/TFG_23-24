@@ -10,6 +10,7 @@
         "dependencies": {
           "FlashGamingHub.Business": "1.0.0",
           "FlashGamingHub.Models": "1.0.0",
+          "FlashGamingHub.common": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -540,6 +541,14 @@
           "FlashGamingHub.Business.dll": {}
         }
       },
+      "FlashGamingHub.common/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0"
+        },
+        "runtime": {
+          "FlashGamingHub.common.dll": {}
+        }
+      },
       "FlashGamingHub.Data/1.0.0": {
         "dependencies": {
           "FlashGamingHub.Models": "1.0.0",
@@ -935,6 +944,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "FlashGamingHub.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FlashGamingHub.common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

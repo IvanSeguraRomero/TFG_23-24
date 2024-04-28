@@ -1,6 +1,7 @@
 using FlashGamingHub.Data;
 using FlashGamingHub.Business;
 using Microsoft.EntityFrameworkCore;
+using FlashGamingHub.common;
 
     var builder = WebApplication.CreateBuilder(args);
     var connectionString = builder.Configuration.GetConnectionString("ServerDB");
@@ -10,9 +11,31 @@ using Microsoft.EntityFrameworkCore;
 
     // Scoped Services
     //Community
-    //  builder.Services.AddScoped<ICommunityRepository, C>(); 
-    // builder.Services.AddScoped<ITicketRepository, TicketEFRepository>();
+    builder.Services.AddScoped<ICommunityService, CommunityService>(); 
+    builder.Services.AddScoped<ICommunityRepository, CommunityEFRepository>();
 
+    //Game
+    builder.Services.AddScoped<IGameService, GameService>(); 
+    builder.Services.AddScoped<IGameRepository, GameEFRepository>();
+    
+    //GameShop
+    builder.Services.AddScoped<IGameShopService, GameShopService>(); 
+    builder.Services.AddScoped<IGameShopRepository, GameShopEFRepository>();
+
+    //Library
+    builder.Services.AddScoped<ILibraryGameUserService, LibraryGameUserService>(); 
+    builder.Services.AddScoped<ILibraryGameUserRepository, LibraryGameUserEFRepository>();
+
+    //Studio
+    builder.Services.AddScoped<IStudioService, StudioService>(); 
+    builder.Services.AddScoped<IStudioRepository, StudioEFRepository>();
+
+    //User
+    builder.Services.AddScoped<IUserService, UserService>(); 
+    builder.Services.AddScoped<IUserRepository, UserEFRepository>();
+
+    //Logs
+    builder.Services.AddScoped<IlogError,LogErrorClass>();
 
 
 
@@ -21,6 +44,7 @@ using Microsoft.EntityFrameworkCore;
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -33,6 +57,13 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseCors(options =>
+    {
+    options.WithOrigins("http://localhost:5173")
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials();
+    });
 
 app.MapControllers();
 

@@ -9,4 +9,5 @@ namespace FlashGamingHub.Business;
         void UpdateCommunity(Community community);
         void DeleteCommunity(int id);
         List<CommunityDTO> GetAll();
+        List<CommunityDTO> GetMessagesUser(int id);
     }

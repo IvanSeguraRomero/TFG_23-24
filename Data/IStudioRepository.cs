@@ -5,7 +5,7 @@ namespace FlashGamingHub.Data
     public interface IStudioRepository
     {
         void AddStudio(Studio studio);
-        StudioDTO GetStudio(int id);
+        Studio GetStudio(int id);
         StudioDTO GetStudioDTO(int id);
         void UpdateStudio(Studio studio);
         void DeleteStudio(int id);

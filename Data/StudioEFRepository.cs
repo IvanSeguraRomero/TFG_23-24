@@ -40,18 +40,10 @@ namespace FlashGamingHub.Data
             return studiosDTO;
         }
 
-        public StudioDTO GetStudio(int id)
+        public Studio GetStudio(int id)
         {
-            var  studio =_context.Studios;
-            var studioDTO=studio.Select(s=>new StudioDTO{
-                Name=s.Name,
-                Fundation=s.Fundation,
-                Country=s.Country,
-                EmailContact=s.EmailContact,
-                Website=s.Website,
-                Active=s.Active
-            }).FirstOrDefault(s=>s.StudioID==id);
-            return studioDTO;
+            var  studio =_context.Studios.FirstOrDefault(s => s.StudioID == id);
+            return studio;
         }
 
         public StudioDTO GetStudioDTO(int id)
