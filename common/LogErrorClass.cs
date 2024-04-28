@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-namespace TeatroWeb.common;
+namespace FlashGamingHub.common;
     public class LogErrorClass : IlogError{
     //logger
     public void LogErrorMethod(Exception ex, string message)

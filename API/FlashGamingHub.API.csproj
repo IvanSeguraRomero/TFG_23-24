@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Business\FlashGamingHub.Business.csproj" />
     <ProjectReference Include="..\Models\FlashGamingHub.Models.csproj" />
+    <ProjectReference Include="..\common\FlashGamingHub.common.csproj" />
   </ItemGroup>
 
 </Project>

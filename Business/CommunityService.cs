@@ -4,7 +4,7 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Data;
 using System.Collections.Generic;
 
-public class CommunityService : ICommunityService{
+public class CommunityService : IGameService{
     private readonly ICommunityRepository _repository;
 
     public CommunityService(ICommunityRepository repository){
