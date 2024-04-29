@@ -25,6 +25,9 @@ namespace FlashGamingHub.Models
 
         public bool Active { get; set; }
 
+        [ForeignKey("GameID")]
+         public int GameID { get; set; }
+
        public List<Game> Games { get; set; } = new List<Game>();
     }
 }

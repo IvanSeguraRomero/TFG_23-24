@@ -27,7 +27,7 @@ namespace FlashGamingHub.Data
         public List<GameShopDTO> GetAll()
         {
             var gamesRepository=new GameEFRepository(_context);
-            var gameShops=_context.GameShops.Include(gs=>gs.Game).ToList();
+            var gameShops=_context.GameShops.Include(gs=>gs.Games).ToList();
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
                 GameID=gs.GameID,
@@ -52,7 +52,7 @@ namespace FlashGamingHub.Data
         public GameShopDTO GetGameShopDTO(int id)
         {
             var gamesRepository=new GameEFRepository(_context);
-            var gameShops=_context.GameShops.Include(gs=>gs.Game).ToList();
+            var gameShops=_context.GameShops.Include(gs=>gs.Games).ToList();
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
                 GameID=gs.GameID,

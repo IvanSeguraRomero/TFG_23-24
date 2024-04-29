@@ -12,9 +12,9 @@ Connect to database
  "ServerDB": "Server=localhost, 8002;Database=Teatro;Uid=sa;Pwd=<YourStrong@Passw0rd>;TrustServerCertificate=True"
 
 ## Migrations folder ,not neccesary already created
-dotnet ef migrations add InitialCreate -p .\Data\Context.cs -s .\API\FlashGamingHub.API.csproj
+dotnet ef migrations add InitialCreate -p .\Data\FlashGamingHub.Data.csproj -s .\API\FlashGamingHub.API.csproj
 ## Run OnModelCreating very important
-dotnet ef database update  -p .\Data\TeatroWeb.Data.csproj -s .\API\TeatroWeb.API.csproj
+dotnet ef database update  -p .\Data\FlashGamingHub.Data.csproj -s .\API\FlashGamingHub.API.csproj
 ## Drop database only when really is not needed anymore
-dotnet ef database drop  -p .\Data\TeatroWeb.Data.csproj -s .\API\TeatroWeb.API.csproj
+dotnet ef database drop  -p .\Data\FlashGamingHub.Data.csproj -s .\API\FlashGamingHub.API.csproj
 

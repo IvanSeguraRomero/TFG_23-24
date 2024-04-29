@@ -36,6 +36,6 @@ public class User
          [ForeignKey("MessageID")]
          public int MessageID { get; set; }
 
-         public Community community{ get; set; }
+         public List<Community> messages{ get; set; }
     
 }

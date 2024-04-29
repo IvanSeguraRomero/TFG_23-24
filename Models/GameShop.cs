@@ -29,7 +29,6 @@ namespace FlashGamingHub.Models
         public string Origin { get; set; }
 
         [ForeignKey("GameID")]
-        public Game Game { get; set; }
 
         public List<Game> Games { get; set; }
     }

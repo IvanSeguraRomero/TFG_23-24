@@ -50,7 +50,7 @@ namespace FlashGamingHub.Data
 
         public LibraryGameUser GetLibraryGameUser(int id)
         {
-             var libraryGameUser=_context.LibraryGameUsers.Include(g=>g.Game).Include(g=>g.User).FirstOrDefault(l=>l.UserID==id);
+             var libraryGameUser=_context.LibraryGameUsers.Include(g=>g.Games.ToList()).Include(g=>g.User).FirstOrDefault(l=>l.UserID==id);
             return libraryGameUser;
         }
 

@@ -70,7 +70,7 @@ namespace FlashGamingHub.Data
         public List<UserDTO> getUsersGameId(int gameId)
             {
                 var libraryGameUsers = _context.LibraryGameUsers;
-                var usersDTO = libraryGameUsers.Where(l=>l.Game.GameID==gameId).Select(u=>new UserDTO{
+                var usersDTO = libraryGameUsers.Where(l => l.Games.Any(g => g.GameID == gameId)).Select(u => new UserDTO{
                     Name=u.User.Name,
                     Surname=u.User.Surname,
                     Password=u.User.Password,

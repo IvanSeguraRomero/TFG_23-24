@@ -28,12 +28,7 @@ public class Context : DbContext
             .HasMany(g => g.StoresAvailableAt)
             .WithMany(gs => gs.Games);
 
-        // Relación de GameShop con Game
-        modelBuilder.Entity<GameShop>()
-            .HasMany(gs => gs.Games)
-            .WithMany(g => g.StoresAvailableAt);
-
-         // Relación de LibraryGameUser con User y Game
+        // Relación de LibraryGameUser con User y Game
         modelBuilder.Entity<LibraryGameUser>()
             .HasKey(lgu => lgu.UserID);
 
@@ -47,11 +42,13 @@ public class Context : DbContext
             .HasOne(u => u.libraryGameUser)
             .WithOne(lgu => lgu.User)
             .HasForeignKey<LibraryGameUser>(lgu => lgu.UserID);
+
         // Relación entre User y Community
         modelBuilder.Entity<User>()
-            .HasOne(u => u.community)
-            .WithOne(c => c.User)
-            .HasForeignKey<Community>(c => c.UserID);
+            .HasMany(u => u.messages)
+            .WithOne(m => m.User)
+            .HasForeignKey(m => m.UserID);
+
     // Relación de Studio con Game
     modelBuilder.Entity<Studio>().HasData(
         new Studio
