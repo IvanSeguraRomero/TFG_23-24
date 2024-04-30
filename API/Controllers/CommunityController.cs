@@ -23,7 +23,7 @@ public class CommunityController : ControllerBase{
     try{
             var query = _communityService.GetAll().AsQueryable();
             if(likesCount.HasValue){
-                query = query.Where(community => community.LikesCount> likesCount.Value)
+                query = query.Where(community => community.LikesCount>= likesCount.Value)
                 .OrderByDescending(community => community.LikesCount);
             }
 
@@ -50,7 +50,7 @@ public class CommunityController : ControllerBase{
             _logError.LogErrorMethod(new Exception("No se encontró el mensaje"), $"Error al obtener la información del mensaje con ID {id}");
             return NotFound();
         }
-
+        
         return messages;
         }catch (Exception ex)
         {
@@ -143,21 +143,6 @@ public class CommunityController : ControllerBase{
         return NoContent();
         }catch(Exception ex){
                 _logError.LogErrorMethod(ex, "Error al eliminar el mensaje");
-                return StatusCode(500, "Error interno del servidor");
-        }
-    }
-    [HttpGet("{id}/messages")]
-    public ActionResult<List<CommunityDTO>> GetMessagesUser(int id){
-        try{
-            var messages = _communityService.GetMessagesUser(id);
-            if(messages == null || messages.Count == 0){
-                _logError.LogErrorMethod(new Exception($"No se encontraron mensajes en el usuario con ID {id}"), "Error al intentar obtener los mensajes");
-                return NotFound();
-            }else{
-                return messages;
-            }
-        }catch(Exception ex){
-                 _logError.LogErrorMethod(ex, "Error al obtener los mensajes");
                 return StatusCode(500, "Error interno del servidor");
         }
     }

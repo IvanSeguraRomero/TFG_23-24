@@ -41,9 +41,4 @@ public class CommunityService : ICommunityService{
     {
         _repository.UpdateCommunity(community);
     }
-
-    public List<CommunityDTO> GetMessagesUser(int id)
-    {
-        return _repository.GetMessagesUser(id);
-    }
 }

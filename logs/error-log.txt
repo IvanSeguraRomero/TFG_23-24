@@ -1,0 +1,23 @@
+30/04/2024 18:31:38 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 3
+30/04/2024 19:01:03 - Error al obtener la información del mensaje con ID 2: No se encontró el mensaje
+30/04/2024 19:01:36 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:02:04 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:02:18 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:08:24 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:10:12 - Error al obtener la información del juego con el id 1: Object reference not set to an instance of an object.
+30/04/2024 19:25:18 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:26:34 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:41:46 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 19:43:23 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:01:46 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:03:17 - Error al obtener la información de los juegos: peta aqui
+30/04/2024 20:05:54 - Error al obtener la información de los juegos: peta aqui
+30/04/2024 20:07:34 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:16:54 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:23:27 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:28:24 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:31:41 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:31:51 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:35:54 - Error al obtener la información de los juegos: Object reference not set to an instance of an object.
+30/04/2024 20:39:06 - Error al obtener la información de los juegos: Value cannot be null. (Parameter 'source')
+30/04/2024 20:47:02 - Error al obtener la información del juego con el id 1: Object reference not set to an instance of an object.

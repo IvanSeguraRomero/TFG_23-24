@@ -38,7 +38,7 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                messages=messagesRepository.GetMessagesUser(u.UserID)
+                // messages=u.messages
             }).ToList();
             return usersDTO;
         }
@@ -62,7 +62,7 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                messages=messagesRepository.GetMessagesUser(u.UserID)
+                // messages=u.messages,
             }).FirstOrDefault(user=>user.UserID==id);
             return userDTO;
         }
@@ -93,5 +93,17 @@ namespace FlashGamingHub.Data
         {
             _context.SaveChanges();
         }
+         public List<CommunityDTO> GetMessagesUser(int userId)
+            {
+                var messagesDTO = _context.Communities.Where(c => c.UserID == userId).Select(c => new CommunityDTO
+                    {
+                        MessageID = c.MessageID,
+                        UserID = c.UserID,
+                        Message = c.Message,
+                        PublicationDate = c.PublicationDate,
+                        LikesCount=c.LikesCount
+                        }).ToList();
+                return messagesDTO;
+            }
     }
 }

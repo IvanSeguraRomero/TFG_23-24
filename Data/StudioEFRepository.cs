@@ -74,8 +74,7 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                StudioID=g.StudioID,
-                users=usersGameRepository.getUsersGameId(g.GameID)
+                StudioID=g.StudioID
             }).ToList();
             return gamesForStudioDTO;
         }

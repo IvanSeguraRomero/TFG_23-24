@@ -26,7 +26,7 @@ namespace FlashGamingHub.Data
 
         public List<GameDTO> GetAll()
         {
-            var userRepository= new UserEFRepository(_context);
+            
             var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gamesDTO=games.Select(g=>new GameDTO{
@@ -36,10 +36,10 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
-                users=userRepository.getUsersGameId(g.GameID)
+                Studio=studioRepository.GetStudioDTO(g.StudioID)
             }).ToList();
             return gamesDTO;
+           
         }
 
         public Game GetGame(int id)
@@ -50,7 +50,6 @@ namespace FlashGamingHub.Data
 
         public GameDTO GetGameDTO(int id)
         {
-            var userRepository= new UserEFRepository(_context);
             var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gameDTO=games.Select(g=>new GameDTO{
@@ -60,8 +59,7 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
-                users=userRepository.getUsersGameId(g.GameID)
+                Studio=studioRepository.GetStudioDTO(g.StudioID)
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;
         }

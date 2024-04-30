@@ -29,5 +29,9 @@ namespace FlashGamingHub.Models
          [ForeignKey("StoreID")]
          public int StoreID { get; set; }
         public List<GameShop>  StoresAvailableAt { get; set; }
+
+        [ForeignKey("LibraryGameUserId")]
+        public int? LibraryGameUserId { get; set; }
+        public LibraryGameUser libraryGameUser { get; set; }
     }
 }
