@@ -28,7 +28,7 @@ public class User
 
         public bool Active { get; set; }
 
-        [ForeignKey("UserID")]
+        [ForeignKey("LibraryGameUserId")]
          public int LibraryGameUserID { get; set; }
 
          public LibraryGameUser libraryGameUser{ get; set; }

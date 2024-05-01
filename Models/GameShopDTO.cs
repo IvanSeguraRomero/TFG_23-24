@@ -19,5 +19,4 @@ namespace FlashGamingHub.Models;
 
         public string Origin { get; set; }
 
-        public List<GameDTO> Game { get; set; } = new List<GameDTO>();
     }

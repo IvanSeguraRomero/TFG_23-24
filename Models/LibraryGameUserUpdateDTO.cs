@@ -10,4 +10,6 @@ public class LibraryGameUserUpdateDTO{
     public int? HoursPlayed { get; set; }
 
     public DateTime? LastPlayed { get; set; }
+
+    public int? UserID { get; set; }
 }

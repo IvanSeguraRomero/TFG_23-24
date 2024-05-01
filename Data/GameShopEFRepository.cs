@@ -37,8 +37,7 @@ namespace FlashGamingHub.Data
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
                 Categories=gs.Categories,
-                Origin=gs.Origin,
-                Game=gamesRepository.getGameShopGames(gs.StoreID)
+                Origin=gs.Origin
             }).ToList();
             return gameShopDTO;
         }
@@ -62,8 +61,7 @@ namespace FlashGamingHub.Data
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
                 Categories=gs.Categories,
-                Origin=gs.Origin,
-                Game=gamesRepository.getGameShopGames(gs.StoreID)
+                Origin=gs.Origin
             }).FirstOrDefault(gs=>gs.StoreID==id);
             return gameShopDTO;
         }

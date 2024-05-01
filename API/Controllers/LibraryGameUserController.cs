@@ -9,10 +9,10 @@ namespace FlashGamingHub.Controllers;
 [Route("[controller]")]
 
 public class LibraryGameUserController : ControllerBase{
-    private readonly LibraryGameUserService? _libraryGameUserService;
+    private readonly ILibraryGameUserService? _libraryGameUserService;
     private readonly IlogError _logError;
 
-    public LibraryGameUserController(IlogError logError, LibraryGameUserService? libraryGameUserService){
+    public LibraryGameUserController(IlogError logError, ILibraryGameUserService? libraryGameUserService){
         _logError = logError;
         _libraryGameUserService = libraryGameUserService;
     }
@@ -105,6 +105,9 @@ public class LibraryGameUserController : ControllerBase{
             if(libraryGameUserUpdateDTO.LastPlayed!=null){
                 existingLibraryGameUser.LastPlayed=(DateTime)libraryGameUserUpdateDTO.LastPlayed;
             }
+            if(libraryGameUserUpdateDTO.UserID!=null){
+                existingLibraryGameUser.UserID =libraryGameUserUpdateDTO.UserID;
+            }
             
             
             _libraryGameUserService.UpdateLibraryGameUser(existingLibraryGameUser);
@@ -112,7 +115,7 @@ public class LibraryGameUserController : ControllerBase{
             return NoContent();
         }catch(Exception ex){
                  _logError.LogErrorMethod(ex, "Error al actualizar la biblioteca");
-                return StatusCode(500, "Error interno del servidor");
+                return StatusCode(500, "Error interno del servidor" + ex.Message);
         }
         }
 

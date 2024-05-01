@@ -10,5 +10,7 @@ namespace FlashGamingHub.Data
         void UpdateUser(User user);
         void DeleteUser(int id);
         List<UserDTO> GetAll();
+
+        List<CommunityDTO> GetMessagesUser(int id);
     }
 }

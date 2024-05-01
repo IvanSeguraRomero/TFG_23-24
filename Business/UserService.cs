@@ -26,6 +26,11 @@ public class UserService : IUserService{
         return _repository.GetAll();
     }
 
+    public List<CommunityDTO> GetMessagesUser(int id)
+    {
+        return _repository.GetMessagesUser(id);
+    }
+
     public User GetUser(int id)
     {
         return _repository.GetUser(id);

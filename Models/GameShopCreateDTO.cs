@@ -4,11 +4,9 @@ using System.ComponentModel.DataAnnotations;
 public class GameShopCreateDTO{
 
     [Required]
-    [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
     public decimal Price { get; set; }
 
     [Required]
-    [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El descuento debe tener hasta dos decimales.")]
     public decimal Discount { get; set; }
 
     [Required]

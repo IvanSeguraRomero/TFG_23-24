@@ -10,7 +10,6 @@ public class GameCreateDTO{
     public string Description { get; set; }
 
     [Required]
-    [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
     public decimal Price { get; set; }
 
     [Required]
@@ -18,4 +17,11 @@ public class GameCreateDTO{
 
     [Required]
     public bool Available { get; set; }
+
+    [Required]
+    public int StudioID { get; set; }
+
+    [Required]
+    public int StoreID { get; set; }
+
 }

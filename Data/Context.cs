@@ -18,32 +18,38 @@ public class Context : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-         // Relación de Game con Studio y GameShop
+         // Relación de Game con Studio muchos juegos a un estudio
         modelBuilder.Entity<Game>()
             .HasOne(g => g.Studio)
             .WithMany(s => s.Games)
             .HasForeignKey(g => g.StudioID);
 
+        //Game con GameShop muchos a muchos
         modelBuilder.Entity<Game>()
             .HasMany(g => g.StoresAvailableAt)
             .WithMany(gs => gs.Games);
 
-        // Relación de LibraryGameUser con User y Game
-        modelBuilder.Entity<LibraryGameUser>()
-            .HasKey(lgu => lgu.UserID);
-
+        // Relación de LibraryGameUser con User uno a uno
         modelBuilder.Entity<LibraryGameUser>()
             .HasOne(lgu => lgu.User)
             .WithOne(u => u.libraryGameUser)
-            .HasForeignKey<LibraryGameUser>(lgu => lgu.UserID);
+            .HasForeignKey<User>(u => u.LibraryGameUserID);
 
-        // Relación de User con LibraryGameUser
+        // LibraryGameUser con Game una a muchos
+        modelBuilder.Entity<LibraryGameUser>()
+            .HasMany(lgu => lgu.Games)
+            .WithOne(g => g.libraryGameUser)
+            .HasForeignKey(g => g.LibraryGameUserId);
+   
+
+        // Relación de User con LibraryGameUser un usuario a una biblioteca
         modelBuilder.Entity<User>()
             .HasOne(u => u.libraryGameUser)
             .WithOne(lgu => lgu.User)
             .HasForeignKey<LibraryGameUser>(lgu => lgu.UserID);
-
-        // Relación entre User y Community
+        
+        
+        // Relación entre User y Community un usuario muchos mensajes
         modelBuilder.Entity<User>()
             .HasMany(u => u.messages)
             .WithOne(m => m.User)
@@ -59,7 +65,8 @@ public class Context : DbContext
             Country = "Country1",
             EmailContact = "studio1@example.com",
             Website = "www.studio1.com",
-            Active = true
+            Active = true,
+            GameID =1
         },
         new Studio
         {
@@ -69,7 +76,8 @@ public class Context : DbContext
             Country = "Country2",
             EmailContact = "studio2@example.com",
             Website = "www.studio2.com",
-            Active = true
+            Active = true,
+            GameID=2
         }
     );
 
@@ -78,6 +86,7 @@ public class Context : DbContext
         new GameShop
         {
             StoreID = 1,
+            GameID=1,
             Price = 49.99m,
             Discount = 0.1m,
             Stock = 100,
@@ -89,6 +98,7 @@ public class Context : DbContext
         new GameShop
         {
             StoreID = 2,
+            GameID=2,
             Price = 39.99m,
             Discount = 0.05m,
             Stock = 150,
@@ -110,7 +120,8 @@ public class Context : DbContext
             ReleaseDate = DateTime.Now.AddYears(-1),
             Available = true,
             StudioID = 1,
-            StoreID = 1
+            StoreID = 1,
+            LibraryGameUserId=1
         },
         new Game
         {
@@ -121,7 +132,8 @@ public class Context : DbContext
             ReleaseDate = DateTime.Now.AddYears(-2),
             Available = true,
             StudioID = 2,
-            StoreID = 2
+            StoreID = 2,
+            LibraryGameUserId=2
         }
     );
 
@@ -159,6 +171,7 @@ public class Context : DbContext
     modelBuilder.Entity<LibraryGameUser>().HasData(
         new LibraryGameUser
         {
+            LibraryGameUserId=1,
             UserID = 1,
             GameID = 1,
             AddedDate = DateTime.Now.AddMonths(-6),
@@ -168,6 +181,7 @@ public class Context : DbContext
         },
         new LibraryGameUser
         {
+            LibraryGameUserId=2,
             UserID = 2,
             GameID = 2,
             AddedDate = DateTime.Now.AddMonths(-3),

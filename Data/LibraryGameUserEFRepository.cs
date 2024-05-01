@@ -28,52 +28,36 @@ namespace FlashGamingHub.Data
         public List<LibraryGameUserDTO> GetAll()
         {
            var studioRepository= new StudioEFRepository(_context);
-           var userRepository= new UserEFRepository(_context);
            var  libraryGameUsers = _context.LibraryGameUsers.ToList();
            var  libraryGameUsersDto = libraryGameUsers.Select(l=>new LibraryGameUserDTO{
+                LibraryGameUserId=l.LibraryGameUserId,
                 AddedDate= l.AddedDate,
                 Rating= l.Rating,
                 HoursPlayed= l.HoursPlayed,
                 LastPlayed= l.LastPlayed,
-                User = userRepository.GetUserDTO(l.UserID),
-                Games= l.Games.Select(g=>new GameDTO{
-                    Name=g.Name,
-                    Description=g.Description,
-                    Price=g.Price,
-                    ReleaseDate=g.ReleaseDate,
-                    Available=g.Available,
-                    Studio=studioRepository.GetStudioDTO(g.StudioID)
-                }).ToList()
+                UserID = l.UserID
            }).ToList();
            return libraryGameUsersDto;
         }
 
         public LibraryGameUser GetLibraryGameUser(int id)
         {
-             var libraryGameUser=_context.LibraryGameUsers.Include(g=>g.Games.ToList()).Include(g=>g.User).FirstOrDefault(l=>l.UserID==id);
+             var libraryGameUser=_context.LibraryGameUsers.Include(g=>g.Games).Include(g=>g.User).FirstOrDefault(l=>l.LibraryGameUserId==id);
             return libraryGameUser;
         }
 
         public LibraryGameUserDTO GetLibraryGameUserDTO(int id)
         {
            var studioRepository= new StudioEFRepository(_context);
-           var userRepository= new UserEFRepository(_context);
            var  libraryGameUsers = _context.LibraryGameUsers.ToList();
            var  libraryGameUsersDto = libraryGameUsers.Select(l=>new LibraryGameUserDTO{
+                LibraryGameUserId=l.LibraryGameUserId,
                 AddedDate= l.AddedDate,
                 Rating= l.Rating,
                 HoursPlayed= l.HoursPlayed,
                 LastPlayed= l.LastPlayed,
-                User = userRepository.GetUserDTO(l.UserID),
-                Games= l.Games.Select(g=>new GameDTO{
-                    Name=g.Name,
-                    Description=g.Description,
-                    Price=g.Price,
-                    ReleaseDate=g.ReleaseDate,
-                    Available=g.Available,
-                    Studio=studioRepository.GetStudioDTO(g.StudioID)
-                }).ToList()
-           }).FirstOrDefault(l=>l.User.UserID==id);
+                UserID = l.UserID
+           }).FirstOrDefault(l=>l.LibraryGameUserId==id);
            return libraryGameUsersDto;
         }
 
@@ -82,12 +66,13 @@ namespace FlashGamingHub.Data
                 var libraryGameUsersDto = _context.LibraryGameUsers.Where(l => l.UserID == id).SelectMany(l => l.Games)
                 .Select(g => new GameDTO
                 {
+                    GameID= g.GameID,
                     Name = g.Name,
                     Description = g.Description,
                     Price = g.Price,
                     ReleaseDate = g.ReleaseDate,
                     Available = g.Available,
-                    Studio = studioRepository.GetStudioDTO(g.StudioID)
+                    StudioID=g.StudioID,
                 })
                 .ToList();
 

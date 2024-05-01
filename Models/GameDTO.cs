@@ -14,13 +14,8 @@ namespace FlashGamingHub.Models
 
         public bool Available { get; set; }
 
-        public int StudioID { get; set; }
+        public int? StudioID { get; set; }
 
-        public StudioDTO Studio { get; set;}
 
-        public int StoreID { get; set; }
-        public List<GameShopDTO>  StoresAvailableAt { get; set; }
-
-        public List<UserDTO> users { get; set; } = new List<UserDTO>();
     }
 }

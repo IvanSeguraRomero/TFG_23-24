@@ -27,15 +27,14 @@ namespace FlashGamingHub.Data
 
         public List<CommunityDTO> GetAll()
         {
-            var userRepository= new UserEFRepository(_context);
             var communities=_context.Communities.Include(c=>c.User).ToList();
             var communitiesDTO=communities.Select(c=>new CommunityDTO{
                 MessageID=c.MessageID,
+                UserID=c.UserID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
-                LikesCount=c.LikesCount,
-                User=userRepository.GetUserDTO(c.UserID)
+                LikesCount=c.LikesCount
             }).ToList();
             return communitiesDTO;
         }
@@ -48,17 +47,16 @@ namespace FlashGamingHub.Data
 
         public CommunityDTO GetCommunityDTO(int id)
         {
-            var userRepository= new UserEFRepository(_context);
             var communities=_context.Communities.Include(c=>c.User).ToList();
             var communitieDTO=communities.Select(c=>new CommunityDTO{
                 MessageID=c.MessageID,
+                UserID=c.UserID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
-                LikesCount=c.LikesCount,
-                User=userRepository.GetUserDTO(c.UserID)
+                LikesCount=c.LikesCount
             }).FirstOrDefault(community=>community.MessageID == id);
-
+            Console.WriteLine(communitieDTO);
             return communitieDTO;
         }
 
@@ -72,17 +70,7 @@ namespace FlashGamingHub.Data
         {
             _context.SaveChanges();
         }
-        public List<CommunityDTO> GetMessagesUser(int userId)
-            {
-                var messagesDTO = _context.Communities.Where(c => c.UserID == userId).Select(c => new CommunityDTO
-                    {
-                        Message = c.Message,
-                        PublicationDate = c.PublicationDate,
-                        ActiveMember = c.ActiveMember,
-                        LikesCount = c.LikesCount
-                        }).ToList();
-                return messagesDTO;
-            }
+       
 
     }
 }

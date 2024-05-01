@@ -13,7 +13,5 @@ namespace FlashGamingHub.Models
         public bool ActiveMember { get; set; }
 
         public int LikesCount { get; set; }
-
-        public UserDTO User { get; set; }
     }
 }

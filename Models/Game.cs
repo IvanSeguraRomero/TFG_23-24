@@ -14,7 +14,7 @@ namespace FlashGamingHub.Models
         [Column(TypeName = "nvarchar(1000)")]
         public string Description { get; set; }
 
-        [Column(TypeName = "decimal(10,2)")]
+        [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
 
         public DateTime ReleaseDate { get; set; }
@@ -29,5 +29,9 @@ namespace FlashGamingHub.Models
          [ForeignKey("StoreID")]
          public int StoreID { get; set; }
         public List<GameShop>  StoresAvailableAt { get; set; }
+
+        [ForeignKey("LibraryGameUserId")]
+        public int? LibraryGameUserId { get; set; }
+        public LibraryGameUser? libraryGameUser { get; set; }
     }
 }

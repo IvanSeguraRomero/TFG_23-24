@@ -26,7 +26,7 @@ namespace FlashGamingHub.Data
 
         public List<GameDTO> GetAll()
         {
-            var userRepository= new UserEFRepository(_context);
+            
             var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gamesDTO=games.Select(g=>new GameDTO{
@@ -36,10 +36,10 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
-                users=userRepository.getUsersGameId(g.GameID)
+                StudioID=g.StudioID
             }).ToList();
             return gamesDTO;
+           
         }
 
         public Game GetGame(int id)
@@ -50,7 +50,6 @@ namespace FlashGamingHub.Data
 
         public GameDTO GetGameDTO(int id)
         {
-            var userRepository= new UserEFRepository(_context);
             var studioRepository= new StudioEFRepository(_context);
             var games=_context.Games.ToList();
             var gameDTO=games.Select(g=>new GameDTO{
@@ -60,8 +59,7 @@ namespace FlashGamingHub.Data
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
                 Available=g.Available,
-                Studio=studioRepository.GetStudioDTO(g.Studio.StudioID),
-                users=userRepository.getUsersGameId(g.GameID)
+                StudioID=g.StudioID
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;
         }
@@ -78,23 +76,15 @@ namespace FlashGamingHub.Data
         }
         public List<GameDTO> getGameShopGames(int storeId)
         {
+            var studioRepository= new StudioEFRepository(_context);
             var games = _context.Games.Where(g => g.StoresAvailableAt.Any(s => s.StoreID == storeId)).Select(g => new GameDTO
                 {
+                    GameID=g.GameID,
                     Name = g.Name,
                     Description = g.Description,
                     Price = g.Price,
                     ReleaseDate = g.ReleaseDate,
-                    Available = g.Available,
-                    StudioID = g.StudioID,
-                    Studio = new StudioDTO
-                    {
-                       Name= g.Studio.Name,
-                       Fundation=g.Studio.Fundation,
-                       Country=g.Studio.Country,
-                       EmailContact=g.Studio.EmailContact,
-                       Website=g.Studio.Website,
-                       Active=g.Studio.Active
-                    }
+                    Available = g.Available
                     }).ToList();
 
             return games;
@@ -102,22 +92,13 @@ namespace FlashGamingHub.Data
           public List<GameDTO> getGamesStudio(int studioId){
              var games = _context.Games.Where(g => g.Studio.StudioID==studioId).Select(gd => new GameDTO
                 {
+                    GameID=gd.GameID,
                     Name = gd.Name,
                     Description = gd.Description,
                     Price = gd.Price,
                     ReleaseDate = gd.ReleaseDate,
                     Available = gd.Available,
-                    StudioID = gd.StudioID,
-                    StoresAvailableAt = gd.StoresAvailableAt.Select(s => new GameShopDTO
-                        {
-                            Price = s.Price,
-                            Discount = s.Discount,
-                            Stock = s.Stock,
-                            AnnualSales = s.AnnualSales,
-                            LastUpdated = s.LastUpdated,
-                            Categories = s.Categories,
-                            Origin = s.Origin
-                        }).ToList()
+                    StudioID=gd.StudioID
                 }).ToList();
             return games;
         }
