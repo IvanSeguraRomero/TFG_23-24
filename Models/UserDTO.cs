@@ -19,6 +19,6 @@ public class UserDTO
 
         public bool Active { get; set; }
 
-        public List<CommunityDTO> messages { get; set; } = new List<CommunityDTO>();
+        public int MessageID { get; set; }
     
 }

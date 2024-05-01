@@ -2,7 +2,8 @@ namespace FlashGamingHub.Models
 {
     public class LibraryGameUserDTO
     {
-
+        public int LibraryGameUserId { get; set; }
+        
         public DateTime AddedDate { get; set; }
 
         public int Rating { get; set; }
@@ -11,8 +12,7 @@ namespace FlashGamingHub.Models
 
         public DateTime LastPlayed { get; set; }
 
-        public UserDTO User { get; set; } = new UserDTO();
+        public int? UserID { get; set; }
 
-        public List<GameDTO> Games { get; set; } = new List<GameDTO>();
     }
 }

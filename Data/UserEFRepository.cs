@@ -38,7 +38,7 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                // messages=u.messages
+                MessageID=u.MessageID
             }).ToList();
             return usersDTO;
         }
@@ -62,7 +62,7 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                // messages=u.messages,
+                MessageID=u.MessageID
             }).FirstOrDefault(user=>user.UserID==id);
             return userDTO;
         }

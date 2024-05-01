@@ -2,6 +2,7 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.Extensions.Logging.Console;
 
 namespace FlashGamingHub.Controllers;
 
@@ -19,7 +20,7 @@ public class GameController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<GameDTO>> GetAll(string? name, int? price) {
+    public ActionResult<List<GameDTO>> GetAll(string? name, decimal? price) {
     try{
             var query = _gameService.GetAll().AsQueryable();
             if(!string.IsNullOrEmpty(name)){
@@ -70,23 +71,24 @@ public class GameController : ControllerBase{
             _logError.LogErrorMethod(new Exception("No se pudo crear el juego"), $"Error al almacenar la información del juego {ModelState}");
             return BadRequest(ModelState);
         }
-
+    
         var gameDTO = new Game
         {
             Name=gameCreateDTO.Name,
             Description=gameCreateDTO.Description,
             Price=gameCreateDTO.Price,
             ReleaseDate=gameCreateDTO.ReleaseDate,
-            Available=gameCreateDTO.Available
+            Available=gameCreateDTO.Available,
+            StudioID=gameCreateDTO.StudioID,
+            StoreID=gameCreateDTO.StoreID
         };
-
         _gameService.AddGame(gameDTO);
 
         // Devolver la respuesta CreatedAtAction con el nuevo DTO
         return CreatedAtAction(nameof(Get), new { id = gameDTO.GameID }, gameCreateDTO);
         }catch(Exception ex){
                 _logError.LogErrorMethod(ex, "Error al crear un nuevo juego");
-                return StatusCode(500, "Error interno del servidor");
+                return StatusCode(500, "Error interno del servidor ");
         }
     }
 

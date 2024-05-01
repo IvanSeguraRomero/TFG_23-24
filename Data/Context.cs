@@ -31,16 +31,13 @@ public class Context : DbContext
 
         // Relación de LibraryGameUser con User uno a uno
         modelBuilder.Entity<LibraryGameUser>()
-            .HasKey(lgu => lgu.UserID);
-
-        //LibraryGameUser con game una a muchos
-        modelBuilder.Entity<LibraryGameUser>()
             .HasOne(lgu => lgu.User)
             .WithOne(u => u.libraryGameUser)
-            .HasForeignKey<LibraryGameUser>(lgu => lgu.UserID);
+            .HasForeignKey<User>(u => u.LibraryGameUserID);
 
+        // LibraryGameUser con Game una a muchos
         modelBuilder.Entity<LibraryGameUser>()
-            .HasMany(l => l.Games)
+            .HasMany(lgu => lgu.Games)
             .WithOne(g => g.libraryGameUser)
             .HasForeignKey(g => g.LibraryGameUserId);
    

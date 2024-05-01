@@ -14,4 +14,6 @@ public class LibraryGameUserCreateDTO{
 
     [Required]
     public DateTime LastPlayed { get; set; }
+
+    public int? UserID { get; set; }
 }
