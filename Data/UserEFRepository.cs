@@ -105,5 +105,29 @@ namespace FlashGamingHub.Data
                         }).ToList();
                 return messagesDTO;
             }
+
+            public UserDTOOut AddUserFromCredentials(UserDtoIn userDtoIn) {
+            // var userId = 1; //fake userID 
+            var user = new UserDTOOut { UserName = userDtoIn.UserName, Email = userDtoIn.Email, Role = Roles.User};
+            // UserId = userId, 
+            if (user == null)
+            {
+                //Simulating register failed
+                throw new KeyNotFoundException("User not created.");
+            }
+            return user;
+        }
+        
+        public UserDTOOut GetUserFromCredentials(LoginDtoIn loginDtoIn) {
+            // if ((loginDtoIn.Email != "agimenezg@svalero.com") && (loginDtoIn.Password != "1234"))
+            // {
+            //     //Simulating login failed
+            //     throw new KeyNotFoundException("User not found.");
+            // } else {
+                var user = new UserDTOOut { Email = loginDtoIn.Email, Role = Roles.Admin};
+                // UserId = 1, UserName = "agimenez", 
+                return user;
+            // }
+        }
     }
 }

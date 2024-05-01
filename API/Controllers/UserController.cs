@@ -2,10 +2,12 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 
 public class UserController : ControllerBase{

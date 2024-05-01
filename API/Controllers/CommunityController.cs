@@ -2,24 +2,30 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 
 public class CommunityController : ControllerBase{
     private readonly ICommunityService? _communityService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public CommunityController(IlogError logError, ICommunityService? communityService){
+    public CommunityController(IlogError logError, ICommunityService? communityService, IAuthService authService){
         _logError = logError;
         _communityService = communityService;
+        _authService= authService;
     }
 
     // GET all action
     [HttpGet]
     public ActionResult<List<CommunityDTO>> GetAll(int? likesCount) {
+        // if (!_authService.HasAccessToResource(Convert.ToInt32(bankAccountQueryParameters.Number), HttpContext.User)) 
+        //     {return Forbid(); }
     try{
             var query = _communityService.GetAll().AsQueryable();
             if(likesCount.HasValue){

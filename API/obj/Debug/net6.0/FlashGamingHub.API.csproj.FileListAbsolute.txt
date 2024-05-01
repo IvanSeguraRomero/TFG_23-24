@@ -146,3 +146,5 @@ D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\API\bin\Debug\net6.0\FlashGamin
 D:\2ºDAW\IvanSegura_GuillermoGarcia_DAW\BackEnd\API\bin\Debug\net6.0\FlashGamingHub.common.pdb
 D:\TFGDAW\Backend\API\bin\Debug\net6.0\FlashGamingHub.common.dll
 D:\TFGDAW\Backend\API\bin\Debug\net6.0\FlashGamingHub.common.pdb
+D:\TFGDAW\Backend\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\TFGDAW\Backend\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

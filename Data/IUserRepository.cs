@@ -12,5 +12,8 @@ namespace FlashGamingHub.Data
         List<UserDTO> GetAll();
 
         List<CommunityDTO> GetMessagesUser(int id);
+
+        public UserDTOOut AddUserFromCredentials(UserDtoIn userDtoIn);
+        public UserDTOOut GetUserFromCredentials(LoginDtoIn loginDtoIn);
     }
 }

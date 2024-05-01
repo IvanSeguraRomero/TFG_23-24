@@ -2,13 +2,25 @@ using FlashGamingHub.Data;
 using FlashGamingHub.Business;
 using Microsoft.EntityFrameworkCore;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
     var builder = WebApplication.CreateBuilder(args);
-    var connectionString = builder.Configuration.GetConnectionString("ServerDB");
-
-    builder.Services.AddDbContext<Context>(options =>
-        options.UseSqlServer(connectionString));
-
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(opt =>
+    {
+        opt.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+            ValidAudience = builder.Configuration["JWT:ValidAudience"],
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]))
+        };
+    });
     // Scoped Services
     //Community
     builder.Services.AddScoped<ICommunityService, CommunityService>(); 
@@ -37,34 +49,72 @@ using FlashGamingHub.common;
     //Logs
     builder.Services.AddScoped<IlogError,LogErrorClass>();
 
+    var connectionString = builder.Configuration.GetConnectionString("ServerDB");
+
+    builder.Services.AddDbContext<Context>(options =>
+        options.UseSqlServer(connectionString));
+
+    
 
 
 
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddAuthorization();
 
-var app = builder.Build();
+    // Add services to the container.
+    builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
 
-// Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-// }
-
-app.UseHttpsRedirection();
-app.UseAuthorization();
-app.UseCors(options =>
+    builder.Services.AddSwaggerGen(opt =>
     {
-    options.WithOrigins("http://localhost:5173")
-           .AllowAnyMethod()
-           .AllowAnyHeader()
-           .AllowCredentials();
+        opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+        opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "bearer"
+        });
+
+        opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type=ReferenceType.SecurityScheme,
+                        Id="Bearer"
+                    }
+                },
+                new string[]{}
+            }
+        });
     });
 
-app.MapControllers();
+    // builder.Services.AddAuthorization();
 
-app.Run();
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    // if (app.Environment.IsDevelopment())
+    // {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    // }
+
+    // app.UseHttpsRedirection();
+    // app.UseAuthorization();
+    app.UseCors(options =>
+        {
+        options.WithOrigins("http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+        });
+
+    app.UseAuthentication();
+    
+    app.MapControllers();
+
+    app.Run();
