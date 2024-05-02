@@ -20,5 +20,7 @@ public class UserDTO
         public bool Active { get; set; }
 
         public int MessageID { get; set; }
+
+        public string Role { get; set; }
     
 }

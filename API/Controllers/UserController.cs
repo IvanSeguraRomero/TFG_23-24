@@ -83,7 +83,8 @@ public class UserController : ControllerBase{
             Age=userCreateDTO.Age,
             Email=userCreateDTO.Email,
             RegisterDate=userCreateDTO.RegisterDate,
-            Active=userCreateDTO.Active
+            Active=userCreateDTO.Active,
+            Role=userCreateDTO.Role
         };
 
         _userService.AddUser(userDTO);
@@ -131,6 +132,9 @@ public class UserController : ControllerBase{
             }
             if(userUpdateDTO.Active!=null){
                 existingUser.Active=(bool)userUpdateDTO.Active;
+            }
+            if(userUpdateDTO.Role!=null){
+                existingUser.Role=userUpdateDTO.Role;
             }
             
             

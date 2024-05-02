@@ -150,7 +150,8 @@ public class Context : DbContext
             RegisterDate = DateTime.Now.AddYears(-2),
             Active = true,
             LibraryGameUserID = 1,
-            MessageID = 1
+            MessageID = 1,
+            Role=Roles.Admin
         },
         new User
         {
@@ -163,7 +164,8 @@ public class Context : DbContext
             RegisterDate = DateTime.Now.AddYears(-1),
             Active = true,
             LibraryGameUserID = 2,
-            MessageID = 2
+            MessageID = 2,
+            Role=Roles.Admin
         }
     );
 

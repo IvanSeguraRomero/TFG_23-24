@@ -23,4 +23,7 @@ public class UserCreateDTO{
 
     [Required]
     public bool Active { get; set; }
+
+    [Required]
+    public string Role { get; set; }
 }

@@ -24,8 +24,6 @@ public class CommunityController : ControllerBase{
     // GET all action
     [HttpGet]
     public ActionResult<List<CommunityDTO>> GetAll(int? likesCount) {
-        // if (!_authService.HasAccessToResource(Convert.ToInt32(bankAccountQueryParameters.Number), HttpContext.User)) 
-        //     {return Forbid(); }
     try{
             var query = _communityService.GetAll().AsQueryable();
             if(likesCount.HasValue){
@@ -41,7 +39,7 @@ public class CommunityController : ControllerBase{
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los mensajes");
-            return StatusCode(500, "Error interno del servidor");
+            return StatusCode(500, "Error interno del servidor" + ex.Message);
         }
     }
 
@@ -69,6 +67,8 @@ public class CommunityController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] CommunityCreateDTO communityCreateDTO)
     {
+        // if (!_authService.HasAccessToResource(Convert.ToInt32(bankAccountQueryParameters.Number), HttpContext.User)) 
+        //     {return Forbid(); }
         try{            
         if (!ModelState.IsValid)
         {

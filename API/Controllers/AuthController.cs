@@ -37,13 +37,13 @@ namespace FlashGamingHub.API.Controllers;
         }
 
         [HttpPost("Register")]
-        public IActionResult Register(UserDtoIn userDtoIn)
+        public IActionResult Register(UserCreateDTO userCreateDTO)
         {
             try
             {
                 if (!ModelState.IsValid)  {return BadRequest(ModelState); } 
 
-                var token = _authService.Register(userDtoIn);
+                var token = _authService.Register(userCreateDTO);
                 return Ok(token);
             }
             catch (Exception ex)

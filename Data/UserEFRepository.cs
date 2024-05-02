@@ -38,7 +38,8 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                MessageID=u.MessageID
+                MessageID=u.MessageID,
+                Role=u.Role
             }).ToList();
             return usersDTO;
         }
@@ -62,7 +63,8 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                MessageID=u.MessageID
+                MessageID=u.MessageID,
+                Role=u.Role
             }).FirstOrDefault(user=>user.UserID==id);
             return userDTO;
         }
@@ -77,7 +79,8 @@ namespace FlashGamingHub.Data
                     Age=u.User.Age,
                     Email=u.User.Email,
                     RegisterDate=u.User.RegisterDate,
-                    Active=u.User.Active
+                    Active=u.User.Active,
+                    Role=u.User.Role
                 }).ToList();   
                 return usersDTO;      
             }
@@ -105,29 +108,25 @@ namespace FlashGamingHub.Data
                         }).ToList();
                 return messagesDTO;
             }
-
-            public UserDTOOut AddUserFromCredentials(UserDtoIn userDtoIn) {
-            // var userId = 1; //fake userID 
-            var user = new UserDTOOut { UserName = userDtoIn.UserName, Email = userDtoIn.Email, Role = Roles.User};
-            // UserId = userId, 
-            if (user == null)
-            {
-                //Simulating register failed
-                throw new KeyNotFoundException("User not created.");
-            }
-            return user;
-        }
-        
         public UserDTOOut GetUserFromCredentials(LoginDtoIn loginDtoIn) {
-            // if ((loginDtoIn.Email != "agimenezg@svalero.com") && (loginDtoIn.Password != "1234"))
-            // {
-            //     //Simulating login failed
-            //     throw new KeyNotFoundException("User not found.");
-            // } else {
-                var user = new UserDTOOut { Email = loginDtoIn.Email, Role = Roles.Admin};
-                // UserId = 1, UserName = "agimenez", 
-                return user;
-            // }
-        }
+                var users = GetAll();
+
+                // Verificar si hay algún usuario con las credenciales proporcionadas
+                var matchingUser = users.FirstOrDefault(user =>
+                    user.Email == loginDtoIn.Email && user.Password==loginDtoIn.Password);
+
+                if (matchingUser != null) {
+                    // Si se encuentra un usuario coincidente, devolverlo en el formato adecuado
+                    return new UserDTOOut {
+                        UserId = matchingUser.UserID,
+                        UserName = matchingUser.Name,
+                        Email = matchingUser.Email,
+                        Role = matchingUser.Role
+                    };
+                } else {
+                    throw new KeyNotFoundException("User not found.");
+                }
+            }
+
     }
 }

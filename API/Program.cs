@@ -46,8 +46,16 @@ using Microsoft.OpenApi.Models;
     builder.Services.AddScoped<IUserService, UserService>(); 
     builder.Services.AddScoped<IUserRepository, UserEFRepository>();
 
+    //AuthService
+    builder.Services.AddScoped<IAuthService, AuthService>();
+
+
     //Logs
     builder.Services.AddScoped<IlogError,LogErrorClass>();
+
+
+
+
 
     var connectionString = builder.Configuration.GetConnectionString("ServerDB");
 
@@ -104,7 +112,7 @@ using Microsoft.OpenApi.Models;
     // }
 
     // app.UseHttpsRedirection();
-    // app.UseAuthorization();
+    
     app.UseCors(options =>
         {
         options.WithOrigins("http://localhost:5173")
@@ -114,7 +122,7 @@ using Microsoft.OpenApi.Models;
         });
 
     app.UseAuthentication();
-    
+    app.UseAuthorization();
     app.MapControllers();
 
     app.Run();

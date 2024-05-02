@@ -25,12 +25,28 @@ namespace FlashGamingHub.Business
             return GenerateToken(user);
         }
 
-        public string Register(UserDtoIn userDtoIn) {
-            var user = _repository.AddUserFromCredentials(userDtoIn);
-            return GenerateToken(user);
+        public string Register(UserCreateDTO userAdd) {
+            var user =new User{
+                Name = userAdd.Name,
+                Surname=userAdd.Surname,
+                Password=userAdd.Password,
+                Age=userAdd.Age,
+                Email=userAdd.Email,
+                RegisterDate=userAdd.RegisterDate,
+                Active=userAdd.Active,
+                Role=userAdd.Role
+            };
+            _repository.AddUser(user);
+            var userOut=new UserDTOOut{
+                UserId=user.UserID,
+                UserName=userAdd.Name,
+                Email=userAdd.Email,
+                Role=userAdd.Role
+            };
+            return GenerateToken(userOut);
         }
 
-        public string GenerateToken(UserDTOOut userDTOOut) {
+        public string GenerateToken(UserDTOOut user) {
             var key = Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]); 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -38,11 +54,10 @@ namespace FlashGamingHub.Business
                 Audience = _configuration["JWT:ValidAudience"],
                 Subject = new ClaimsIdentity(new Claim[] 
                     {
-                        new Claim(ClaimTypes.NameIdentifier, Convert.ToString(userDTOOut.UserId)),
-                        new Claim(ClaimTypes.Name, userDTOOut.UserName),
-                        new Claim(ClaimTypes.Role, userDTOOut.Role),
-                        new Claim(ClaimTypes.Email, userDTOOut.Email),
-                        new Claim("myCustomClaim", "myCustomClaimValue"),
+                        new Claim(ClaimTypes.NameIdentifier, Convert.ToString(user.UserId)),
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(ClaimTypes.Role, user.Role),
+                        new Claim(ClaimTypes.Email, user.Email)
                     }),
                 Expires = DateTime.UtcNow.AddDays(7), // AddMinutes(60)
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
