@@ -37,5 +37,7 @@ public class User
          public int MessageID { get; set; }
 
          public List<Community> messages{ get; set; }
+
+         public string Role { get; set; }
     
 }

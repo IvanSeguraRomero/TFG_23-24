@@ -38,7 +38,8 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                MessageID=u.MessageID
+                MessageID=u.MessageID,
+                Role=u.Role
             }).ToList();
             return usersDTO;
         }
@@ -62,7 +63,8 @@ namespace FlashGamingHub.Data
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
                 Active=u.Active,
-                MessageID=u.MessageID
+                MessageID=u.MessageID,
+                Role=u.Role
             }).FirstOrDefault(user=>user.UserID==id);
             return userDTO;
         }
@@ -77,7 +79,8 @@ namespace FlashGamingHub.Data
                     Age=u.User.Age,
                     Email=u.User.Email,
                     RegisterDate=u.User.RegisterDate,
-                    Active=u.User.Active
+                    Active=u.User.Active,
+                    Role=u.User.Role
                 }).ToList();   
                 return usersDTO;      
             }
@@ -105,5 +108,25 @@ namespace FlashGamingHub.Data
                         }).ToList();
                 return messagesDTO;
             }
+        public UserDTOOut GetUserFromCredentials(LoginDtoIn loginDtoIn) {
+                var users = GetAll();
+
+                // Verificar si hay algún usuario con las credenciales proporcionadas
+                var matchingUser = users.FirstOrDefault(user =>
+                    user.Email == loginDtoIn.Email && user.Password==loginDtoIn.Password);
+
+                if (matchingUser != null) {
+                    // Si se encuentra un usuario coincidente, devolverlo en el formato adecuado
+                    return new UserDTOOut {
+                        UserId = matchingUser.UserID,
+                        UserName = matchingUser.Name,
+                        Email = matchingUser.Email,
+                        Role = matchingUser.Role
+                    };
+                } else {
+                    throw new KeyNotFoundException("User not found.");
+                }
+            }
+
     }
 }

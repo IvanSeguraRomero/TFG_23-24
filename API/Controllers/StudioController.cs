@@ -2,19 +2,23 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 
 public class StudioController : ControllerBase{
     private readonly IStudioService? _studioService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public StudioController(IlogError logError, IStudioService? studioService){
+    public StudioController(IlogError logError, IStudioService? studioService, IAuthService authService){
         _logError = logError;
         _studioService = studioService;
+        _authService= authService;
     }
 
     // GET all action
@@ -64,6 +68,10 @@ public class StudioController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] StudioCreateDTO studioCreateDTO)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -97,6 +105,10 @@ public class StudioController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] StudioUpdateDTO studioUpdateDTO)
         {
+            if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingStudio = _studioService.GetStudio(id);
 
@@ -142,6 +154,10 @@ public class StudioController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var studio = _studioService.GetStudioDTO(id);
     

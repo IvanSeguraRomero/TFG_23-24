@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj": {}
+    "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj": {}
   },
   "projects": {
-    "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj": {
+    "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
+        "projectUniqueName": "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj",
         "projectName": "FlashGamingHub.API",
-        "projectPath": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
+        "projectPath": "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\TFGDAW\\Backend\\API\\obj\\",
+        "outputPath": "D:\\TFGDAW\\Backend\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -48,6 +48,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.28, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

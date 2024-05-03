@@ -51,3 +51,9 @@
 01/05/2024 17:39:02 - Error al obtener la información de la biblioteca con ID 3: No se encontró la biblioteca
 01/05/2024 18:00:06 - Error al obtener la información del estudio con ID 3: No se encontró el estudio
 01/05/2024 18:09:55 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 3
+02/05/2024 19:29:24 - Error al obtener la información del mensaje con el id 1: The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Role'.
+02/05/2024 19:34:14 - Error al obtener la información de los mensajes: The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Role'.
+02/05/2024 19:34:31 - Error al obtener la información del mensaje con el id 1: The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Role'.
+02/05/2024 19:35:33 - Error al obtener la información de los mensajes: The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Role'.
+02/05/2024 20:55:31 - Error al crear un nuevo usuario: An error occurred while saving the entity changes. See the inner exception for details.
+02/05/2024 20:56:38 - Error al crear un nuevo usuario: An error occurred while saving the entity changes. See the inner exception for details.

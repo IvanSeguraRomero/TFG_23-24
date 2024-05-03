@@ -2,24 +2,32 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 
 public class UserController : ControllerBase{
     private readonly IUserService? _userService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public UserController(IlogError logError, IUserService? userService){
+    public UserController(IlogError logError, IUserService? userService, IAuthService authService){
         _logError = logError;
         _userService = userService;
+        _authService= authService;
     }
 
     // GET all action
     [HttpGet]
     public ActionResult<List<UserDTO>> GetAll(bool? active) {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
     try{
             var query = _userService.GetAll().AsQueryable();
             if(active.HasValue){
@@ -46,6 +54,10 @@ public class UserController : ControllerBase{
     [HttpGet("{id}")]
     public ActionResult<UserDTO> Get(int id)
     {
+         if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var user = _userService.GetUserDTO(id);
 
@@ -66,6 +78,10 @@ public class UserController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] UserCreateDTO userCreateDTO)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -81,7 +97,8 @@ public class UserController : ControllerBase{
             Age=userCreateDTO.Age,
             Email=userCreateDTO.Email,
             RegisterDate=userCreateDTO.RegisterDate,
-            Active=userCreateDTO.Active
+            Active=userCreateDTO.Active,
+            Role=userCreateDTO.Role
         };
 
         _userService.AddUser(userDTO);
@@ -100,6 +117,10 @@ public class UserController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] UserUpdateDTO userUpdateDTO)
         {
+             if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingUser = _userService.GetUser(id);
 
@@ -130,6 +151,9 @@ public class UserController : ControllerBase{
             if(userUpdateDTO.Active!=null){
                 existingUser.Active=(bool)userUpdateDTO.Active;
             }
+            if(userUpdateDTO.Role!=null){
+                existingUser.Role=userUpdateDTO.Role;
+            }
             
             
             _userService.UpdateUser(existingUser);
@@ -147,6 +171,10 @@ public class UserController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var messages = _userService.GetUserDTO(id);
     
@@ -166,6 +194,10 @@ public class UserController : ControllerBase{
 
     [HttpGet("{id}/messages")]
     public ActionResult<List<CommunityDTO>> GetMessagesUser(int id){
+         if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
             var messages = _userService.GetMessagesUser(id);
             if(messages == null || messages.Count == 0){

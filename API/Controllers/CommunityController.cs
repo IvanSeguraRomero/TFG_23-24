@@ -2,24 +2,29 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 
 public class CommunityController : ControllerBase{
     private readonly ICommunityService? _communityService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public CommunityController(IlogError logError, ICommunityService? communityService){
+    public CommunityController(IlogError logError, ICommunityService? communityService, IAuthService authService){
         _logError = logError;
         _communityService = communityService;
+        _authService= authService;
     }
 
     // GET all action
     [HttpGet]
     public ActionResult<List<CommunityDTO>> GetAll(int? likesCount) {
+        
     try{
             var query = _communityService.GetAll().AsQueryable();
             if(likesCount.HasValue){
@@ -35,7 +40,7 @@ public class CommunityController : ControllerBase{
       }catch (Exception ex)
         {
             _logError.LogErrorMethod(ex, $"Error al obtener la información de los mensajes");
-            return StatusCode(500, "Error interno del servidor");
+            return StatusCode(500, "Error interno del servidor" + ex.Message);
         }
     }
 
@@ -63,6 +68,12 @@ public class CommunityController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] CommunityCreateDTO communityCreateDTO)
     {
+        
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
+        
         try{            
         if (!ModelState.IsValid)
         {
@@ -93,6 +104,10 @@ public class CommunityController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] CommunityUpdateDTO communityUpdateDTO)
         {
+            if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingCommunity = _communityService.GetCommunity(id);
 
@@ -130,6 +145,10 @@ public class CommunityController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var messages = _communityService.GetCommunityDTO(id);
     
