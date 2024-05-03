@@ -24,6 +24,7 @@ public class CommunityController : ControllerBase{
     // GET all action
     [HttpGet]
     public ActionResult<List<CommunityDTO>> GetAll(int? likesCount) {
+        
     try{
             var query = _communityService.GetAll().AsQueryable();
             if(likesCount.HasValue){
@@ -67,8 +68,12 @@ public class CommunityController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] CommunityCreateDTO communityCreateDTO)
     {
-        // if (!_authService.HasAccessToResource(Convert.ToInt32(bankAccountQueryParameters.Number), HttpContext.User)) 
-        //     {return Forbid(); }
+        
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
+        
         try{            
         if (!ModelState.IsValid)
         {
@@ -99,6 +104,10 @@ public class CommunityController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] CommunityUpdateDTO communityUpdateDTO)
         {
+            if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingCommunity = _communityService.GetCommunity(id);
 
@@ -136,6 +145,10 @@ public class CommunityController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var messages = _communityService.GetCommunityDTO(id);
     

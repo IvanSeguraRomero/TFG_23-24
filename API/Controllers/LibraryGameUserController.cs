@@ -13,15 +13,21 @@ namespace FlashGamingHub.Controllers;
 public class LibraryGameUserController : ControllerBase{
     private readonly ILibraryGameUserService? _libraryGameUserService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public LibraryGameUserController(IlogError logError, ILibraryGameUserService? libraryGameUserService){
+    public LibraryGameUserController(IlogError logError, ILibraryGameUserService? libraryGameUserService, IAuthService authService){
         _logError = logError;
         _libraryGameUserService = libraryGameUserService;
+        _authService= authService;
     }
 
     // GET all action
     [HttpGet]
     public ActionResult<List<LibraryGameUserDTO>> GetAll() {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
     try{
             return _libraryGameUserService.GetAll();
       }catch (Exception ex)
@@ -35,6 +41,10 @@ public class LibraryGameUserController : ControllerBase{
     [HttpGet("{id}")]
     public ActionResult<LibraryGameUserDTO> Get(int id)
     {
+         if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var library = _libraryGameUserService.GetLibraryGameUserDTO(id);
 
@@ -55,6 +65,7 @@ public class LibraryGameUserController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] LibraryGameUserCreateDTO libraryGameUserCreateDTO)
     {
+        
         try{            
         if (!ModelState.IsValid)
         {
@@ -86,6 +97,10 @@ public class LibraryGameUserController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] LibraryGameUserUpdateDTO libraryGameUserUpdateDTO)
         {
+             if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingLibraryGameUser = _libraryGameUserService.GetLibraryGameUser(id);
 
@@ -127,6 +142,10 @@ public class LibraryGameUserController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var library = _libraryGameUserService.GetLibraryGameUserDTO(id);
     
@@ -145,6 +164,10 @@ public class LibraryGameUserController : ControllerBase{
     }
     [HttpGet("{id}/games")]
     public ActionResult<List<GameDTO>> GetLibraryGameUserGames(int id){
+         if (!_authService.HasAccessToResource(id,HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
             var games = _libraryGameUserService.GetLibraryGameUserGames(id);
             if(games == null || games.Count == 0){

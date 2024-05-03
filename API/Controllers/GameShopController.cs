@@ -13,10 +13,12 @@ namespace FlashGamingHub.Controllers;
 public class GameShopController : ControllerBase{
     private readonly IGameShopService? _gameShopService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public GameShopController(IlogError logError, IGameShopService? gameShopService){
+    public GameShopController(IlogError logError, IGameShopService? gameShopService, IAuthService authService){
         _logError = logError;
         _gameShopService = gameShopService;
+        _authService= authService;
     }
 
     // GET all action
@@ -63,6 +65,10 @@ public class GameShopController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] GameShopCreateDTO gameShopCreateDTO)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -97,6 +103,10 @@ public class GameShopController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] GameShopUpdateDTO gameShopUpdateDTO)
         {
+            if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
             try{
             var existingGameShop = _gameShopService.GetGameShop(id);
 
@@ -143,6 +153,10 @@ public class GameShopController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var gameShop = _gameShopService.GetGameShopDTO(id);
     

@@ -2,7 +2,6 @@ using FlashGamingHub.Models;
 using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
-using Microsoft.Extensions.Logging.Console;
 using Microsoft.AspNetCore.Authorization;
 
 namespace FlashGamingHub.Controllers;
@@ -14,10 +13,12 @@ namespace FlashGamingHub.Controllers;
 public class GameController : ControllerBase{
     private readonly IGameService? _gameService;
     private readonly IlogError _logError;
+    private readonly IAuthService _authService;
 
-    public GameController(IlogError logError, IGameService? gameService){
+    public GameController(IlogError logError, IGameService? gameService, IAuthService authService){
         _logError = logError;
         _gameService = gameService;
+        _authService= authService;
     }
 
     // GET all action
@@ -67,6 +68,10 @@ public class GameController : ControllerBase{
     [HttpPost]
     public IActionResult Create([FromBody] GameCreateDTO gameCreateDTO)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -100,6 +105,11 @@ public class GameController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] GameUpdateDTO gameUpdateDTO)
         {
+            if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
+            
             try{
             var existingGame = _gameService.GetGame(id);
 
@@ -140,6 +150,10 @@ public class GameController : ControllerBase{
    [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
+        if (!_authService.IsAdmin(HttpContext.User))
+        {
+            return Forbid();
+        }
         try{
         var games = _gameService.GetGameDTO(id);
     

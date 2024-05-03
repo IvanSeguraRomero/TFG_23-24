@@ -10,6 +10,8 @@ namespace FlashGamingHub.Business
         public string GenerateToken(UserDTOOut userDTOOut);
         public bool HasAccessToResource(int requestedUserID, ClaimsPrincipal user);
 
+         public bool IsAdmin(ClaimsPrincipal user);
+
 
     }
 }

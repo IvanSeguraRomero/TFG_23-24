@@ -54,12 +54,12 @@ namespace FlashGamingHub.Business
                 Audience = _configuration["JWT:ValidAudience"],
                 Subject = new ClaimsIdentity(new Claim[] 
                     {
-                        new Claim(ClaimTypes.NameIdentifier, Convert.ToString(user.UserId)),
+                        new Claim("id", Convert.ToString(user.UserId)),
                         new Claim(ClaimTypes.Name, user.UserName),
                         new Claim(ClaimTypes.Role, user.Role),
                         new Claim(ClaimTypes.Email, user.Email)
                     }),
-                Expires = DateTime.UtcNow.AddDays(7), // AddMinutes(60)
+                Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
@@ -68,22 +68,27 @@ namespace FlashGamingHub.Business
             var tokenString = tokenHandler.WriteToken(token);
             return tokenString;
         } 
-        public bool HasAccessToResource(int requestedUserID, ClaimsPrincipal user) 
+       public bool HasAccessToResource(int requestedUserID, ClaimsPrincipal user) 
         {
-            var userIdClaim = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            var userIdClaim = user.Claims.FirstOrDefault(c => c.Type == "id");
             if (userIdClaim is null || !int.TryParse(userIdClaim.Value, out int userId)) 
             { 
                 return false; 
             }
-            var isOwnResource = userId == requestedUserID;
-
-            var roleClaim = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
-            if (roleClaim != null) return false;
-            var isAdmin = roleClaim!.Value == Roles.Admin;
-            
-            var hasAccess = isOwnResource || isAdmin;
-            return hasAccess;
+            return userId == requestedUserID;
         }
+
+        public bool IsAdmin(ClaimsPrincipal user) 
+        {
+            var roleClaim = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+            if (roleClaim != null && roleClaim.Value == Roles.Admin)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
      
 
     }
