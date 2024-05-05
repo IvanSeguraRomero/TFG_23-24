@@ -15,6 +15,8 @@ public class Context : DbContext
     public DbSet<LibraryGameUser> LibraryGameUsers{ get;set; }
     public DbSet<Community> Communities { get;set; }
     public DbSet<GameShop>GameShops{ get; set; }
+    public DbSet<ShoppingCart>ShoppingCarts{ get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -54,6 +56,15 @@ public class Context : DbContext
             .HasMany(u => u.messages)
             .WithOne(m => m.User)
             .HasForeignKey(m => m.UserID);
+
+        // Relación entre User y ShoppingCart
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.ShoppingCart)
+                .WithOne(sc => sc.User)
+                .HasForeignKey<ShoppingCart>(sc => sc.UserID);
+
+
+
 
     // Relación de Studio con Game
     modelBuilder.Entity<Studio>().HasData(
@@ -215,8 +226,22 @@ public class Context : DbContext
         }
     );
 
-        
-
+    modelBuilder.Entity<ShoppingCart>().HasData(
+        new ShoppingCart
+        {
+            ShoppingCartID = 1,
+            UserID = 1,
+            Total = 0,
+            FechaCreacion = DateTime.Now
+        },
+        new ShoppingCart
+        {
+            ShoppingCartID = 2,
+            UserID = 2,
+            Total = 0,
+            FechaCreacion = DateTime.Now
+        }
+    );
         base.OnModelCreating(modelBuilder);
     }
  }

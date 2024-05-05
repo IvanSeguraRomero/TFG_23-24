@@ -39,5 +39,7 @@ public class User
          public List<Community> messages{ get; set; }
 
          public string Role { get; set; }
+
+          public ShoppingCart ShoppingCart { get; set; }
     
 }
