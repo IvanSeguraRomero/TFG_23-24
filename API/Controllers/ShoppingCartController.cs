@@ -62,7 +62,7 @@ public class ShoppingCartController : ControllerBase{
 
      // POST action
     [HttpPost]
-    public IActionResult Create([FromBody] ShoppingCart shoppingCart)
+    public IActionResult Create([FromBody] ShoppingCartCreateDTO shoppingCart)
     {
         try{            
         if (!ModelState.IsValid)
@@ -71,20 +71,17 @@ public class ShoppingCartController : ControllerBase{
             return BadRequest(ModelState);
         }
 
-        // var studioDTO = new Studio
-        // {
-        //     Name=shoppingCart.Name,
-        //     Fundation=shoppingCart.Fundation,
-        //     Country=shoppingCart.Country,
-        //     EmailContact=shoppingCart.EmailContact,
-        //     Website=shoppingCart.Website,
-        //     Active=shoppingCart.Active
-        // };
+        var shoppingCartDTO = new ShoppingCart
+        {
+           UserID=shoppingCart.UserID,
+           Total=shoppingCart.Total,
+           FechaCreacion=shoppingCart.FechaCreacion
+        };
 
-        _shoppingCartService.AddShoppingCart(shoppingCart);
+        _shoppingCartService.AddShoppingCart(shoppingCartDTO);
 
         // Devolver la respuesta CreatedAtAction con el nuevo DTO
-        return CreatedAtAction(nameof(Get), new { id = shoppingCart.ShoppingCartID }, shoppingCart);
+        return CreatedAtAction(nameof(Get), new { id = shoppingCartDTO.ShoppingCartID }, shoppingCartDTO);
         }catch(Exception ex){
                 _logError.LogErrorMethod(ex, "Error al crear un nuevo carrito");
                 return StatusCode(500, "Error interno del servidor");
@@ -108,9 +105,29 @@ public class ShoppingCartController : ControllerBase{
                 return NotFound();
             }
 
-            // if(shoppingCart.Games!=null){
-            //     existingShoppingCart.Games=shoppingCart.Games;
-            // }
+            if(shoppingCart.Games!=null){
+               var updateGames = shoppingCart.Games.Select(g =>
+                {
+                    var newGame = new Game();
+                    if (g.Name != null)
+                        newGame.Name = g.Name;
+
+                    if (g.Description != null)
+                        newGame.Description = g.Description;
+
+                    if (g.Price != null)
+                        newGame.Price = (decimal)g.Price;
+
+                    if (g.ReleaseDate != null)
+                        newGame.ReleaseDate = (DateTime)g.ReleaseDate;
+
+                    if (g.Available != null)
+                        newGame.Available = (bool)g.Available;
+
+                    return newGame;
+                }).ToList();
+                existingShoppingCart.Games=updateGames;
+            }
             if(shoppingCart.Total!=null){
                 existingShoppingCart.Total=(decimal)shoppingCart.Total;
             }

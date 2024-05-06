@@ -63,8 +63,12 @@ public class Context : DbContext
                 .WithOne(sc => sc.User)
                 .HasForeignKey<ShoppingCart>(sc => sc.UserID);
 
-
-
+        // Relación entre ShoppingCart y Game
+            modelBuilder.Entity<ShoppingCart>()
+                .HasMany(sc => sc.Games)
+                .WithOne(g => g.shoppingCart)
+                .HasForeignKey(g => g.ShoppingCartID);
+            
 
     // Relación de Studio con Game
     modelBuilder.Entity<Studio>().HasData(
