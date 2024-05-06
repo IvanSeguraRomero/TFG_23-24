@@ -46,6 +46,10 @@ using Microsoft.OpenApi.Models;
     builder.Services.AddScoped<IUserService, UserService>(); 
     builder.Services.AddScoped<IUserRepository, UserEFRepository>();
 
+    //ShoppingCart
+    builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>(); 
+    builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartEFRepository>();
+
     //AuthService
     builder.Services.AddScoped<IAuthService, AuthService>();
 

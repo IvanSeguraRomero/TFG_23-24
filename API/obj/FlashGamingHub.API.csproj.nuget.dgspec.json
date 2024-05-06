@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj": {}
+    "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj": {}
   },
   "projects": {
-    "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj": {
+    "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj",
+        "projectUniqueName": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
         "projectName": "FlashGamingHub.API",
-        "projectPath": "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj",
+        "projectPath": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\TFGDAW\\Backend\\Api\\obj\\",
+        "outputPath": "D:\\TFGDAW\\Backend\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"

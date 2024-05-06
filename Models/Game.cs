@@ -33,5 +33,11 @@ namespace FlashGamingHub.Models
         [ForeignKey("LibraryGameUserId")]
         public int? LibraryGameUserId { get; set; }
         public LibraryGameUser? libraryGameUser { get; set; }
+
+        [ForeignKey("ShoppingCartID")]
+        public int? ShoppingCartID { get; set; }
+        public ShoppingCart? shoppingCart { get; set; }
+
+
     }
 }
