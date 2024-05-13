@@ -51,19 +51,17 @@
 }
 .sections {
   transform: scale(0.7);
-  right: 20px;
-  margin: 0;
+  right: 10px;
   position: absolute;
   top: 46px;
-  right: 196px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 33px;
+  gap: 38px;
   text-align: center;
   font-size: 28px;
-  color: #5d5a88;
+  color: #000000;
   font-family: var(--font-playfair-display);
 }
 
@@ -102,7 +100,6 @@
   line-height: 18px;
   font-weight: 400;
   font-family: inherit;
-  display: none;
 }
 /*Search*/
 .container {

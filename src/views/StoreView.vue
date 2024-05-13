@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router'
 import { jwtDecode } from 'jwt-decode'
 
 //import css
-import '../assets/main.css'
 
 const user = {
   email: 'user1@example.com',
@@ -42,5 +41,20 @@ loginUser()
 </script>
 
 <template>
+  <main>
   <h1>HOLAStore</h1>
+  </main>
 </template>
+
+<style scoped>
+  main{
+  background-color: var(--color-maroon);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: var(--font-size-25xl);
+  color: var(--color-goldenrod);
+  font-family: var(--font-lobster);
+}
+</style>
+
