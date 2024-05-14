@@ -62,7 +62,7 @@
   text-align: center;
   font-size: 28px;
   color: #000000;
-  font-family: var(--font-playfair-display);
+  font-family: var(--font-roboto);
 }
 
 .header-line-hr {

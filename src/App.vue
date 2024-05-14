@@ -18,6 +18,10 @@ import './assets/main.css'
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet"
   />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" 
+    rel="stylesheet"
+    />
   <header>
     <HeaderItem>
       <template #admin
@@ -50,7 +54,7 @@ import './assets/main.css'
       >
       <template #profile
         ><RouterLink
-          to="/login"
+          to="/login&register"
           style="text-decoration: none; color: var(--neutral-colors-headings-black)"
           >Login</RouterLink
         ></template
