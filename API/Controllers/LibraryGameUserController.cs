@@ -79,6 +79,7 @@ public class LibraryGameUserController : ControllerBase{
             Rating=libraryGameUserCreateDTO.Rating,
             HoursPlayed=libraryGameUserCreateDTO.HoursPlayed,
             LastPlayed=libraryGameUserCreateDTO.LastPlayed,
+            UserID=libraryGameUserCreateDTO.UserID
         };
 
         _libraryGameUserService.AddLibraryGameUser(libraryGameUserDTO);
