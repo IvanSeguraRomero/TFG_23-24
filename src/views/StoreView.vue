@@ -3,8 +3,8 @@ import { useApiStore, pinia } from '../store/api'
 import { jwtDecode } from 'jwt-decode'
 
 const user = {
-  email: 'user2@example.com',
-  password: 'password2'
+  email: 'user1@example.com',
+  password: 'password1'
 }
 // const userRegister = {
 //   name: 'Probandoregister',
@@ -18,7 +18,7 @@ const user = {
 // }
 //put user prueba
 const userData = {
-  age: 777,
+  message: "sueltenme"
 };
 // test login
 const loginUser = async () => {
@@ -55,8 +55,8 @@ const decodedToken = async () => {
 
   // console.log('Token decodificado:', decodedToken)
   console.log('Token sin decodificar:', token)
-  await useApiStore(pinia).fetchUpdateUser(decodedToken.id,userData)
-  // console.log(put)
+await useApiStore(pinia).fetchUpdateCommunity(1,userData);
+
 }
 loginUser()
 // registerUser()
