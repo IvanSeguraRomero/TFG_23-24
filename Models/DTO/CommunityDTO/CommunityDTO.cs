@@ -4,7 +4,7 @@ namespace FlashGamingHub.Models
     {
         public int MessageID { get; set; }
 
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
 
         public string Message { get; set; }
 

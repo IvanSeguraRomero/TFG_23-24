@@ -57,3 +57,11 @@
 02/05/2024 19:35:33 - Error al obtener la información de los mensajes: The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Role'.
 02/05/2024 20:55:31 - Error al crear un nuevo usuario: An error occurred while saving the entity changes. See the inner exception for details.
 02/05/2024 20:56:38 - Error al crear un nuevo usuario: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:15:25 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:18:54 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:19:34 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:19:36 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:20:20 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:20:37 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:20:53 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+16/05/2024 18:24:03 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.

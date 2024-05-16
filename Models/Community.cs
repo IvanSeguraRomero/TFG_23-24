@@ -18,7 +18,7 @@ namespace FlashGamingHub.Models
         public int LikesCount { get; set; }
 
         [ForeignKey("UserID")]
-        public int UserID { get; set; }
-        public User User { get; set; }
+        public int? UserID { get; set; }
+        public User? User { get; set; }
     }
 }

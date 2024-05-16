@@ -88,7 +88,6 @@ public class CommunityController : ControllerBase{
             ActiveMember= communityCreateDTO.ActiveMember,
             LikesCount= communityCreateDTO.LikesCount
         };
-
         _communityService.AddCommunity(communityDTO);
 
         // Devolver la respuesta CreatedAtAction con el nuevo DTO
