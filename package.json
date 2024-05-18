@@ -13,11 +13,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "jwt-decode": "^4.0.0",
     "pinia": "^2.1.7",
+    "vee-validate": "^4.12.8",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2",
-    "vuetify": "^3.6.5"
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
@@ -33,6 +34,8 @@
     "prettier": "^3.2.5",
     "typescript": "~5.4.0",
     "vite": "^5.2.11",
-    "vue-tsc": "^2.0.11"
+    "vite-plugin-vuetify": "^2.0.3",
+    "vue-tsc": "^2.0.11",
+    "vuetify": "^3.6.6"
   }
 }
