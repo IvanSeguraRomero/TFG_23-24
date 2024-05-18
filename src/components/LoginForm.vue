@@ -51,10 +51,7 @@
         return 'Must be checked.'
       },
       passwd(value:any) {
-        if (
-          value?.length >= 7
-        )
-          return true
+        if (value?.length >= 7) return true
 
         return 'Password must contain at leats 1 number, 1 letter, 1 symbol & have more than 7 characters'
       },

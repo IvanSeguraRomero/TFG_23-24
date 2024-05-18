@@ -34,5 +34,5 @@ app.mixin({
   }
 })
 app.use(vuetify)
-app.mount('#app')
+app.mount('#app');
 // app.mount('#app');

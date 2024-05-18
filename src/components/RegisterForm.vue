@@ -195,4 +195,8 @@ label{
   width:50%;
   height: 50%;
 }
+
+.v-date-picker {
+    width: 400px;
+}
 </style>
