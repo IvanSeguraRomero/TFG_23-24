@@ -13,6 +13,7 @@ namespace FlashGamingHub.Data;
         public void AddShoppingCart(ShoppingCart shoppingCart)
         {
             _context.ShoppingCarts.Add(shoppingCart);
+            SaveChanges();
         }
 
         public void DeleteShoppingCart(int id)

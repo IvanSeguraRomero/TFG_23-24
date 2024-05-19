@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
-[Authorize]
+// [Authorize]
 [Route("[controller]")]
 
 public class ShoppingCartController : ControllerBase{
@@ -25,10 +25,10 @@ public class ShoppingCartController : ControllerBase{
     [HttpGet("{id}")]
     public ActionResult<ShoppingCartDTO> Get(int id)
     {
-        if (!_authService.HasAccessToResource(id,HttpContext.User))
-        {
-            return Forbid();
-        }
+        // if (!_authService.HasAccessToResource(id,HttpContext.User))
+        // {
+        //     return Forbid();
+        // }
         try{
         var shoppingCart = _shoppingCartService.GetShoppingCart(id);
 
