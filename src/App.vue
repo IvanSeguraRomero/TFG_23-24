@@ -24,6 +24,7 @@ import './assets/main.css'
     rel="stylesheet"
     />
   <header>
+    
     <HeaderItem>
       <template #admin
         ><RouterLink

@@ -1,101 +1,184 @@
 <script setup lang="ts">
 import { useField, useForm } from 'vee-validate';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useApiStore, pinia } from '../store/api';
+
 const existingUser = ref(false);
 
-function proveExistingUser(users:any,values : any){
-  users.forEach((element:any) => {
-    if(element.email === values.email || element.tlf==values.phone){
-      existingUser.value=true;
-    } 
+function proveExistingUser(users: any, values: any) {
+  users.forEach((element: any) => {
+    if (element.email === values.email) {
+      existingUser.value = true;
+    }
   });
 
-  if(existingUser.value==false){
+  if (!existingUser.value) {
+    fetchPostUser(values);
     handleReset();
-    }else{
-      alert('Este usuario ya se ha registrado');
-    }
+    handleDateReset;
+  } else {
+    alert('Este usuario ya se ha registrado');
+  }
 }
 
-  const { handleSubmit, handleReset } = useForm({
-    validationSchema: {
-      name(value:any) {
-        if (value?.length >= 2) return true
 
-        return 'Name needs to be at least 2 characters.'
-      },
-      surname(value:any) {
-        if (value?.length >= 2) return true
 
-        return 'Name needs to be at least 2 characters.'
-      },
-      birthDate(value:any) {
-        return true
-      },
-      email(value:any) {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+//clean datefield when registered
+const handleDateReset=()=>{
+  const text=document.querySelector("#input-9").innerHTML="";
+  console.log(text);
+  
+}
 
-        return 'Must be a valid e-mail.'
-      },
-      checkbox(value:any) {
-        if (value === '1') return true
+const fetchPostUser = async (values: any) => {
+  try {
+    const userDTO = {
+      name: values.name,
+      surname: values.surname,
+      password: values.passwd,
+      age: values.age,
+      email: values.email,
+      registerDate: values.registeredDate,
+      active: true,
+      role: "user"
+    };
+    console.log(userDTO);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-        return 'Must be checked.'
-      },
-      passwd(value:any) {
-        if (
-          /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\w\s])/.test(value) &&
-          value.length >= 7
-        )
-          return true
+const fetchGetUser = async (values: any) => {
+  try {
+    const users = await useApiStore(pinia).fetchUsers();
+    proveExistingUser(users, values);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-        return 'Password must contain at leats 1 number, 1 letter, 1 symbol & have more than 7 characters'
-      },
+const { handleSubmit, handleReset } = useForm({
+  validationSchema: {
+    name(value: any) {
+      if (value?.length >= 2) return true;
+      return 'Name needs to be at least 2 characters.';
     },
-  })
-  const name = useField('name')
-  const surname = useField('surname')
-  const email = useField('email')
-  const checkbox = useField('checkbox')
-  const passwd = useField('passwd')
-  const visible = ref(false);
+    surname(value: any) {
+      if (value?.length >= 2) return true;
+      return 'Surname needs to be at least 2 characters.';
+    },
+    birthDate(value: any) {
+      return true;
+    },
+    email(value: any) {
+      if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
+      return 'Must be a valid e-mail.';
+    },
+    checkbox(value: any) {
+      if (value === '1') return true;
+      return 'Must be checked.';
+    },
+    passwd(value: any) {
+      if (
+        /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\w\s])/.test(value) &&
+        value.length >= 7
+      )
+        return true;
+      return 'Password must contain at least 1 number, 1 letter, 1 symbol & have more than 7 characters';
+    },
+  },
+});
 
-  const birthDate = ref<Date | null>(null);
-  const menu = ref(false);
-  const maxDate = computed(() => {
-    const today = new Date();
-    const maxYear = today.getFullYear() - 12;
-    const maxMonth = today.getMonth() + 1; // Añadimos 1 ya que los meses comienzan desde 0
-    const maxDay = today.getDate();
-    return `${maxYear}-${maxMonth < 10 ? '0' + maxMonth : maxMonth}-${maxDay < 10 ? '0' + maxDay : maxDay}`;
-  });
-  const minDate = computed(() => {
-    const today = new Date();
-    const minYear = today.getFullYear() - 100;
-    const minMonth = today.getMonth() + 1; // Añadimos 1 ya que los meses comienzan desde 0
-    const minDay = today.getDate();
-    return `${minYear}-${minMonth < 10 ? '0' + minMonth : minMonth}-${minDay < 10 ? '0' + minDay : minDay}`;
-  });
+const name = useField('name');
+const surname = useField('surname');
+const email = useField('email');
+const checkbox = useField('checkbox');
+const passwd = useField('passwd');
+const visible = ref(false);
 
-  const formattedDate = computed(() => {
-    return birthDate.value ? new Date(birthDate.value).toLocaleDateString() : '';
-  });
+const birthDate = ref<Date | null>(null);
+const formattedDate = ref<string | null>(null);
+const menu = ref(false);
 
-  const openMenu = () => {
-    menu.value = true;
-  };
+const maxDate = computed(() => {
+  const today = new Date();
+  const maxYear = today.getFullYear() - 12;
+  const maxMonth = today.getMonth() + 1;
+  const maxDay = today.getDate();
+  return `${maxYear}-${maxMonth < 10 ? '0' + maxMonth : maxMonth}-${maxDay < 10 ? '0' + maxDay : maxDay}`;
+});
 
-  const closeMenu = () => {
-    menu.value = false;
-  };
+const minDate = computed(() => {
+  const today = new Date();
+  const minYear = today.getFullYear() - 100;
+  const minMonth = today.getMonth() + 1;
+  const minDay = today.getDate();
+  return `${minYear}-${minMonth < 10 ? '0' + minMonth : minMonth}-${minDay < 10 ? '0' + minDay : minDay}`;
+});
 
-  const submit = handleSubmit(values => {
-    existingUser.value=false;
-    
-  });
-  submit
+function formatDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+watch(birthDate, (newVal) => {
+  if (newVal) {
+    formattedDate.value = formatDate(newVal);
+  }
+});
+
+function calcAge(birthDate: Date): number {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+const age = ref<number | null>(null);
+
+const submit = handleSubmit((values) => {
+  if (birthDate.value) {
+    existingUser.value = false;
+    formattedDate.value = formatDate(birthDate.value);
+    age.value = calcAge(birthDate.value);
+    values.age = age.value;
+    values.registeredDate = formattedDate.value;
+    fetchGetUser(values);
+  }
+});
+
+const openMenu = () => {
+  menu.value = true;
+};
+
+const closeMenu = () => {
+  menu.value = false;
+};
+
+submit;
+
+const resetFields = () => {
+  birthDate.value = null;
+  formattedDate.value = null;
+  age.value = null;
+  visible.value = false;
+  menu.value = false;
+};
+
+const handleClear = () => {
+  resetFields();
+  handleReset();
+};
+
+
 </script>
+
+
 <template>
       <form @submit.prevent="submit">
         <label for="chk" aria-hidden="true">Register</label>
@@ -132,13 +215,13 @@ function proveExistingUser(users:any,values : any){
           @click:append-inner="visible = !visible"
         ></v-text-field>
     
-        <v-menu v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y >
+        <v-menu v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y  class="centered-menu">
           <template v-slot:activator>
             <v-text-field v-model="formattedDate" label="Fecha de nacimiento" readonly @click="openMenu"></v-text-field>
           </template>
           <v-date-picker :max="maxDate" :min="minDate" color="secondary" v-model="birthDate" @input="menu = false"></v-date-picker>
         </v-menu>
-    
+
         <v-checkbox
           v-model="checkbox.value.value"
           :error-messages="checkbox.errorMessage.value"
@@ -150,7 +233,7 @@ function proveExistingUser(users:any,values : any){
         <div class="buttons">
           <v-btn class="me-4" type="submit"> Register </v-btn>
       
-          <v-btn @click="handleReset" class="clear"> Clear </v-btn>
+          <v-btn @click="handleClear" class="clear" id="regClear"> Clear </v-btn>
         </div>
       </form>
 </template>
@@ -198,5 +281,11 @@ label{
 
 .v-date-picker {
     width: 400px;
+}
+
+.centered-menu {
+  top: 50% ;
+  left: 45% ;
+  transform: translate(-50%, -50%) ;
 }
 </style>

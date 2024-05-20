@@ -13,7 +13,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@date-io/dayjs": "^3.0.0",
     "@mdi/font": "^7.4.47",
+    "axios": "^1.7.0",
+    "dayjs": "^1.11.11",
     "jwt-decode": "^4.0.0",
     "pinia": "^2.1.7",
     "vee-validate": "^4.12.8",
