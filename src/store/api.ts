@@ -394,7 +394,7 @@ export const useApiStore = defineStore('flashgaminghub', {
         throw error
       }
     },
-    //no FUNKA post
+    
     async fetchPostShoppingCart(shoppingCartData:any) {
       try {
         if (!this.token) {
@@ -426,7 +426,7 @@ export const useApiStore = defineStore('flashgaminghub', {
         throw error;
       }
     },
-    //end no FUNKA
+    
     async fetchUpdateShoppingCart(id: number, shoppingCartData: any) {
        
       try {
