@@ -58,19 +58,14 @@ export const useApiStore = defineStore('flashgaminghub', {
       }
     },
     //USER
-    async fetchUsers(active?: boolean) {
+    async fetchUsers() {
       try {
         if (!this.token) {
           console.error('No se encontró ningún token JWT en el localStorage');
           return;
         }
     
-        let url = 'https://localhost:7025/User';
-        if (active !== undefined) {
-          url += `?active=${active}`;
-        }
-    
-        const response = await fetch(url, {
+        const response = await fetch('https://localhost:7025/User', {
           headers: {
             Authorization: `Bearer ${this.token}`
           }

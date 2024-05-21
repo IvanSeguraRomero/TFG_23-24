@@ -44,7 +44,6 @@ const fetchPostUser = async (values: any) => {
       age: values.age,
       email: values.email,
       registerDate: values.registeredDate,
-      active: true,
       role: "user"
     };
     
