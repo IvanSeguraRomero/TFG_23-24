@@ -34,7 +34,6 @@ namespace FlashGamingHub.Data
                 Country=s.Country,
                 EmailContact=s.EmailContact,
                 Website=s.Website,
-                Active=s.Active,
                 games=gamesRepository.getGamesStudio(s.StudioID)
             }).ToList();
             return studiosDTO;
@@ -57,7 +56,6 @@ namespace FlashGamingHub.Data
                 Country=s.Country,
                 EmailContact=s.EmailContact,
                 Website=s.Website,
-                Active=s.Active,
                 games=gamesRepository.getGamesStudio(s.StudioID)
             }).FirstOrDefault(studio=>studio.StudioID==id);
 

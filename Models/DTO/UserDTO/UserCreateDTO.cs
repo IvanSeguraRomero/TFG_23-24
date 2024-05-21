@@ -22,8 +22,5 @@ public class UserCreateDTO{
     public DateTime RegisterDate { get; set; }
 
     [Required]
-    public bool Active { get; set; }
-
-    [Required]
     public string Role { get; set; }
 }

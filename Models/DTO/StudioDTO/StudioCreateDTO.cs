@@ -16,8 +16,8 @@ public class StudioCreateDTO{
     public string EmailContact { get; set; }
 
     [Required]
-    public string Website { get; set; }
+    public string EmailLogin { get; set; }
 
     [Required]
-    public bool Active { get; set; }
+    public string Website { get; set; }
 }

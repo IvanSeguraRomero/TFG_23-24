@@ -23,16 +23,9 @@ public class UserController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<UserDTO>> GetAll(bool? active) {
+    public ActionResult<List<UserDTO>> GetAll() {
     try{
             var query = _userService.GetAll().AsQueryable();
-            if(active.HasValue){
-                if(active.Value){
-                    query=query.Where(u => u.Active);
-                }else{
-                    query=query.Where(u => !u.Active);
-                }
-            }
 
             var users = query.ToList();
             if(users.Count==0){
@@ -93,7 +86,6 @@ public class UserController : ControllerBase{
             Age=userCreateDTO.Age,
             Email=userCreateDTO.Email,
             RegisterDate=userCreateDTO.RegisterDate,
-            Active=userCreateDTO.Active,
             Role=userCreateDTO.Role
         };
 
@@ -143,9 +135,6 @@ public class UserController : ControllerBase{
             }
             if(userUpdateDTO.RegisterDate!=null){
                 existingUser.RegisterDate=(DateTime)userUpdateDTO.RegisterDate;
-            }
-            if(userUpdateDTO.Active!=null){
-                existingUser.Active=(bool)userUpdateDTO.Active;
             }
             if(userUpdateDTO.Role!=null){
                 existingUser.Role=userUpdateDTO.Role;

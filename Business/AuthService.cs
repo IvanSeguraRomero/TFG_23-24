@@ -33,7 +33,6 @@ namespace FlashGamingHub.Business
                 Age=userAdd.Age,
                 Email=userAdd.Email,
                 RegisterDate=userAdd.RegisterDate,
-                Active=userAdd.Active,
                 Role=userAdd.Role
             };
             _repository.AddUser(user);

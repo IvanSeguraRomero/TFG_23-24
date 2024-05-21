@@ -12,9 +12,9 @@ namespace FlashGamingHub.Models
 
         public string EmailContact { get; set; }
 
-        public string Website { get; set; }
+        public string EmailLogin { get; set; }
 
-        public bool Active { get; set; }
+        public string Website { get; set; }
 
         public List<GameDTO> games { get; set; } = new List<GameDTO>();
     }

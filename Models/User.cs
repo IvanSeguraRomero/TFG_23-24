@@ -26,8 +26,6 @@ public class User
 
         public DateTime RegisterDate { get; set; }
 
-        public bool Active { get; set; }
-
         [ForeignKey("LibraryGameUserId")]
          public int LibraryGameUserID { get; set; }
 

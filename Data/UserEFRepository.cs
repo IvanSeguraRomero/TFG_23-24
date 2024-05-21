@@ -37,7 +37,6 @@ namespace FlashGamingHub.Data
                 Age=u.Age,
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
-                Active=u.Active,
                 MessageID=u.MessageID,
                 Role=u.Role
             }).ToList();
@@ -62,7 +61,6 @@ namespace FlashGamingHub.Data
                 Age=u.Age,
                 Email = u.Email,
                 RegisterDate=u.RegisterDate,
-                Active=u.Active,
                 MessageID=u.MessageID,
                 Role=u.Role
             }).FirstOrDefault(user=>user.UserID==id);
@@ -79,7 +77,6 @@ namespace FlashGamingHub.Data
                     Age=u.User.Age,
                     Email=u.User.Email,
                     RegisterDate=u.User.RegisterDate,
-                    Active=u.User.Active,
                     Role=u.User.Role
                 }).ToList();   
                 return usersDTO;      

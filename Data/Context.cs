@@ -79,8 +79,8 @@ public class Context : DbContext
             Fundation = DateTime.Now.AddYears(-10),
             Country = "Country1",
             EmailContact = "studio1@example.com",
+            EmailLogin = "studio1login@example.com",
             Website = "www.studio1.com",
-            Active = true,
             GameID =1
         },
         new Studio
@@ -90,8 +90,8 @@ public class Context : DbContext
             Fundation = DateTime.Now.AddYears(-5),
             Country = "Country2",
             EmailContact = "studio2@example.com",
+            EmailLogin = "studio2login@example.com",
             Website = "www.studio2.com",
-            Active = true,
             GameID=2
         }
     );
@@ -163,7 +163,6 @@ public class Context : DbContext
             Age = 30,
             Email = "user1@example.com",
             RegisterDate = DateTime.Now.AddYears(-2),
-            Active = true,
             LibraryGameUserID = 1,
             MessageID = 1,
             Role=Roles.Admin
@@ -177,7 +176,6 @@ public class Context : DbContext
             Age = 25,
             Email = "user2@example.com",
             RegisterDate = DateTime.Now.AddYears(-1),
-            Active = true,
             LibraryGameUserID = 2,
             MessageID = 2,
             Role=Roles.Admin

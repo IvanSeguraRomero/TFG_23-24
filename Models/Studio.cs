@@ -21,9 +21,10 @@ namespace FlashGamingHub.Models
         public string EmailContact { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Website { get; set; }
+        public string EmailLogin { get; set; }
 
-        public bool Active { get; set; }
+        [Column(TypeName = "nvarchar(100)")]
+        public string Website { get; set; }
 
         [ForeignKey("GameID")]
          public int GameID { get; set; }

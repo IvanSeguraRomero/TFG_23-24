@@ -14,8 +14,9 @@ public class StudioUpdateDTO{
     [StringLength(20, ErrorMessage = "Email demasiado corto")]
     public string? EmailContact { get; set; }
 
+    [StringLength(20, ErrorMessage = "Email demasiado corto")]
+    public string? EmailLogin { get; set; }
+
     [StringLength(20, ErrorMessage = "Website demasiado corta")]
     public string? Website { get; set; }
-
-    public bool? Active { get; set; }
 }

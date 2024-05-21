@@ -85,8 +85,8 @@ public class StudioController : ControllerBase{
             Fundation=studioCreateDTO.Fundation,
             Country=studioCreateDTO.Country,
             EmailContact=studioCreateDTO.EmailContact,
-            Website=studioCreateDTO.Website,
-            Active=studioCreateDTO.Active
+            EmailLogin=studioCreateDTO.EmailLogin,
+            Website=studioCreateDTO.Website
         };
 
         _studioService.AddStudio(studioDTO);
@@ -131,11 +131,13 @@ public class StudioController : ControllerBase{
             if(studioUpdateDTO.EmailContact!=null){
                 existingStudio.EmailContact=studioUpdateDTO.EmailContact;
             }
+
+            if(studioUpdateDTO.EmailLogin!=null){
+                existingStudio.EmailLogin=studioUpdateDTO.EmailLogin;
+            }
+
             if(studioUpdateDTO.Website!=null){
                 existingStudio.Website=studioUpdateDTO.Website;
-            }
-            if(studioUpdateDTO.Active!=null){
-                existingStudio.Active=(bool)studioUpdateDTO.Active;
             }
             
             
