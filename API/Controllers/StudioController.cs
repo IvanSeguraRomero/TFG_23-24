@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authorization;
 namespace FlashGamingHub.Controllers;
 
 [ApiController]
-[Authorize]
 [Route("[controller]")]
 
 public class StudioController : ControllerBase{
@@ -66,6 +65,7 @@ public class StudioController : ControllerBase{
 
     // POST action
     [HttpPost]
+    [Authorize]
     public IActionResult Create([FromBody] StudioCreateDTO studioCreateDTO)
     {
         if (!_authService.IsAdmin(HttpContext.User))
@@ -103,6 +103,7 @@ public class StudioController : ControllerBase{
 
    // PUT action
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult Update(int id,[FromBody] StudioUpdateDTO studioUpdateDTO)
         {
             if (!_authService.IsAdmin(HttpContext.User))
@@ -152,6 +153,7 @@ public class StudioController : ControllerBase{
 
     // DELETE action
    [HttpDelete("{id}")]
+   [Authorize]
     public IActionResult Delete(int id)
     {
         if (!_authService.IsAdmin(HttpContext.User))
