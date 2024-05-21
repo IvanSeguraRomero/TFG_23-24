@@ -24,10 +24,6 @@ public class UserController : ControllerBase{
     // GET all action
     [HttpGet]
     public ActionResult<List<UserDTO>> GetAll(bool? active) {
-        if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
     try{
             var query = _userService.GetAll().AsQueryable();
             if(active.HasValue){
