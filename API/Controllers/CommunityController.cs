@@ -69,11 +69,6 @@ public class CommunityController : ControllerBase{
     public IActionResult Create([FromBody] CommunityCreateDTO communityCreateDTO)
     {
         
-        if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
-        
         try{            
         if (!ModelState.IsValid)
         {
@@ -86,7 +81,8 @@ public class CommunityController : ControllerBase{
             Message= communityCreateDTO.Message,
             PublicationDate= communityCreateDTO.PublicationDate,
             ActiveMember= communityCreateDTO.ActiveMember,
-            LikesCount= communityCreateDTO.LikesCount
+            LikesCount= communityCreateDTO.LikesCount,
+            UserID=communityCreateDTO.UserID
         };
         _communityService.AddCommunity(communityDTO);
 

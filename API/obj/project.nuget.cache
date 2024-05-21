@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d2JVSL3U1KuhitQnBidaAfvCLAFni2CZBi/X87dBmBfpcSywVHZTv8kAr6tx1Sm1uUw9no63mTmlNpaaVHCRTw==",
+  "dgSpecHash": "vpNFFjR6FIEOR662KNjBhmmHj3rIxNM8I/tzvOaVaxv5uguBsJVEp4mzH8p9sNahvXy4v7+kH/vHP3CjKT/SWQ==",
   "success": true,
-  "projectFilePath": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
+  "projectFilePath": "D:\\TFGDAW\\Backend\\Api\\FlashGamingHub.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.28\\microsoft.aspnetcore.authentication.jwtbearer.6.0.28.nupkg.sha512",
