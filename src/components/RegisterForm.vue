@@ -2,10 +2,12 @@
 import { useField, useForm } from 'vee-validate';
 import { computed, ref, watch } from 'vue';
 import { useApiStore, pinia } from '../store/api';
+import { jwtDecode } from 'jwt-decode';
 
 const existingUser = ref(false);
 
 function proveExistingUser(users: any, values: any) {
+  
   users.forEach((element: any) => {
     if (element.email === values.email) {
       existingUser.value = true;
@@ -15,7 +17,7 @@ function proveExistingUser(users: any, values: any) {
   if (!existingUser.value) {
     fetchPostUser(values);
     handleReset();
-    handleDateReset;
+    handleDateReset();
   } else {
     alert('Este usuario ya se ha registrado');
   }
@@ -25,8 +27,11 @@ function proveExistingUser(users: any, values: any) {
 
 //clean datefield when registered
 const handleDateReset=()=>{
-  const text=document.querySelector("#input-9").innerHTML="";
-  console.log(text);
+  const text = document.querySelector("#textDateField") as HTMLInputElement | HTMLTextAreaElement | null;
+
+if (text !== null) {
+    text.value = "";
+}
   
 }
 
@@ -42,19 +47,57 @@ const fetchPostUser = async (values: any) => {
       active: true,
       role: "user"
     };
-    console.log(userDTO);
+    
+    const token=await useApiStore(pinia).fetchPostRegisterUser(userDTO);
+    if(token){
+    localStorage.setItem('jwtToken', token);
+    }
+    await postUpdateTables();
   } catch (err) {
     console.error(err);
   }
 };
+  const postUpdateTables = async()=>{
+    const token=localStorage.getItem('jwtToken');
+  if (!token) {
+    console.error('No se encontró un token JWT en el almacenamiento local.')
+    return
+  }
 
+  // Decodificar el token JWT
+  const decodedToken = jwtDecode(token) as { id: number };
+  
+    postLibraryCommunity(decodedToken.id);
+    updateUserIds(decodedToken.id);
+}
+function postLibraryCommunity(userId : any){
+  const libraryUserDTO = {
+      addedDate: Date.now,
+      userID : userId
+    };
+    useApiStore(pinia).fetchPostLibraryGameUser(libraryUserDTO);
+  const communityUserDTO={
+    message : "Start",
+    userID : userId
+  }
+    useApiStore(pinia).fetchPostCommunity(communityUserDTO);
+
+}
+function updateUserIds(userId : any){
+  const objectIds = {
+    libraryGameUserID : userId,
+    messageID : userId
+  }
+  useApiStore(pinia).fetchUpdateUser(userId++,objectIds);
+}
 const fetchGetUser = async (values: any) => {
   try {
     const users = await useApiStore(pinia).fetchUsers();
+    localStorage.setItem('users',JSON.stringify(users));
     proveExistingUser(users, values);
   } catch (err) {
     console.error(err);
-  }
+}
 };
 
 const { handleSubmit, handleReset } = useForm({
@@ -217,7 +260,7 @@ const handleClear = () => {
     
         <v-menu v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y  class="centered-menu">
           <template v-slot:activator>
-            <v-text-field v-model="formattedDate" label="Fecha de nacimiento" readonly @click="openMenu"></v-text-field>
+            <v-text-field v-model="formattedDate" label="Fecha de nacimiento" readonly @click="openMenu" id="textDateField"></v-text-field>
           </template>
           <v-date-picker :max="maxDate" :min="minDate" color="secondary" v-model="birthDate" @input="menu = false"></v-date-picker>
         </v-menu>

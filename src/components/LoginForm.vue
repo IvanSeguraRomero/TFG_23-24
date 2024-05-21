@@ -13,26 +13,25 @@
     }
   };
 
-  function proveExistingUser(users:any,values : any){
-    users.forEach((element:any) => {
-      if((element.email === values.emailTlf || element.tlf==values.emailTlf) && element.passwd === values.passwd){
-        existingUser.value=true;
-        localStorage.setItem('user', JSON.stringify(element));
-        if(element.email.indexOf('@svalero') !==-1){
-          localStorage.setItem('admin', "true");
-        }else{
-          localStorage.setItem('admin', "false");
-        }
-      } 
-    });
-
-    if(existingUser.value==false){
-        alert('Este usuario no se ha registrado');
-      }else{
+  async function loginUserToken(values : any){
+    const userDTO ={
+        email : values.emailTlf,
+        password : values.passwd
+      }
+      try{
+      const token=await useApiStore(pinia).fetchPostLoginUser(userDTO);
+      if(token){
+        localStorage.setItem('jwtToken', token);
         handleReset();
         alert('El usuario se ha logeado correctamente');
         navigateToHome();
+      }else{
+        alert('Este usuario no se ha registrado');
       }
+    } catch (error) {
+    console.error('Error during login');
+    alert('Ocurrió un error durante el inicio de sesión.');
+  }
     }
 
   
@@ -64,13 +63,24 @@
 
   const submit = handleSubmit(values => {
     existingUser.value=false;
+    fetchGetUser(values);
     
   })
+
+  const fetchGetUser = async (values:any) => {
+    try {
+     const users= await useApiStore(pinia).fetchUsers();
+     localStorage.setItem('users',JSON.stringify(users));
+     loginUserToken(values);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const logOut = () =>{
     if(localStorage.getItem('user')!=JSON.stringify(null)){
       localStorage.setItem('user', JSON.stringify(null));
-      localStorage.setItem('admin', "false");
+      localStorage.setItem('jwtToken', JSON.stringify(null));
       alert('Se ha cerrado sesión');
     }else{
       alert('Todavía no se ha logueado');
