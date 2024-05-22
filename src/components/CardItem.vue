@@ -1,67 +1,131 @@
+<script setup lang="ts">
+import { useApiStore, pinia } from '../store/api';
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const games = ref([]);
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const categories=(category: string)=>{
+    return category.split(','); 
+}
+
+onMounted(async () => {
+  games.value = await useApiStore(pinia).fetchGames();
+//   console.log(games.value);
+});
+</script>
+
 <template>
-    <div class="card">
-        <img src="/src/assets/cyber_site.jpg" alt="Descripción de la imagen" class="card-image">
+    <div class="cards">
+      <div class="card" v-for="game in games" :key="game.gameID">
+        <img src="/src/assets/ForzaHorizon5_mainImage.jpg" class="card-image">
         <div class="card-content">
-            <h2 class="card-title">Título</h2>
-            <p class="card-subtitle">Subtítulo</p>
+          <h2 class="card-title">{{ game.name }}</h2>
+          
+          <div class="card-subtitle">
+    <span v-for="(category) in categories(game.categories)" :key="category" class="category">{{ category }}</span>
+            </div>
+
+            <p class="card-price">{{ game.price }}</p>
         </div>
-        <button class="card-button">Botón</button>
+        <button class="card-button">Add To Cart</button>
+      </div>
     </div>
-</template>
-<style scoped>
-.card {
-    position: relative;
+  </template>
+  
+  
+ 
+  
+  <style scoped>
+  .cards {
+    margin-bottom: 10%;
+  }
+  .card {
+    margin-bottom: 10px;
     display: flex;
-    align-items: flex-start; /* Alinea los elementos a la parte superior */
-    width: 700px;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
     height: 200px;
-    left: 20%;
+    position: relative;
+    left: 25%;
     background-color: var(--color-black);
     border-radius: 20px;
-    overflow: hidden; /* Oculta el botón si se desborda de la tarjeta */
-}
-
-.card-image {
-    width: 40%; /* Ajusta el ancho de la imagen según tu preferencia */
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .card-image {
+    width: 40%;
+    height: 90%;
     border-radius: 20px;
-    margin-left: 3%;
-    margin-top: 3%;
-}
-
-.card-content {
-    flex-grow: 1; /* Para que ocupe el espacio restante */
-    padding: 20px; /* Ajusta según tu preferencia */
-}
-
-.card-title {
-    margin-bottom: 5px; /* Ajusta según tu preferencia */
-    color: var(--neutral-colors-white); /* Ajusta el color del texto según tu preferencia */
+    margin-left: 2%;
+  }
+  .card-content {
+    flex-grow: 1;
+    padding: 20px;
+    
+  }
+  .card-title {
+    bottom: 15px;
+    position: relative;
+    color: var(--neutral-colors-white);
     font-family: var(--font-archivo-black);
-    margin-top: 0; /* Elimina el margen superior del título */
-}
-
-.card-subtitle {
-    margin-bottom: 10px; /* Ajusta según tu preferencia */
-    font-size: 14px; /* Ajusta el tamaño del texto según tu preferencia */
-    color: var(--neutral-colors-white); /* Ajusta el color del texto según tu preferencia */
+  }
+  .card-subtitle, .card-price {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--neutral-colors-white);
     font-family: var(--font-orbitron);
     padding: 10px;
     width: min-content;
     background-color: var(--color-dark-blue);
-    box-shadow: 5px 5px 10px 0 var(--color-blue); 
-}
+    box-shadow: 3px 3px 4px 0 var(--color-blue);
+    
+  }
+  .card-subtitle { 
+    position: relative;
+    height: 40px;
+    width: 70%;
+  }
+  .card-price {
+    position: relative;
+    top: 18px;
+    left: 55%;
+  }
 
-.card-button {
-    position: absolute; /* Posiciona el botón absolutamente */
-    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
-    right: 20px; /* Ajusta la distancia desde la derecha */
-    background-color: var(--color-blue); /* Ajusta el color del botón según tu preferencia */
-    color: var(--color-white); /* Ajusta el color del texto del botón según tu preferencia */
+  .card-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin-bottom: 5px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
     border: none;
-    padding: 10px 20px; /* Ajusta según tu preferencia */
-    border-radius: 5px; /* Ajusta según tu preferencia */
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     outline: none;
     font-family: var(--font-roboto);
-}
-</style>
+  }
+  .category {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: var(--color-light-blue);
+    color: var(--color-black);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  </style>
+  

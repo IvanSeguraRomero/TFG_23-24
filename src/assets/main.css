@@ -23,6 +23,7 @@ body {
   --font-size-9xl: 28px;
   --headings-h3-size: 24px;
   --text-single-100-regular-size: 16px;
+  --text-smallest-regular-size: 14px;
 
   /* Colors */
   --neutral-colors-white: #f9f9f9;
