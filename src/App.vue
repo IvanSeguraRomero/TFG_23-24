@@ -24,6 +24,7 @@ import './assets/main.css'
     rel="stylesheet"
     />
   <header>
+    
     <HeaderItem>
       <template #admin
         ><RouterLink
@@ -81,9 +82,6 @@ import './assets/main.css'
 </template>
 
 <style scoped>
-/* .desktop-home{
-  background-color: var(--color-dark-blue);
-} */
 body {
   margin: 0;
   line-height: normal;
