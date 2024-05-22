@@ -28,9 +28,9 @@ import LoginForm from '@/components/LoginForm.vue';
 .background-container {
     position: absolute;
     width: auto;
-    height: 720px;
+    height: 750px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     border: 1px solid #ccc;
     margin-top: 40px;
     border: 1px solid #ccc;
@@ -46,7 +46,7 @@ import LoginForm from '@/components/LoginForm.vue';
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-90px);
+    transform: translateY(-50px);
 	transition: .8s ease-in-out;
     border-radius: 60% / 10%;
     margin-bottom: 20px;
@@ -56,7 +56,7 @@ import LoginForm from '@/components/LoginForm.vue';
     display: none;
 }
 #chk:checked ~ .containerL{
-	transform: translateY(-600px);
+	transform: translateY(-610px);
 }
 #chk:checked ~ .containerL label{
 	transform: scale(1);	
