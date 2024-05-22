@@ -82,6 +82,9 @@ import './assets/main.css'
 </template>
 
 <style scoped>
+/* .desktop-home{
+  background-color: var(--color-dark-blue);
+} */
 body {
   margin: 0;
   line-height: normal;

@@ -16,7 +16,17 @@ const router = createRouter({
       path: '/login&register',
       name: 'login&register',
       component: LoginView
-    }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: GameView
+    },
   ]
 })
 export default router
