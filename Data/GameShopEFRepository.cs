@@ -31,12 +31,10 @@ namespace FlashGamingHub.Data
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
                 GameID=gs.GameID,
-                Price=gs.Price,
-                Discount=gs.Discount,
+                Event=gs.Event,
                 Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
-                Categories=gs.Categories,
                 Origin=gs.Origin
             }).ToList();
             return gameShopDTO;
@@ -55,12 +53,10 @@ namespace FlashGamingHub.Data
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
                 GameID=gs.GameID,
-                Price=gs.Price,
-                Discount=gs.Discount,
+                Event=gs.Event,
                 Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
-                Categories=gs.Categories,
                 Origin=gs.Origin
             }).FirstOrDefault(gs=>gs.StoreID==id);
             return gameShopDTO;
@@ -73,9 +69,10 @@ namespace FlashGamingHub.Data
                 GameID=g.GameID,
                 Name=g.Name,
                 Description=g.Description,
+                Synopsis=g.Synopsis,
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
-                Available=g.Available,
+                Categories=g.Categories,
                 StudioID=g.StudioID
             }).ToList();
             return gamesForGameShopDTO;

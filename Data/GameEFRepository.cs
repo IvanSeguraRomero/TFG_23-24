@@ -33,9 +33,10 @@ namespace FlashGamingHub.Data
                 GameID=g.GameID,
                 Name=g.Name,
                 Description=g.Description,
+                Synopsis=g.Synopsis,
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
-                Available=g.Available,
+                Categories=g.Categories,
                 StudioID=g.StudioID
             }).ToList();
             return gamesDTO;
@@ -56,9 +57,10 @@ namespace FlashGamingHub.Data
                 GameID=g.GameID,
                 Name=g.Name,
                 Description=g.Description,
+                Synopsis=g.Synopsis,
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
-                Available=g.Available,
+                Categories=g.Categories,
                 StudioID=g.StudioID
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;
@@ -82,9 +84,10 @@ namespace FlashGamingHub.Data
                     GameID=g.GameID,
                     Name = g.Name,
                     Description = g.Description,
+                    Synopsis = g.Synopsis,
                     Price = g.Price,
                     ReleaseDate = g.ReleaseDate,
-                    Available = g.Available
+                    Categories=g.Categories,
                     }).ToList();
 
             return games;
@@ -96,8 +99,9 @@ namespace FlashGamingHub.Data
                     Name = gd.Name,
                     Description = gd.Description,
                     Price = gd.Price,
+                    Synopsis = gd.Synopsis,
                     ReleaseDate = gd.ReleaseDate,
-                    Available = gd.Available,
+                    Categories=gd.Categories,
                     StudioID=gd.StudioID
                 }).ToList();
             return games;

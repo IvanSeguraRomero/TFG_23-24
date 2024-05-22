@@ -23,11 +23,18 @@ public class GameShopController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<GameShopDTO>> GetAll(string? categorie) {
+    public ActionResult<List<GameShopDTO>> GetAll(string? orderAnnualSales) {
     try{
             var query =  _gameShopService.GetAll().AsQueryable();
-            if(!string.IsNullOrEmpty(categorie)){
-                query = query.Where(gameShop => gameShop.Categories.ToLower().Contains(categorie.ToLower()));
+            if(!string.IsNullOrEmpty(orderAnnualSales)){
+                //De menos a más
+                if(orderAnnualSales.ToLower() == "asc"){
+                    query = query.OrderBy(gameshop => gameshop.AnnualSales);
+                }
+                //De más a menos
+                else if(orderAnnualSales.ToLower() == "desc"){
+                    query = query.OrderByDescending(gameshop => gameshop.AnnualSales);
+                }
             }
             var gameShops = query.ToList();
             if(gameShops.Count==0){
@@ -78,12 +85,10 @@ public class GameShopController : ControllerBase{
 
         var gameShopDTO = new GameShop
         {
-            Price= gameShopCreateDTO.Price,
-            Discount= gameShopCreateDTO.Discount,
+            Event= gameShopCreateDTO.Event,
             Stock= gameShopCreateDTO.Stock,
             AnnualSales= gameShopCreateDTO.AnnualSales,
             LastUpdated=gameShopCreateDTO.LastUpdated,
-            Categories=gameShopCreateDTO.Categories,
             Origin=gameShopCreateDTO.Origin
         };
 
@@ -116,11 +121,8 @@ public class GameShopController : ControllerBase{
                 return NotFound();
             }
 
-            if(gameShopUpdateDTO.Price!=null){
-                existingGameShop.Price=(decimal)gameShopUpdateDTO.Price;
-            }
-            if(gameShopUpdateDTO.Discount!=null){
-                existingGameShop.Discount=(decimal)gameShopUpdateDTO.Discount;
+            if(gameShopUpdateDTO.Event!=null){
+                existingGameShop.Event=gameShopUpdateDTO.Event;
             }
             if(gameShopUpdateDTO.Stock!=null){
                 existingGameShop.Stock=(int)gameShopUpdateDTO.Stock;
@@ -130,9 +132,6 @@ public class GameShopController : ControllerBase{
             }
             if(gameShopUpdateDTO.LastUpdated!=null){
                 existingGameShop.LastUpdated=(DateTime)gameShopUpdateDTO.LastUpdated;
-            }
-            if(gameShopUpdateDTO.Categories!=null){
-                existingGameShop.Categories=gameShopUpdateDTO.Categories;
             }
             if(gameShopUpdateDTO.Origin!=null){
                 existingGameShop.Origin=gameShopUpdateDTO.Origin;

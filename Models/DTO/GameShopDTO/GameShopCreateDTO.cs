@@ -7,7 +7,7 @@ public class GameShopCreateDTO{
     public decimal Price { get; set; }
 
     [Required]
-    public decimal Discount { get; set; }
+    public string Event { get; set; }
 
     [Required]
     public int Stock { get; set; }
@@ -17,9 +17,6 @@ public class GameShopCreateDTO{
 
     [Required]
     public DateTime LastUpdated { get; set; }
-
-    [Required]
-    public string Categories { get; set; }
 
     [Required]
     public string Origin { get; set; }

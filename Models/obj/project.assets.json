@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\peter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TFGDAW\\Backend\\Models\\FlashGamingHub.Models.csproj",
+      "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj",
       "projectName": "FlashGamingHub.Models",
-      "projectPath": "D:\\TFGDAW\\Backend\\Models\\FlashGamingHub.Models.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\TFGDAW\\Backend\\Models\\obj\\",
+      "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj",
+      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+      "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.422\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }

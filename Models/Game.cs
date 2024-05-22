@@ -14,12 +14,16 @@ namespace FlashGamingHub.Models
         [Column(TypeName = "nvarchar(1000)")]
         public string Description { get; set; }
 
+        [Column(TypeName = "nvarchar(300)")]
+        public string Synopsis {get; set;}
+
         [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 
-        public bool Available { get; set; }
+        [Column(TypeName = "nvarchar(300)")]
+        public string Categories {get; set;}
 
         [ForeignKey("StudioID")]
         public int StudioID { get; set; }

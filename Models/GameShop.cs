@@ -10,20 +10,14 @@ namespace FlashGamingHub.Models
 
         public int GameID { get; set; }
 
-        [Column(TypeName = "decimal(10,2)")]
-        public decimal Price { get; set; }
-
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal Discount { get; set; }
+        [Column(TypeName = "nvarchar(80)")]
+        public string Event { get; set; }
 
         public int Stock { get; set; }
 
         public int AnnualSales { get; set; }
 
         public DateTime LastUpdated { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        public string Categories { get; set; }
 
         [Column(TypeName = "nvarchar(80)")]
         public string Origin { get; set; }

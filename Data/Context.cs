@@ -102,24 +102,20 @@ public class Context : DbContext
         {
             StoreID = 1,
             GameID=1,
-            Price = 49.99m,
-            Discount = 0.1m,
+            Event = "",
             Stock = 100,
             AnnualSales = 1000,
             LastUpdated = DateTime.Now.AddDays(-30),
-            Categories = "Category1",
             Origin = "Origin1"
         },
         new GameShop
         {
             StoreID = 2,
             GameID=2,
-            Price = 39.99m,
-            Discount = 0.05m,
+            Event = "",
             Stock = 150,
             AnnualSales = 1200,
             LastUpdated = DateTime.Now.AddDays(-20),
-            Categories = "Category2",
             Origin = "Origin2"
         }
     );
@@ -131,9 +127,10 @@ public class Context : DbContext
             GameID = 1,
             Name = "Game1",
             Description = "Description1",
+            Synopsis = "Short description about game's history",
             Price = 59.99m,
             ReleaseDate = DateTime.Now.AddYears(-1),
-            Available = true,
+            Categories = "Races, Multiplayer, One Person",
             StudioID = 1,
             StoreID = 1,
             LibraryGameUserId=1
@@ -143,9 +140,10 @@ public class Context : DbContext
             GameID = 2,
             Name = "Game2",
             Description = "Description2",
+            Synopsis = "Short description about game's history",
             Price = 49.99m,
             ReleaseDate = DateTime.Now.AddYears(-2),
-            Available = true,
+            Categories = "Races, Multiplayer, Shooting",
             StudioID = 2,
             StoreID = 2,
             LibraryGameUserId=2

@@ -43,9 +43,10 @@ public class ShoppingCartController : ControllerBase{
                 GameID = game.GameID,
                 Name=game.Name,
                 Description=game.Description,
+                Synopsis=game.Synopsis,
                 Price=game.Price,
                 ReleaseDate=game.ReleaseDate,
-                Available=game.Available,
+                Categories=game.Categories,
                 StudioID=game.StudioID
             }).ToList(),
             Total=shoppingCart.Total,
@@ -114,15 +115,19 @@ public class ShoppingCartController : ControllerBase{
 
                     if (g.Description != null)
                         newGame.Description = g.Description;
+                    
+                    if (g.Synopsis != null)
+                        newGame.Synopsis = g.Synopsis;
 
                     if (g.Price != null)
                         newGame.Price = (decimal)g.Price;
 
                     if (g.ReleaseDate != null)
                         newGame.ReleaseDate = (DateTime)g.ReleaseDate;
+                    
+                    if(g.Categories != null)
+                        newGame.Categories = g.Categories;
 
-                    if (g.Available != null)
-                        newGame.Available = (bool)g.Available;
 
                     return newGame;
                 }).ToList();
