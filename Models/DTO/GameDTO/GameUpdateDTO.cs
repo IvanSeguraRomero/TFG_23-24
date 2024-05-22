@@ -15,6 +15,8 @@ public class GameUpdateDTO{
     [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
     public decimal? Price { get; set; }
 
+    public int? Discount { get; set; }
+
     public DateTime? ReleaseDate { get; set; }
 
     [StringLength(300, ErrorMessage = "Tiene que haber menos categorías")]

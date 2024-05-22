@@ -115,7 +115,9 @@ public class GameController : ControllerBase{
             Description=gameCreateDTO.Description,
             Synopsis=gameCreateDTO.Synopsis,
             Price=gameCreateDTO.Price,
+            Discount=gameCreateDTO.Discount,
             ReleaseDate=gameCreateDTO.ReleaseDate,
+            Categories=gameCreateDTO.Categories,
             StudioID=gameCreateDTO.StudioID,
             StoreID=gameCreateDTO.StoreID
         };
@@ -159,8 +161,11 @@ public class GameController : ControllerBase{
             if(gameUpdateDTO.Synopsis!=null){
                 existingGame.Synopsis=gameUpdateDTO.Synopsis;
             }
-           if(gameUpdateDTO.Price!=null){
+            if(gameUpdateDTO.Price!=null){
                 existingGame.Price=(decimal)gameUpdateDTO.Price;
+            }
+            if(gameUpdateDTO.Discount!=null){
+                existingGame.Discount=(int)gameUpdateDTO.Discount;
             }
             if(gameUpdateDTO.ReleaseDate!=null){
                 existingGame.ReleaseDate=(DateTime)gameUpdateDTO.ReleaseDate;

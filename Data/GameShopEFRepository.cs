@@ -71,6 +71,7 @@ namespace FlashGamingHub.Data
                 Description=g.Description,
                 Synopsis=g.Synopsis,
                 Price=g.Price,
+                Discount=g.Discount,
                 ReleaseDate=g.ReleaseDate,
                 Categories=g.Categories,
                 StudioID=g.StudioID

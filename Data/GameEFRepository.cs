@@ -35,6 +35,7 @@ namespace FlashGamingHub.Data
                 Description=g.Description,
                 Synopsis=g.Synopsis,
                 Price=g.Price,
+                Discount=g.Discount,
                 ReleaseDate=g.ReleaseDate,
                 Categories=g.Categories,
                 StudioID=g.StudioID
@@ -59,6 +60,7 @@ namespace FlashGamingHub.Data
                 Description=g.Description,
                 Synopsis=g.Synopsis,
                 Price=g.Price,
+                Discount=g.Discount,
                 ReleaseDate=g.ReleaseDate,
                 Categories=g.Categories,
                 StudioID=g.StudioID
@@ -86,6 +88,7 @@ namespace FlashGamingHub.Data
                     Description = g.Description,
                     Synopsis = g.Synopsis,
                     Price = g.Price,
+                    Discount=g.Discount,
                     ReleaseDate = g.ReleaseDate,
                     Categories=g.Categories,
                     }).ToList();
@@ -98,8 +101,9 @@ namespace FlashGamingHub.Data
                     GameID=gd.GameID,
                     Name = gd.Name,
                     Description = gd.Description,
-                    Price = gd.Price,
                     Synopsis = gd.Synopsis,
+                    Price = gd.Price,
+                    Discount=gd.Discount,
                     ReleaseDate = gd.ReleaseDate,
                     Categories=gd.Categories,
                     StudioID=gd.StudioID
