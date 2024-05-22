@@ -170,6 +170,9 @@ public class GameController : ControllerBase{
             if(gameUpdateDTO.ReleaseDate!=null){
                 existingGame.ReleaseDate=(DateTime)gameUpdateDTO.ReleaseDate;
             }
+            if(gameUpdateDTO.Categories!=null){
+                existingGame.Categories=gameUpdateDTO.Categories;
+            }
             
             _gameService.UpdateGame(existingGame);
 
