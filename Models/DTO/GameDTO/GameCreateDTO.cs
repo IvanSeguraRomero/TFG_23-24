@@ -15,6 +15,8 @@ public class GameCreateDTO{
     [Required]
     public decimal Price { get; set; }
 
+    public int Discount { get; set; }
+
     [Required]
     public DateTime ReleaseDate { get; set; }
 

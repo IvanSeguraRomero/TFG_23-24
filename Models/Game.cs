@@ -20,6 +20,9 @@ namespace FlashGamingHub.Models
         [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
 
+        [Column(TypeName = "int")]
+        public int Discount { get; set; }
+
         public DateTime ReleaseDate { get; set; }
 
         [Column(TypeName = "nvarchar(300)")]
