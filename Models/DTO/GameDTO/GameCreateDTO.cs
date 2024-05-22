@@ -10,13 +10,16 @@ public class GameCreateDTO{
     public string Description { get; set; }
 
     [Required]
+    public string Synopsis { get; set; }
+
+    [Required]
     public decimal Price { get; set; }
 
     [Required]
     public DateTime ReleaseDate { get; set; }
 
     [Required]
-    public bool Available { get; set; }
+    public string Categories { get; set; }
 
     [Required]
     public int StudioID { get; set; }

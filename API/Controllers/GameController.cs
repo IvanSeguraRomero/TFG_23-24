@@ -22,7 +22,7 @@ public class GameController : ControllerBase{
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<GameDTO>> GetAll(string? name, decimal? price) {
+    public ActionResult<List<GameDTO>> GetAll(string? name, decimal? price, string? orderPrice, string? orderDate, string? orderName) {
     try{
             var query = _gameService.GetAll().AsQueryable();
             if(!string.IsNullOrEmpty(name)){
@@ -30,6 +30,36 @@ public class GameController : ControllerBase{
             }
             if(price.HasValue){
                 query = query.Where(game => game.Price<price.Value);
+            }
+            if(!string.IsNullOrEmpty(orderPrice)){
+                //Del más barato al más caro
+                if(orderPrice.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.Price);
+                } 
+                //Del más caro al más barato
+                else if(orderPrice.ToLower() == "desc"){
+                    query = query.OrderByDescending(game => game.Price);
+                }
+            }
+            if(!string.IsNullOrEmpty(orderDate)){
+                //Del más nuevo al más viejo
+                if(orderDate.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.ReleaseDate);
+                } 
+                //Del más viejo al más nuevo
+                else if(orderDate.ToLower() == "desc"){
+                    query = query.OrderByDescending(game => game.ReleaseDate);
+                }
+            }
+            if(!string.IsNullOrEmpty(orderName)){
+                //Por orden alfabético
+                if(orderName.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.Name);
+                } 
+                //Por orden alfabético inverso
+                else if(orderName.ToLower() == "desc"){
+                    query = query.OrderByDescending(game => game.Name);
+                }
             }
             var games = query.ToList();
             if(games.Count==0){
@@ -83,9 +113,9 @@ public class GameController : ControllerBase{
         {
             Name=gameCreateDTO.Name,
             Description=gameCreateDTO.Description,
+            Synopsis=gameCreateDTO.Synopsis,
             Price=gameCreateDTO.Price,
             ReleaseDate=gameCreateDTO.ReleaseDate,
-            Available=gameCreateDTO.Available,
             StudioID=gameCreateDTO.StudioID,
             StoreID=gameCreateDTO.StoreID
         };
@@ -126,14 +156,14 @@ public class GameController : ControllerBase{
             if(gameUpdateDTO.Description!=null){
                 existingGame.Description=gameUpdateDTO.Description;
             }
+            if(gameUpdateDTO.Synopsis!=null){
+                existingGame.Synopsis=gameUpdateDTO.Synopsis;
+            }
            if(gameUpdateDTO.Price!=null){
                 existingGame.Price=(decimal)gameUpdateDTO.Price;
             }
             if(gameUpdateDTO.ReleaseDate!=null){
                 existingGame.ReleaseDate=(DateTime)gameUpdateDTO.ReleaseDate;
-            }
-            if(gameUpdateDTO.Available!=null){
-                existingGame.Available=(bool)gameUpdateDTO.Available;
             }
             
             _gameService.UpdateGame(existingGame);

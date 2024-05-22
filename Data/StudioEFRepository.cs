@@ -69,9 +69,10 @@ namespace FlashGamingHub.Data
                 GameID=g.GameID,
                 Name=g.Name,
                 Description=g.Description,
+                Synopsis=g.Synopsis,
                 Price=g.Price,
                 ReleaseDate=g.ReleaseDate,
-                Available=g.Available,
+                Categories=g.Categories,
                 StudioID=g.StudioID
             }).ToList();
             return gamesForStudioDTO;

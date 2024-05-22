@@ -8,11 +8,13 @@ namespace FlashGamingHub.Models
 
         public string Description { get; set; }
 
+        public string Synopsis { get; set; }
+
         public decimal Price { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 
-        public bool Available { get; set; }
+        public string Categories { get; set; }
 
         public int? StudioID { get; set; }
 

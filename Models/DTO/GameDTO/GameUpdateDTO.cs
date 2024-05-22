@@ -6,13 +6,17 @@ public class GameUpdateDTO{
     [StringLength(20, ErrorMessage = "El nombre debe ser mas corto")]
     public string? Name { get; set; }
 
-    [StringLength(300, ErrorMessage = "La descripción debe ser mas corta")]
+    [StringLength(1000, ErrorMessage = "La descripción debe ser mas corta")]
     public string? Description { get; set; }
+
+    [StringLength(300, ErrorMessage = "La sinopsis debe ser mas corta")]
+    public string? Synopsis { get; set; }
 
     [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
     public decimal? Price { get; set; }
 
     public DateTime? ReleaseDate { get; set; }
 
-    public bool? Available { get; set; }
+    [StringLength(300, ErrorMessage = "Tiene que haber menos categorías")]
+    public string? Categories { get; set; }
 }

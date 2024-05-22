@@ -59,7 +59,7 @@ namespace FlashGamingHub.Data.Migrations
                             ActiveMember = true,
                             LikesCount = 100,
                             Message = "Community1",
-                            PublicationDate = new DateTime(2023, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2670),
+                            PublicationDate = new DateTime(2023, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9247),
                             UserID = 1
                         },
                         new
@@ -68,7 +68,7 @@ namespace FlashGamingHub.Data.Migrations
                             ActiveMember = true,
                             LikesCount = 150,
                             Message = "Community2",
-                            PublicationDate = new DateTime(2022, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2673),
+                            PublicationDate = new DateTime(2022, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9250),
                             UserID = 2
                         });
                 });
@@ -81,8 +81,9 @@ namespace FlashGamingHub.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GameID"), 1L, 1);
 
-                    b.Property<bool>("Available")
-                        .HasColumnType("bit");
+                    b.Property<string>("Categories")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -110,6 +111,10 @@ namespace FlashGamingHub.Data.Migrations
                     b.Property<int>("StudioID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Synopsis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(300)");
+
                     b.HasKey("GameID");
 
                     b.HasIndex("LibraryGameUserId");
@@ -124,26 +129,28 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             GameID = 1,
-                            Available = true,
+                            Categories = "Races, Multiplayer, One Person",
                             Description = "Description1",
                             LibraryGameUserId = 1,
                             Name = "Game1",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2023, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2603),
+                            ReleaseDate = new DateTime(2023, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9185),
                             StoreID = 1,
-                            StudioID = 1
+                            StudioID = 1,
+                            Synopsis = "Short description about game's history"
                         },
                         new
                         {
                             GameID = 2,
-                            Available = true,
+                            Categories = "Races, Multiplayer, Shooting",
                             Description = "Description2",
                             LibraryGameUserId = 2,
                             Name = "Game2",
                             Price = 49.99m,
-                            ReleaseDate = new DateTime(2022, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2607),
+                            ReleaseDate = new DateTime(2022, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9189),
                             StoreID = 2,
-                            StudioID = 2
+                            StudioID = 2,
+                            Synopsis = "Short description about game's history"
                         });
                 });
 
@@ -158,12 +165,9 @@ namespace FlashGamingHub.Data.Migrations
                     b.Property<int>("AnnualSales")
                         .HasColumnType("int");
 
-                    b.Property<string>("Categories")
+                    b.Property<string>("Event")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(5,2)");
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<int>("GameID")
                         .HasColumnType("int");
@@ -174,9 +178,6 @@ namespace FlashGamingHub.Data.Migrations
                     b.Property<string>("Origin")
                         .IsRequired()
                         .HasColumnType("nvarchar(80)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -190,24 +191,20 @@ namespace FlashGamingHub.Data.Migrations
                         {
                             StoreID = 1,
                             AnnualSales = 1000,
-                            Categories = "Category1",
-                            Discount = 0.1m,
+                            Event = "",
                             GameID = 1,
-                            LastUpdated = new DateTime(2024, 4, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2584),
+                            LastUpdated = new DateTime(2024, 4, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9160),
                             Origin = "Origin1",
-                            Price = 49.99m,
                             Stock = 100
                         },
                         new
                         {
                             StoreID = 2,
                             AnnualSales = 1200,
-                            Categories = "Category2",
-                            Discount = 0.05m,
+                            Event = "",
                             GameID = 2,
-                            LastUpdated = new DateTime(2024, 5, 1, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2588),
+                            LastUpdated = new DateTime(2024, 5, 2, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9164),
                             Origin = "Origin2",
-                            Price = 39.99m,
                             Stock = 150
                         });
                 });
@@ -251,20 +248,20 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             LibraryGameUserId = 1,
-                            AddedDate = new DateTime(2023, 11, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2646),
+                            AddedDate = new DateTime(2023, 11, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9224),
                             GameID = 1,
                             HoursPlayed = 50,
-                            LastPlayed = new DateTime(2024, 5, 14, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2649),
+                            LastPlayed = new DateTime(2024, 5, 15, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9227),
                             Rating = 4,
                             UserID = 1
                         },
                         new
                         {
                             LibraryGameUserId = 2,
-                            AddedDate = new DateTime(2024, 2, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2652),
+                            AddedDate = new DateTime(2024, 2, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9230),
                             GameID = 2,
                             HoursPlayed = 100,
-                            LastPlayed = new DateTime(2024, 5, 16, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2654),
+                            LastPlayed = new DateTime(2024, 5, 17, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9233),
                             Rating = 5,
                             UserID = 2
                         });
@@ -298,14 +295,14 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             ShoppingCartID = 1,
-                            FechaCreacion = new DateTime(2024, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2688),
+                            FechaCreacion = new DateTime(2024, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9265),
                             Total = 0m,
                             UserID = 1
                         },
                         new
                         {
                             ShoppingCartID = 2,
-                            FechaCreacion = new DateTime(2024, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2691),
+                            FechaCreacion = new DateTime(2024, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9267),
                             Total = 0m,
                             UserID = 2
                         });
@@ -356,7 +353,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Country1",
                             EmailContact = "studio1@example.com",
                             EmailLogin = "studio1login@example.com",
-                            Fundation = new DateTime(2014, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2332),
+                            Fundation = new DateTime(2014, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(8941),
                             GameID = 1,
                             Name = "Studio1",
                             Website = "www.studio1.com"
@@ -367,7 +364,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Country2",
                             EmailContact = "studio2@example.com",
                             EmailLogin = "studio2login@example.com",
-                            Fundation = new DateTime(2019, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2367),
+                            Fundation = new DateTime(2019, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(8985),
                             GameID = 2,
                             Name = "Studio2",
                             Website = "www.studio2.com"
@@ -428,7 +425,7 @@ namespace FlashGamingHub.Data.Migrations
                             MessageID = 1,
                             Name = "User1",
                             Password = "password1",
-                            RegisterDate = new DateTime(2022, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2627),
+                            RegisterDate = new DateTime(2022, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9204),
                             Role = "admin",
                             Surname = "Surname1"
                         },
@@ -441,7 +438,7 @@ namespace FlashGamingHub.Data.Migrations
                             MessageID = 2,
                             Name = "User2",
                             Password = "password2",
-                            RegisterDate = new DateTime(2023, 5, 21, 20, 17, 52, 946, DateTimeKind.Local).AddTicks(2631),
+                            RegisterDate = new DateTime(2023, 5, 22, 13, 41, 12, 47, DateTimeKind.Local).AddTicks(9208),
                             Role = "admin",
                             Surname = "Surname2"
                         });
