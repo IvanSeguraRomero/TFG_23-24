@@ -12,70 +12,86 @@ const formatDate = (dateString: string) => {
   const day = String(date.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 };
-const categories=(category: string)=>{
+
+const categories = (category: string) => {
   return category[0].categories.split(','); 
-}
-const categoriesSnd=(category: any)=>{
+};
+
+const categoriesSnd = (category: any) => {
   const categoriesArray = category.replace(/'/g, '').split(',');
   return categoriesArray[0];
-}
+};
+
 const router = useRouter();
 
 const navigateToGame = (id: any) => {
-  router.push({ name: 'game', params: { id: id} });
-}
+  router.push({ name: 'game', params: { id: id } });
+};
 
+const calculateDiscountedPrice = (price: number, discount: number) => {
+  return (price - (price * (discount / 100))).toFixed(2);
+};
 
 onMounted(async () => {
   games.value = await useApiStore(pinia).fetchGames();
+  if (games.value.length > 0) {
+    games.value.forEach(game => {
+      if (game.discount > 0) {
+        game.finalPrice = calculateDiscountedPrice(game.price, game.discount);
+      } else {
+        game.finalPrice = game.price;
+      }
+    });
+  }
 });
 </script>
+
 <template>
-    <div class="titleDiscountGames">Games In Offer</div>
-    <div class="centerBlock" v-if="games.length > 0">
-        
-      <div class="bloque">
-        <div class="principal" @click="navigateToGame(games[0].gameID)">
-          <div class="image-container">
-            <img src="/src/assets/ForzaHorizon5_mainImage.jpg" alt="" class="imgPrn">
+  <div class="titleDiscountGames">Games In Offer</div>
+  <div class="centerBlock" v-if="games.length > 0">
+    <div class="bloque">
+      <div class="principal" @click="navigateToGame(games[0].gameID)">
+        <div class="image-container">
+          <img src="/src/assets/ForzaHorizon5_mainImage.jpg" alt="" class="imgPrn">
+        </div>
+        <div class="info">
+          <p class="date">Until {{ formatDate(games[0].releaseDate) }}</p>
+          <h1 class="title">{{ games[0].name }}</h1>
+          <div class="categories">
+            <span class="category" v-for="(category) in categories(games)" :key="games[0].id">{{ category }}</span>
           </div>
-          <div class="info">
-            <p class="date">Until {{ formatDate(games[0].releaseDate) }}</p>
-            <h1 class="title">{{ games[0].name }}</h1>
-            <div class="categories">
-              <span class="category" v-for="(category) in categories(games)" :key="games[0].id">{{ category }}</span>
+          <div class="price">
+            <div class="discount-container" v-if="games[0].discount > 0">
+              <span class="discount">{{ games[0].discount }}% OFF</span>
+              <span class="second-discount">{{ games[0].price }}€</span>
             </div>
-            <div class="price">
-              <div class="discount-container">
-                <span class="discount">35% OFF</span>
-                <span class="second-discount"> {{games[0].price}} </span>
-              </div>
-              <div class="final-price">PRICE: {{ games[0].price }}€</div>
-            </div>
+            <div class="final-price">PRICE: {{ games[0].finalPrice }}€</div>
           </div>
         </div>
-        <div class="grid">
-          <div class="grid-item" v-for="(game) in games.slice(1, 5)" :key="game.id"  @click="navigateToGame(game.gameID)">
-            <div class="image-container">
-              <img src="/src/assets/ForzaHorizon5_mainImage.jpg" alt="" class="imgMin">
-            </div>
-            <div class="info-min">
-              <p class="date-min">Until {{ formatDate(game.releaseDate) }}</p>
-              <p class="title-min">{{ game.name }}</p>
-                <span class="category-min">{{ (categoriesSnd(game.categories)) }}</span>
-              <div class="price-min">
-                <div class="discount-original-container">
-                  <span class="discount-min">35% OFF</span>
-                  <span class="price-original-min">20€</span>
-                </div>
-                <span class="price-final-min"> PRICE: {{ game.price }}€</span>
+      </div>
+      <div class="grid">
+        <div class="grid-item" v-for="(game) in games.slice(1, 5)" :key="game.id" @click="navigateToGame(game.gameID)">
+          <div class="image-container">
+            <img src="/src/assets/ForzaHorizon5_mainImage.jpg" alt="" class="imgMin">
+          </div>
+          <div class="info-min">
+            <p class="date-min">Until {{ formatDate(game.releaseDate) }}</p>
+            <p class="title-min">{{ game.name }}</p>
+            <span class="category-min">{{ categoriesSnd(game.categories) }}</span>
+            <div class="price-min">
+              <div class="discount-original-container" v-if="game.discount > 0">
+                <span class="discount-min">{{ game.discount }}% OFF</span>
+                <span class="price-original-min">{{ game.price }}€</span>
               </div>
+              <span class="price-final-min">PRICE: {{ game.finalPrice }}€</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
   
   
@@ -127,7 +143,7 @@ onMounted(async () => {
 }
 
 .date, .date-min {
-  font-size: 12px;
+  font-size: var(--text-smallest-regular-size);
   position: relative;
   left: 30%;
   top: 2%;
@@ -145,6 +161,9 @@ onMounted(async () => {
   font-family: var(--font-archivo-black);
   position: relative;
   right: 95%;
+}
+.title{
+  bottom: 5%;
 }
 
 .title-min {
@@ -239,13 +258,13 @@ onMounted(async () => {
   font-weight: bold;
   padding: 5px;
   text-align: center;
-  width: 110%;
+  width: 100%;
   margin-top: 5px;
 }
 
 .price-original {
   text-decoration: line-through;
-  font-size: 12px;
+  font-size: var(--text-smallest-regular-size);
   margin-right: 5px;
 }
 
@@ -332,8 +351,7 @@ onMounted(async () => {
   font-size: var(--text-single-200-regular-size);
   position: relative;
   top: 20px;
-  left: 35%;
-  border: 3px solid black;
+  margin-left: 35%;
   border-radius: 5px;
 }
 
@@ -354,8 +372,11 @@ onMounted(async () => {
 .discount-min, .price-original-min {
   margin-right: 10px;
 }
-.grid-item:hover , .principal:hover{
+.grid-item:hover {
   transform: scale(1.1);
+  cursor: pointer;
+}
+.principal:hover{
   cursor: pointer;
 }
 </style>

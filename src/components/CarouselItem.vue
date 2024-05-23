@@ -23,7 +23,7 @@ onMounted(async () => {
     hide-delimiter-background
   >
     <v-carousel-item
-      v-for="(game, i) in games"
+    v-for="(game, i) in games.slice(0, 5)"
       :key="i"
     >
       <v-sheet

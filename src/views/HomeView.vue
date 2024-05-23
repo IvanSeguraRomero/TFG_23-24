@@ -6,14 +6,10 @@ import CardItem from '@/components/CardItem.vue'
 
 <template>
     <CarouselItem />
-    <div class="bodyBack">
         <GridItem />
         <CardItem />
-    </div>
 </template>
 
 <style scoped>
-.bodyBack{
-    background-color: var(--color-dark-blue);
-}
+
 </style>
