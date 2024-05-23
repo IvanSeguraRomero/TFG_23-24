@@ -1,103 +1,39 @@
 <script setup lang="ts">
 import { useField, useForm } from 'vee-validate';
-import { computed, ref, watch } from 'vue';
+import { ref } from 'vue';
 import { useApiStore, pinia } from '../store/api';
-import { jwtDecode } from 'jwt-decode';
 import { RouterLink } from 'vue-router';
 
-const existingUser = ref(false);
-
-function proveExistingUser(users: any, values: any) {
+async function proveExistingStudio(email: string): Promise<boolean> {
+  const studios = await useApiStore(pinia).fetchStudios();
   
-  users.forEach((element: any) => {
-    if (element.email === values.email) {
-      existingUser.value = true;
+  for (const studio of studios) {
+    if (studio.emailLogin === email) {
+      alert('Este estudio ya se ha registrado');
+      return true;
     }
-  });
-
-  if (!existingUser.value) {
-    fetchPostUser(values);
-    handleReset();
-    handleDateReset();
-  } else {
-    alert('Este usuario ya se ha registrado');
   }
+  return false;
 }
 
-
-
-//clean datefield when registered
-const handleDateReset=()=>{
-  const text = document.querySelector("#textDateField") as HTMLInputElement | HTMLTextAreaElement | null;
-
-if (text !== null) {
-    text.value = "";
-}
-  
-}
 
 const fetchPostUser = async (values: any) => {
   try {
-    const userDTO = {
-      name: values.name,
-      surname: values.surname,
-      password: values.passwd,
-      age: values.age,
-      email: values.email,
-      registerDate: values.registeredDate,
-      role: "user"
-    };
-    
-    const token=await useApiStore(pinia).fetchPostRegisterUser(userDTO);
-    if(token){
-    localStorage.setItem('jwtToken', token);
+    const exists = await proveExistingStudio(values.email);
+    if (!exists) {
+      const studioDTO = {
+        name: values.name,
+        fundation: new Date().toISOString(),
+        country: values.country,
+        emailLogin: values.email,
+        password: values.passwd
+      };
+      await useApiStore(pinia).fetchPostStudio(studioDTO);
+      handleClear();
     }
-    await postUpdateTables();
   } catch (err) {
     console.error(err);
   }
-};
-  const postUpdateTables = async()=>{
-    const token=localStorage.getItem('jwtToken');
-  if (!token) {
-    console.error('No se encontró un token JWT en el almacenamiento local.')
-    return
-  }
-
-  // Decodificar el token JWT
-  const decodedToken = jwtDecode(token) as { id: number };
-  
-    postLibraryCommunity(decodedToken.id);
-    updateUserIds(decodedToken.id);
-}
-function postLibraryCommunity(userId : any){
-  const libraryUserDTO = {
-      addedDate: Date.now,
-      userID : userId
-    };
-    useApiStore(pinia).fetchPostLibraryGameUser(libraryUserDTO);
-  const communityUserDTO={
-    message : "Start",
-    userID : userId
-  }
-    useApiStore(pinia).fetchPostCommunity(communityUserDTO);
-
-}
-function updateUserIds(userId : any){
-  const objectIds = {
-    libraryGameUserID : userId,
-    messageID : userId
-  }
-  useApiStore(pinia).fetchUpdateUser(userId++,objectIds);
-}
-const fetchGetUser = async (values: any) => {
-  try {
-    const users = await useApiStore(pinia).fetchUsers();
-    localStorage.setItem('users',JSON.stringify(users));
-    proveExistingUser(users, values);
-  } catch (err) {
-    console.error(err);
-}
 };
 
 const { handleSubmit, handleReset } = useForm({
@@ -108,10 +44,7 @@ const { handleSubmit, handleReset } = useForm({
     },
     country(value: any) {
       if (value?.length >= 2) return true;
-      return 'Surname needs to be at least 2 characters.';
-    },
-    website(value: any) {
-      return true;
+      return 'Country needs to be at least 2 characters.';
     },
     email(value: any) {
       if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
@@ -125,8 +58,7 @@ const { handleSubmit, handleReset } = useForm({
       if (
         /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\w\s])/.test(value) &&
         value.length >= 7
-      )
-        return true;
+      ) return true;
       return 'Password must contain at least 1 number, 1 letter, 1 symbol & have more than 7 characters';
     },
   },
@@ -137,37 +69,17 @@ const country = useField('country');
 const email = useField('email');
 const checkbox = useField('checkbox');
 const passwd = useField('passwd');
-const website = useField('website');
 const visible = ref(false);
 
-
-function calcAge(birthDate: Date): number {
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  return age;
-}
-
-const age = ref<number | null>(null);
-
 const submit = handleSubmit((values) => {
-  
+  fetchPostUser(values);
 });
 
-
-submit;
-
-
 const handleClear = () => {
-
   handleReset();
 };
-
-
 </script>
+
 
 
 <template>
@@ -194,13 +106,6 @@ const handleClear = () => {
           :error-messages="email.errorMessage.value"
           label="E-Mail"
           placeholder="tstudios@example.com"
-        ></v-text-field>
-
-        <v-text-field
-          v-model="website.value.value"
-          :error-messages="website.errorMessage.value"
-          label="Website"
-          placeholder="webiste.com"
         ></v-text-field>
 
         <v-text-field
