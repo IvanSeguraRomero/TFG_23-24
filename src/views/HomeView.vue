@@ -5,9 +5,9 @@ import CardItem from '@/components/CardItem.vue'
 </script>
 
 <template>
-    <!-- <CarouselItem /> -->
-    <!-- <GridItem />-->
-    <CardItem />
+    <CarouselItem />
+        <GridItem />
+        <CardItem />
 </template>
 
 <style scoped>
