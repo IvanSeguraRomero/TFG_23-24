@@ -38,10 +38,9 @@ public class Context : DbContext
             .HasForeignKey<User>(u => u.LibraryGameUserID);
 
         // LibraryGameUser con Game una a muchos
-        modelBuilder.Entity<LibraryGameUser>()
-            .HasMany(lgu => lgu.Games)
-            .WithOne(g => g.libraryGameUser)
-            .HasForeignKey(g => g.LibraryGameUserId);
+        modelBuilder.Entity<Game>()
+            .HasMany(lgu => lgu.libraryGameUser)
+            .WithMany(g => g.Games);
    
 
         // Relación de User con LibraryGameUser un usuario a una biblioteca
@@ -66,8 +65,7 @@ public class Context : DbContext
         // Relación entre ShoppingCart y Game
             modelBuilder.Entity<ShoppingCart>()
                 .HasMany(sc => sc.Games)
-                .WithOne(g => g.shoppingCart)
-                .HasForeignKey(g => g.ShoppingCartID);
+                .WithMany(g => g.shoppingCart);
             
 
     // Relación de Studio con Game
@@ -80,8 +78,8 @@ public class Context : DbContext
             Country = "Country1",
             EmailContact = "studio1@example.com",
             EmailLogin = "studio1login@example.com",
-            Website = "www.studio1.com",
-            GameID =1
+            Password = "studio1password",
+            Website = "www.studio1.com"
         },
         new Studio
         {
@@ -91,8 +89,8 @@ public class Context : DbContext
             Country = "Country2",
             EmailContact = "studio2@example.com",
             EmailLogin = "studio2login@example.com",
-            Website = "www.studio2.com",
-            GameID=2
+            Password = "studio2password",
+            Website = "www.studio2.com"
         }
     );
 
@@ -132,8 +130,7 @@ public class Context : DbContext
             ReleaseDate = DateTime.Now.AddYears(-1),
             Categories = "Races, Multiplayer, One Person",
             StudioID = 1,
-            StoreID = 1,
-            LibraryGameUserId=1
+            StoreID = 1
         },
         new Game
         {
@@ -145,8 +142,7 @@ public class Context : DbContext
             ReleaseDate = DateTime.Now.AddYears(-2),
             Categories = "Races, Multiplayer, Shooting",
             StudioID = 2,
-            StoreID = 2,
-            LibraryGameUserId=2
+            StoreID = 2
         }
     );
 
@@ -186,7 +182,6 @@ public class Context : DbContext
         {
             LibraryGameUserId=1,
             UserID = 1,
-            GameID = 1,
             AddedDate = DateTime.Now.AddMonths(-6),
             Rating = 4,
             HoursPlayed = 50,
@@ -196,7 +191,6 @@ public class Context : DbContext
         {
             LibraryGameUserId=2,
             UserID = 2,
-            GameID = 2,
             AddedDate = DateTime.Now.AddMonths(-3),
             Rating = 5,
             HoursPlayed = 100,

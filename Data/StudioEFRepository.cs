@@ -33,6 +33,8 @@ namespace FlashGamingHub.Data
                 Fundation=s.Fundation,
                 Country=s.Country,
                 EmailContact=s.EmailContact,
+                EmailLogin=s.EmailLogin,
+                Password=s.Password,
                 Website=s.Website,
                 games=gamesRepository.getGamesStudio(s.StudioID)
             }).ToList();
@@ -55,6 +57,8 @@ namespace FlashGamingHub.Data
                 Fundation=s.Fundation,
                 Country=s.Country,
                 EmailContact=s.EmailContact,
+                EmailLogin=s.EmailLogin,
+                Password=s.Password,
                 Website=s.Website,
                 games=gamesRepository.getGamesStudio(s.StudioID)
             }).FirstOrDefault(studio=>studio.StudioID==id);

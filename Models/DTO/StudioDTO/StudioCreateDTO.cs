@@ -12,12 +12,13 @@ public class StudioCreateDTO{
     [Required]
     public string Country { get; set; }
 
-    [Required]
-    public string EmailContact { get; set; }
+    public string? EmailContact { get; set; }
 
     [Required]
     public string EmailLogin { get; set; }
 
     [Required]
-    public string Website { get; set; }
+    public string Password { get; set; }
+
+    public string? Website { get; set; }
 }

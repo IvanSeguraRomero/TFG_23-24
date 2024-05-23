@@ -18,16 +18,16 @@ namespace FlashGamingHub.Models
         public string Country { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string EmailContact { get; set; }
+        public string? EmailContact { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string EmailLogin { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
-        public string Website { get; set; }
+        [Column(TypeName = "nvarchar(20)")]
+        public string Password { get; set; }
 
-        [ForeignKey("GameID")]
-         public int GameID { get; set; }
+        [Column(TypeName = "nvarchar(100)")]
+        public string? Website { get; set; }
 
        public List<Game> Games { get; set; } = new List<Game>();
     }

@@ -37,13 +37,9 @@ namespace FlashGamingHub.Models
          public int StoreID { get; set; }
         public List<GameShop>  StoresAvailableAt { get; set; }
 
-        [ForeignKey("LibraryGameUserId")]
-        public int? LibraryGameUserId { get; set; }
-        public LibraryGameUser? libraryGameUser { get; set; }
+        public List<LibraryGameUser>? libraryGameUser { get; set; }
 
-        [ForeignKey("ShoppingCartID")]
-        public int? ShoppingCartID { get; set; }
-        public ShoppingCart? shoppingCart { get; set; }
+        public List<ShoppingCart>? shoppingCart { get; set; }
 
 
     }

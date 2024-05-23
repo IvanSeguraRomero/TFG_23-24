@@ -65,13 +65,8 @@ public class StudioController : ControllerBase{
 
     // POST action
     [HttpPost]
-    [Authorize]
     public IActionResult Create([FromBody] StudioCreateDTO studioCreateDTO)
     {
-        if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -86,6 +81,7 @@ public class StudioController : ControllerBase{
             Country=studioCreateDTO.Country,
             EmailContact=studioCreateDTO.EmailContact,
             EmailLogin=studioCreateDTO.EmailLogin,
+            Password=studioCreateDTO.Password,
             Website=studioCreateDTO.Website
         };
 
@@ -103,13 +99,8 @@ public class StudioController : ControllerBase{
 
    // PUT action
         [HttpPut("{id}")]
-        [Authorize]
         public IActionResult Update(int id,[FromBody] StudioUpdateDTO studioUpdateDTO)
         {
-            if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
             try{
             var existingStudio = _studioService.GetStudio(id);
 
@@ -134,6 +125,10 @@ public class StudioController : ControllerBase{
 
             if(studioUpdateDTO.EmailLogin!=null){
                 existingStudio.EmailLogin=studioUpdateDTO.EmailLogin;
+            }
+
+            if(studioUpdateDTO.Password!=null){
+                existingStudio.Password=studioUpdateDTO.Password;
             }
 
             if(studioUpdateDTO.Website!=null){

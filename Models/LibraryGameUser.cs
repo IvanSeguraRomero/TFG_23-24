@@ -20,9 +20,6 @@ namespace FlashGamingHub.Models
         [ForeignKey("UserID")]
         public int? UserID { get; set; }
         public User? User { get; set; }
-
-        [ForeignKey("GameID")]
-        public int? GameID { get; set; }
         public List<Game>? Games { get; set; }
     }
 }

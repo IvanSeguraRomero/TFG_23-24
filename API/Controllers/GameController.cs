@@ -95,13 +95,8 @@ public class GameController : ControllerBase{
 
     // POST action
     [HttpPost]
-    [Authorize]
     public IActionResult Create([FromBody] GameCreateDTO gameCreateDTO)
     {
-        if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
         try{            
         if (!ModelState.IsValid)
         {
@@ -135,13 +130,8 @@ public class GameController : ControllerBase{
 
     // PUT action
         [HttpPut("{id}")]
-        [Authorize]
         public IActionResult Update(int id,[FromBody] GameUpdateDTO gameUpdateDTO)
         {
-            if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
             
             try{
             var existingGame = _gameService.GetGame(id);
@@ -187,13 +177,8 @@ public class GameController : ControllerBase{
 
     // DELETE action
    [HttpDelete("{id}")]
-   [Authorize]
     public IActionResult Delete(int id)
     {
-        if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
         try{
         var games = _gameService.GetGameDTO(id);
     
