@@ -4,18 +4,29 @@
         <div class="card-content">
             <div class="card-column">
                 <div class="card-username">
-                    <p class="username-title">Username</p>
-                    <h2 class="username-subtitle">HelloKitty2000</h2>
+                    <p class="username-title">Name</p>
+                    <h2 class="username-subtitle">TStudios</h2>
                 </div>
                 <div class="card-name">
-                    <p class="name-title">Name</p>
-                    <h2 class="name-subtitle">Gustavo Hernandez</h2>
+                    <p class="name-title">Fundation</p>
+                    <h2 class="name-subtitle">23/04/1998</h2>
+                </div>
+                <div class="card-name">
+                    <p class="name-title">Country</p>
+                    <h2 class="name-subtitle">Spain</h2>
+                </div>
+                <div class="card-name">
+                    <p class="name-title">Website</p>
+                    <h2 class="name-subtitle">https://tstudios.com</h2>
                 </div>
             </div>
             <div class="card-column">
                 <div class="card-email">
-                    <p class="email-title">Email</p>
-                    <h2 class="email-subtitle">gustavo2000@gmail.com</h2>
+                    <p class="email-title">Email-Contact</p>
+                    <h2 class="email-subtitle">tstudios@gmail.com</h2>
+                </div><div class="card-email">
+                    <p class="email-title">Email-Login</p>
+                    <h2 class="email-subtitle">admin@tstudios.com</h2>
                 </div>
                 <div class="card-phone">
                     <p class="phone-title">Password</p>
@@ -32,9 +43,10 @@
     display: flex;
     align-items: flex-start; /* Alinea los elementos a la parte superior */
     width: 80%;
-    height: 250px;
+    height: 390px;
     left: 10%;
     margin-top: 40px;
+    margin-bottom: 40px;
     background: linear-gradient(to right, var(--color-black), var(--color-dark-blue), var(--color-blue));
     border-radius: 20px;
     overflow: hidden; /* Oculta el botón si se desborda de la tarjeta */
@@ -45,7 +57,7 @@
     height: 60%;
     border-radius: 20px;
     margin-left: 3%;
-    margin-top: 3%;
+    margin-top: 6%;
 }
 
 .card-content {
