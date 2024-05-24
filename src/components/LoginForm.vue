@@ -139,7 +139,7 @@ form{
   background-image: linear-gradient(var(--color-dark-blue), var(--color-yellow)); 
   color: white;
   border-radius: 50px 50px 5px 5px;
-  height: 650px;
+  height: 670px;
 }
 label{
   display: flex;
@@ -158,8 +158,8 @@ label{
   justify-content: center;
 }
 .me-4{
-  background: linear-gradient(to right, #99e380, #56ccf2); /* Cambia los colores según tu preferencia */
-  color: white;
+  background: linear-gradient(to right, #ecfe94, #56ccf2); /* Cambia los colores según tu preferencia */
+  color: black;
 }
 .clear{
   background: linear-gradient(to right, #450054, #db0606); /* Cambia los colores según tu preferencia */

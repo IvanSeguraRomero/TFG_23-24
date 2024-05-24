@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-      <div class="container">
+      <div class="container-images">
         <img src="/src/assets/ForzaHorizon5_mainImage.jpg" class="main-image">
         <div class="thumbnail-container">
             <img src="/src/assets/ForzaHorizon5_mainImage.jpg" class="thumbnail">
@@ -25,7 +25,7 @@
     min-height: 100vh;
   }
   
-  .container {
+  .container-images {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +60,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    margin-left: 20px;
   }
   
   .side-image {

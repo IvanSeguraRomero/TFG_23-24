@@ -196,10 +196,6 @@ export const useApiStore = defineStore('flashgaminghub', {
     //STUDIO
     async fetchStudios(name?: string, country?: string) {
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
     
         let url = 'https://localhost:7025/Studio';
         if (name !== undefined) {
@@ -208,11 +204,7 @@ export const useApiStore = defineStore('flashgaminghub', {
           url += `?country=${country}`;
         }
     
-        const response = await fetch(url, {
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
-        });
+        const response = await fetch(url);
     
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
@@ -233,17 +225,7 @@ export const useApiStore = defineStore('flashgaminghub', {
     },
     async fetchStudio(id: number) {
       try {
-
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage')
-          return
-        }
-
-        const response = await fetch(`https://localhost:7025/Studio/${id}`, {
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
-        })
+        const response = await fetch(`https://localhost:7025/Studio/${id}`);
         if (!response.ok) {
           throw new Error('Error al obtener los datos')
         }
@@ -255,17 +237,7 @@ export const useApiStore = defineStore('flashgaminghub', {
     },
     async fetchGamesStudio(id: number) {
       try {
-
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage')
-          return
-        }
-
-        const response = await fetch(`https://localhost:7025/Studio/${id}/games`, {
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
-        })
+        const response = await fetch(`https://localhost:7025/Studio/${id}/games`);
         if (!response.ok) {
           throw new Error('Error al obtener los datos')
         }
@@ -277,18 +249,13 @@ export const useApiStore = defineStore('flashgaminghub', {
     },
     async fetchPostStudio(studioData:any) {
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
-    
+        
         const url = 'https://localhost:7025/Studio';
     
         const response = await fetch(url, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${this.token}`
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify(studioData)
         });
@@ -331,10 +298,6 @@ export const useApiStore = defineStore('flashgaminghub', {
     async fetchUpdateStudio(id: number, studioData: any) {
        
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
 
         const formattedStudioData: { [key: string]: any } = {};
         Object.keys(studioData).forEach(key => {
@@ -343,7 +306,6 @@ export const useApiStore = defineStore('flashgaminghub', {
         const response = await fetch(`https://localhost:7025/Studio/${id}`, {
           method: 'PUT',
           headers: {
-            Authorization: `Bearer ${this.token}`,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(formattedStudioData)
@@ -396,7 +358,6 @@ export const useApiStore = defineStore('flashgaminghub', {
           console.error('No se encontró ningún token JWT en el localStorage');
           return;
         }
-        console.log( JSON.stringify(shoppingCartData));
         
         const url = 'https://localhost:7025/ShoppingCart';
     
@@ -563,7 +524,6 @@ export const useApiStore = defineStore('flashgaminghub', {
           console.error('No se encontró ningún token JWT en el localStorage');
           return;
         }
-        console.log( JSON.stringify(libraryGameUserData));
         
         const url = 'https://localhost:7025/LibraryGameUser';
     
@@ -729,7 +689,6 @@ export const useApiStore = defineStore('flashgaminghub', {
           console.error('No se encontró ningún token JWT en el localStorage');
           return;
         }
-        console.log( JSON.stringify(gameShopData));
         
         const url = 'https://localhost:7025/GameShop';
     
@@ -818,15 +777,7 @@ export const useApiStore = defineStore('flashgaminghub', {
     //GAME
     async fetchGames() {
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
-        const response = await fetch('https://localhost:7025/Game', {
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
-        });
+        const response = await fetch('https://localhost:7025/Game');
     
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
@@ -847,17 +798,7 @@ export const useApiStore = defineStore('flashgaminghub', {
     },
     async fetchGame(id: number) {
       try {
-
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage')
-          return
-        }
-
-        const response = await fetch(`https://localhost:7025/Game/${id}`, {
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
-        })
+        const response = await fetch(`https://localhost:7025/Game/${id}`);
         if (!response.ok) {
           throw new Error('Error al obtener los datos')
         }
@@ -869,19 +810,12 @@ export const useApiStore = defineStore('flashgaminghub', {
     },
     async fetchPostGame(gameData:any) {
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
-        console.log( JSON.stringify(gameData));
-        
         const url = 'https://localhost:7025/Game';
     
         const response = await fetch(url, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${this.token}`
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify(gameData)
         });
@@ -901,10 +835,6 @@ export const useApiStore = defineStore('flashgaminghub', {
     async fetchUpdateGame(id: number, gameData: any) {
        
       try {
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage');
-          return;
-        }
 
         const formattedGameData: { [key: string]: any } = {};
         Object.keys(gameData).forEach(key => {
@@ -913,7 +843,6 @@ export const useApiStore = defineStore('flashgaminghub', {
         const response = await fetch(`https://localhost:7025/Game/${id}`, {
           method: 'PUT',
           headers: {
-            Authorization: `Bearer ${this.token}`,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(formattedGameData)
@@ -938,16 +867,8 @@ export const useApiStore = defineStore('flashgaminghub', {
     async fetchDeleteGame(id: number) {
       try {
 
-        if (!this.token) {
-          console.error('No se encontró ningún token JWT en el localStorage')
-          return
-        }
-
         const response = await fetch(`https://localhost:7025/Game/${id}`, {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${this.token}`
-          }
+          method: 'DELETE'
         })
         if (!response.ok) {
           throw new Error('Error al eliminar el elemento')
@@ -1018,7 +939,6 @@ export const useApiStore = defineStore('flashgaminghub', {
           console.error('No se encontró ningún token JWT en el localStorage');
           return;
         }
-        console.log( JSON.stringify(communityData));
         
         const url = 'https://localhost:7025/Community';
     

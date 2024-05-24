@@ -3,6 +3,7 @@ import { useField, useForm } from 'vee-validate';
 import { computed, ref, watch } from 'vue';
 import { useApiStore, pinia } from '../store/api';
 import { jwtDecode } from 'jwt-decode';
+import { RouterLink } from 'vue-router';
 
 const existingUser = ref(false);
 
@@ -277,6 +278,7 @@ const handleClear = () => {
       
           <v-btn @click="handleClear" class="clear" id="regClear"> Clear </v-btn>
         </div>
+        <RouterLink to="/" class="custom-link">Are you a Studio?</RouterLink>
       </form>
 </template>
 <style scoped>
@@ -287,14 +289,13 @@ form{
   padding: 20px;
   background-image: linear-gradient(var(--color-yellow), var(--color-dark-blue));
   color: white;
-  /* backdrop-filter: blur(16px); */
   height: 700px;
 }
 label{
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
-  color: var(--color-gray);
+  color: var(--neutral-colors-white);
   font-size: var(--font-size-25xl);
   font-family: var(--font-orbitron);
   font-weight: bold;
@@ -306,8 +307,8 @@ label{
   justify-content: center;
 }
 .me-4{
-  background: linear-gradient(to right, #99e380, #56ccf2); /* Cambia los colores según tu preferencia */
-  color: white;
+  background: linear-gradient(to right, #ecfe94, #56ccf2); /* Cambia los colores según tu preferencia */
+  color: black;
 }
 .clear{
   background: linear-gradient(to right, #450054, #db0606); /* Cambia los colores según tu preferencia */
@@ -329,5 +330,12 @@ label{
   top: 50% ;
   left: 45% ;
   transform: translate(-50%, -50%) ;
+}
+.custom-link {
+  font-style: italic;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--color-blue);
 }
 </style>
