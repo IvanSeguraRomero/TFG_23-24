@@ -82,7 +82,9 @@ public class CommunityController : ControllerBase{
             PublicationDate= communityCreateDTO.PublicationDate,
             ActiveMember= communityCreateDTO.ActiveMember,
             LikesCount= communityCreateDTO.LikesCount,
-            UserID=communityCreateDTO.UserID
+            UserID=communityCreateDTO.UserID,
+            GameID =communityCreateDTO.GameID,
+
         };
         _communityService.AddCommunity(communityDTO);
 
