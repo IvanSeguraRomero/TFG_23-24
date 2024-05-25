@@ -56,6 +56,15 @@ public class Context : DbContext
             .WithOne(m => m.User)
             .HasForeignKey(m => m.UserID);
 
+        //Relacion entre Game y Community
+        modelBuilder.Entity<Game>()
+            .HasMany(u => u.messages)
+            .WithOne(m => m.Game)
+            .HasForeignKey(m => m.GameID);
+
+
+
+
         // Relación entre User y ShoppingCart
             modelBuilder.Entity<User>()
                 .HasOne(u => u.ShoppingCart)
@@ -158,7 +167,6 @@ public class Context : DbContext
             Email = "user1@example.com",
             RegisterDate = DateTime.Now.AddYears(-2),
             LibraryGameUserID = 1,
-            MessageID = 1,
             Role=Roles.Admin
         },
         new User
@@ -171,7 +179,6 @@ public class Context : DbContext
             Email = "user2@example.com",
             RegisterDate = DateTime.Now.AddYears(-1),
             LibraryGameUserID = 2,
-            MessageID = 2,
             Role=Roles.Admin
         }
     );
@@ -204,6 +211,7 @@ public class Context : DbContext
         {
             MessageID = 1,
             UserID = 1,
+            GameID = 1,
             Message = "Community1",
             PublicationDate = DateTime.Now.AddYears(-1),
             ActiveMember = true,
@@ -213,6 +221,7 @@ public class Context : DbContext
         {
             MessageID = 2,
             UserID = 2,
+            GameID = 1,
             Message = "Community2",
             PublicationDate = DateTime.Now.AddYears(-2),
             ActiveMember = true,

@@ -31,6 +31,7 @@ namespace FlashGamingHub.Data
             var communitiesDTO=communities.Select(c=>new CommunityDTO{
                 MessageID=c.MessageID,
                 UserID=c.UserID,
+                GameID=c.GameID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
@@ -51,6 +52,7 @@ namespace FlashGamingHub.Data
             var communitieDTO=communities.Select(c=>new CommunityDTO{
                 MessageID=c.MessageID,
                 UserID=c.UserID,
+                GameID=c.GameID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
                 ActiveMember=c.ActiveMember,
@@ -59,6 +61,28 @@ namespace FlashGamingHub.Data
             Console.WriteLine(communitieDTO);
             return communitieDTO;
         }
+
+        public List<CommunityDTO> getMessagesGame(int gameID)
+         {
+                // Filtrar las comunidades por GameID
+                var communities = _context.Communities.Include(c => c.User).Where(c => c.GameID == gameID).ToList();
+                
+                // Mapear las comunidades filtradas a CommunityDTO
+                var communitieDTO = communities.Select(c => new CommunityDTO
+                {
+                    MessageID = c.MessageID,
+                    UserID = c.UserID,
+                    GameID = c.GameID,
+                    Message = c.Message,
+                    PublicationDate = c.PublicationDate,
+                    ActiveMember = c.ActiveMember,
+                    LikesCount = c.LikesCount
+                }).ToList();
+                return communitieDTO;
+            }
+
+
+
 
         public void UpdateCommunity(Community community)
         {

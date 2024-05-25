@@ -6,6 +6,8 @@ namespace FlashGamingHub.Models
 
         public int? UserID { get; set; }
 
+        public int? GameID  { get; set; }
+
         public string Message { get; set; }
 
         public DateTime PublicationDate { get; set; }

@@ -23,5 +23,5 @@ public class UserUpdateDTO{
 
     public int? LibraryGameUserID { get; set; }
 
-    public int? MessageID { get; set; }
+    public List<Community>? messages{ get; set; }
 }

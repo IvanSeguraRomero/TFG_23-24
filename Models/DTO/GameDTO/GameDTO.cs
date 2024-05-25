@@ -18,6 +18,8 @@ namespace FlashGamingHub.Models
 
         public string Categories { get; set; }
 
+        public List<CommunityDTO>? messages{ get; set; }
+
         public int? StudioID { get; set; }
 
 

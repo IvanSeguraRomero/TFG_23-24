@@ -21,4 +21,7 @@ public class GameUpdateDTO{
 
     [StringLength(300, ErrorMessage = "Tiene que haber menos categorías")]
     public string? Categories { get; set; }
+
+    [StringLength(100, ErrorMessage = "El comentario debe ser mas corto")]
+    public List<Community>? messages{ get; set; }
 }

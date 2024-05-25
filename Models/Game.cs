@@ -41,6 +41,8 @@ namespace FlashGamingHub.Models
 
         public List<ShoppingCart>? shoppingCart { get; set; }
 
+        public List<Community> messages{ get; set; }
+
 
     }
 }

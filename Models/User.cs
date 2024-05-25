@@ -31,9 +31,6 @@ public class User
 
          public LibraryGameUser libraryGameUser{ get; set; }
 
-         [ForeignKey("MessageID")]
-         public int MessageID { get; set; }
-
          public List<Community> messages{ get; set; }
 
          public string Role { get; set; }

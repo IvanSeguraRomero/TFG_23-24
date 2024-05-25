@@ -28,6 +28,7 @@ namespace FlashGamingHub.Data
         {
             
             var studioRepository= new StudioEFRepository(_context);
+            var communityRepository= new CommunityEFRepository(_context);
             var games=_context.Games.ToList();
             var gamesDTO=games.Select(g=>new GameDTO{
                 GameID=g.GameID,
@@ -38,6 +39,7 @@ namespace FlashGamingHub.Data
                 Discount=g.Discount,
                 ReleaseDate=g.ReleaseDate,
                 Categories=g.Categories,
+                messages = communityRepository.getMessagesGame(g.GameID),
                 StudioID=g.StudioID
             }).ToList();
             return gamesDTO;
@@ -46,13 +48,14 @@ namespace FlashGamingHub.Data
 
         public Game GetGame(int id)
         {
-            var game=_context.Games.Include(g=>g.Studio).FirstOrDefault(g=>g.GameID==id);
+            var game = _context.Games.Include(g => g.Studio).Include(g => g.messages).FirstOrDefault(g => g.GameID == id);
             return game;
         }
 
         public GameDTO GetGameDTO(int id)
         {
             var studioRepository= new StudioEFRepository(_context);
+            var communityRepository= new CommunityEFRepository(_context);
             var games=_context.Games.ToList();
             var gameDTO=games.Select(g=>new GameDTO{
                 GameID=g.GameID,
@@ -63,6 +66,7 @@ namespace FlashGamingHub.Data
                 Discount=g.Discount,
                 ReleaseDate=g.ReleaseDate,
                 Categories=g.Categories,
+                messages = communityRepository.getMessagesGame(g.GameID),
                 StudioID=g.StudioID
             }).FirstOrDefault(game=>game.GameID==id);
             return gameDTO;

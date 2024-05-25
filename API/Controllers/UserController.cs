@@ -142,9 +142,6 @@ public class UserController : ControllerBase{
             if(userUpdateDTO.LibraryGameUserID!=null){
                 existingUser.LibraryGameUserID=(int)userUpdateDTO.LibraryGameUserID;
             }
-            if(userUpdateDTO.MessageID!=null){
-                existingUser.MessageID=(int)userUpdateDTO.MessageID;
-            }
             
             
             _userService.UpdateUser(existingUser);

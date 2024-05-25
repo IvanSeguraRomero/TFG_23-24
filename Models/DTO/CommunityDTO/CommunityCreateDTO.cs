@@ -14,5 +14,8 @@ public class CommunityCreateDTO{
     [Required]
     public int LikesCount { get; set; }
 
+    [Required]
+    public int GameID { get; set; }
+
     public int? UserID {get; set; }
 }

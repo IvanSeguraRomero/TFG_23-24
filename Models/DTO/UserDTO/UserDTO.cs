@@ -17,7 +17,7 @@ public class UserDTO
 
         public DateTime RegisterDate { get; set; }
 
-        public int MessageID { get; set; }
+        public List<Community>? messages{ get; set; }
 
         public string Role { get; set; }
     
