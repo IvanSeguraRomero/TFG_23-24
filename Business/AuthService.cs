@@ -13,11 +13,13 @@ namespace FlashGamingHub.Business
     {
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _repository;
+        private readonly Context _context;
 
-        public AuthService(IConfiguration configuration, IUserRepository repository)
+        public AuthService(IConfiguration configuration, IUserRepository repository,Context context)
         {
             _configuration = configuration;
             _repository = repository;
+            _context=context;
         }
 
         public string Login(LoginDtoIn loginDtoIn) {
@@ -26,6 +28,8 @@ namespace FlashGamingHub.Business
         }
 
         public string Register(UserCreateDTO userAdd) {
+            var exists=checkUserEmail(userAdd.Email);
+            if (exists) return "User already exists";
             var user =new User{
                 Name = userAdd.Name,
                 Surname=userAdd.Surname,
@@ -85,6 +89,13 @@ namespace FlashGamingHub.Business
                 return true;
             }
             return false;
+        }
+
+       public bool checkUserEmail(string email)
+        {
+             bool exists = _context.Users.Any(u => u.Email == email);
+
+            return exists;
         }
 
 
