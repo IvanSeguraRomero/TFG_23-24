@@ -43,10 +43,6 @@ public class UserController : ControllerBase{
     [HttpGet("{id}")]
     public ActionResult<UserDTO> Get(int id)
     {
-         if (!_authService.HasAccessToResource(id,HttpContext.User))
-        {
-            return Forbid();
-        }
         try{
         var user = _userService.GetUserDTO(id);
 
