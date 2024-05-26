@@ -12,7 +12,7 @@ public class GameUpdateDTO{
     [StringLength(300, ErrorMessage = "La sinopsis debe ser mas corta")]
     public string? Synopsis { get; set; }
 
-    [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
+    // [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener hasta dos decimales.")]
     public decimal? Price { get; set; }
 
     public int? Discount { get; set; }

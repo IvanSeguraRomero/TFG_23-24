@@ -91,3 +91,7 @@
 26/05/2024 14:36:06 - Error al intentar eliminar la biblioteca: No se encontró la biblioteca con ID 2
 26/05/2024 14:36:43 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 2
 26/05/2024 14:37:12 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 1
+26/05/2024 14:45:59 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 3
+26/05/2024 15:11:11 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 5
+26/05/2024 15:15:42 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 8
+26/05/2024 15:17:48 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 10
