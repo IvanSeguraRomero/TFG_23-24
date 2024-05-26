@@ -71,3 +71,23 @@
 22/05/2024 12:59:48 - Error al obtener la información de los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
 22/05/2024 18:14:52 - Error al crear un nuevo juego: An error occurred while saving the entity changes. See the inner exception for details.
 25/05/2024 16:19:48 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+25/05/2024 20:51:15 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:51:49 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:53:08 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:54:08 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:54:26 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:54:55 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:55:41 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:56:26 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:56:48 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:56:50 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:57:53 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+25/05/2024 20:57:56 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 13
+26/05/2024 14:23:20 - Error al eliminar el usuario: An error occurred while saving the entity changes. See the inner exception for details.
+26/05/2024 14:24:38 - Error al eliminar el usuario: An error occurred while saving the entity changes. See the inner exception for details.
+26/05/2024 14:24:54 - Error al eliminar el usuario: An error occurred while saving the entity changes. See the inner exception for details.
+26/05/2024 14:25:48 - Error al intentar eliminar el usuario: No se encontró el usuario con ID 6
+26/05/2024 14:27:48 - Error al eliminar el usuario: An error occurred while saving the entity changes. See the inner exception for details.
+26/05/2024 14:36:06 - Error al intentar eliminar la biblioteca: No se encontró la biblioteca con ID 2
+26/05/2024 14:36:43 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 2
+26/05/2024 14:37:12 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 1

@@ -178,10 +178,6 @@ public class UserController : ControllerBase{
 
     [HttpGet("{id}/messages")]
     public ActionResult<List<CommunityDTO>> GetMessagesUser(int id){
-         if (!_authService.HasAccessToResource(id,HttpContext.User))
-        {
-            return Forbid();
-        }
         try{
             var messages = _userService.GetMessagesUser(id);
             if(messages == null || messages.Count == 0){

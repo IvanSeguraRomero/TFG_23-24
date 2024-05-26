@@ -101,10 +101,6 @@ public class CommunityController : ControllerBase{
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody] CommunityUpdateDTO communityUpdateDTO)
         {
-            if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
             try{
             var existingCommunity = _communityService.GetCommunity(id);
 
