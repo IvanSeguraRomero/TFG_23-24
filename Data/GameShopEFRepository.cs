@@ -30,7 +30,7 @@ namespace FlashGamingHub.Data
             var gameShops=_context.GameShops.Include(gs=>gs.Games).ToList();
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
-                GameID=gs.GameID,
+                // GameID=gs.GameID,
                 Event=gs.Event,
                 Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,
@@ -52,7 +52,7 @@ namespace FlashGamingHub.Data
             var gameShops=_context.GameShops.Include(gs=>gs.Games).ToList();
             var gameShopDTO=gameShops.Select(gs=>new GameShopDTO{
                 StoreID=gs.StoreID,
-                GameID=gs.GameID,
+                // GameID=gs.GameID,
                 Event=gs.Event,
                 Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,

@@ -32,10 +32,10 @@ namespace FlashGamingHub.Models
         public int StudioID { get; set; }
 
         public Studio Studio { get; set; }
-        //este id fuera, esta en una lista de tiendas
+        
          [ForeignKey("StoreID")]
          public int StoreID { get; set; }
-        public List<GameShop>  StoresAvailableAt { get; set; }
+        public GameShop  StoreAvaidable { get; set; }
 
         public List<LibraryGameUser>? libraryGameUser { get; set; }
 

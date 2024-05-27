@@ -20,9 +20,6 @@ namespace FlashGamingHub.Models
 
         [Column(TypeName = "nvarchar(80)")]
         public string Origin { get; set; }
-        //este id de juego fuera, es un lista de juegos en la tienda
-        [ForeignKey("GameID")]
-        public int GameID { get; set; }
 
         public List<Game> Games { get; set; }
     }

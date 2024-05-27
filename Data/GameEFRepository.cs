@@ -82,23 +82,6 @@ namespace FlashGamingHub.Data
         {
             _context.SaveChanges();
         }
-        public List<GameDTO> getGameShopGames(int storeId)
-        {
-            var studioRepository= new StudioEFRepository(_context);
-            var games = _context.Games.Where(g => g.StoresAvailableAt.Any(s => s.StoreID == storeId)).Select(g => new GameDTO
-                {
-                    GameID=g.GameID,
-                    Name = g.Name,
-                    Description = g.Description,
-                    Synopsis = g.Synopsis,
-                    Price = g.Price,
-                    Discount=g.Discount,
-                    ReleaseDate = g.ReleaseDate,
-                    Categories=g.Categories,
-                    }).ToList();
-
-            return games;
-        }
           public List<GameDTO> getGamesStudio(int studioId){
              var games = _context.Games.Where(g => g.Studio.StudioID==studioId).Select(gd => new GameDTO
                 {

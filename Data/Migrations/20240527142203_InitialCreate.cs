@@ -15,7 +15,6 @@ namespace FlashGamingHub.Data.Migrations
                 {
                     StoreID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GameID = table.Column<int>(type: "int", nullable: false),
                     Event = table.Column<string>(type: "nvarchar(80)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     AnnualSales = table.Column<int>(type: "int", nullable: false),
@@ -85,6 +84,12 @@ namespace FlashGamingHub.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Games", x => x.GameID);
+                    table.ForeignKey(
+                        name: "FK_Games_GameShops_StoreID",
+                        column: x => x.StoreID,
+                        principalTable: "GameShops",
+                        principalColumn: "StoreID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Games_Studios_StudioID",
                         column: x => x.StudioID,
@@ -165,30 +170,6 @@ namespace FlashGamingHub.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GameGameShop",
-                columns: table => new
-                {
-                    GameID = table.Column<int>(type: "int", nullable: false),
-                    GamesGameID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_GameGameShop", x => new { x.GameID, x.GamesGameID });
-                    table.ForeignKey(
-                        name: "FK_GameGameShop_Games_GamesGameID",
-                        column: x => x.GamesGameID,
-                        principalTable: "Games",
-                        principalColumn: "GameID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_GameGameShop_GameShops_GameID",
-                        column: x => x.GameID,
-                        principalTable: "GameShops",
-                        principalColumn: "StoreID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "GameLibraryGameUser",
                 columns: table => new
                 {
@@ -238,11 +219,11 @@ namespace FlashGamingHub.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "GameShops",
-                columns: new[] { "StoreID", "AnnualSales", "Event", "GameID", "LastUpdated", "Origin", "Stock" },
+                columns: new[] { "StoreID", "AnnualSales", "Event", "LastUpdated", "Origin", "Stock" },
                 values: new object[,]
                 {
-                    { 1, 1000, "", 1, new DateTime(2024, 4, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9394), "Origin1", 100 },
-                    { 2, 1200, "", 2, new DateTime(2024, 5, 5, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9398), "Origin2", 150 }
+                    { 1, 1000, "", new DateTime(2024, 4, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5167), "Origin1", 100 },
+                    { 2, 1200, "", new DateTime(2024, 5, 7, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5171), "Origin2", 150 }
                 });
 
             migrationBuilder.InsertData(
@@ -250,8 +231,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "StudioID", "Country", "EmailContact", "EmailLogin", "Fundation", "Name", "Password", "Website" },
                 values: new object[,]
                 {
-                    { 1, "Country1", "studio1@example.com", "studio1login@example.com", new DateTime(2014, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9263), "Studio1", "studio1password", "www.studio1.com" },
-                    { 2, "Country2", "studio2@example.com", "studio2login@example.com", new DateTime(2019, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9296), "Studio2", "studio2password", "www.studio2.com" }
+                    { 1, "Country1", "studio1@example.com", "studio1login@example.com", new DateTime(2014, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5033), "Studio1", "studio1password", "www.studio1.com" },
+                    { 2, "Country2", "studio2@example.com", "studio2login@example.com", new DateTime(2019, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5069), "Studio2", "studio2password", "www.studio2.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -259,8 +240,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "UserID", "Age", "Email", "LibraryGameUserID", "Name", "Password", "RegisterDate", "Role", "Surname" },
                 values: new object[,]
                 {
-                    { 1, 30, "user1@example.com", 1, "User1", "password1", new DateTime(2022, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9432), "admin", "Surname1" },
-                    { 2, 25, "user2@example.com", 2, "User2", "password2", new DateTime(2023, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9435), "admin", "Surname2" }
+                    { 1, 30, "user1@example.com", 1, "User1", "password1", new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5206), "admin", "Surname1" },
+                    { 2, 25, "user2@example.com", 2, "User2", "password2", new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5210), "admin", "Surname2" }
                 });
 
             migrationBuilder.InsertData(
@@ -268,8 +249,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "GameID", "Categories", "Description", "Discount", "Name", "Price", "ReleaseDate", "StoreID", "StudioID", "Synopsis" },
                 values: new object[,]
                 {
-                    { 1, "Races, Multiplayer, One Person", "Description1", 0, "Game1", 59.99m, new DateTime(2023, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9413), 1, 1, "Short description about game's history" },
-                    { 2, "Races, Multiplayer, Shooting", "Description2", 0, "Game2", 49.99m, new DateTime(2022, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9417), 2, 2, "Short description about game's history" }
+                    { 1, "Races, Multiplayer, One Person", "Description1", 0, "Game1", 59.99m, new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5188), 1, 1, "Short description about game's history" },
+                    { 2, "Races, Multiplayer, Shooting", "Description2", 0, "Game2", 49.99m, new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5192), 2, 2, "Short description about game's history" }
                 });
 
             migrationBuilder.InsertData(
@@ -277,8 +258,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "LibraryGameUserId", "AddedDate", "HoursPlayed", "LastPlayed", "Rating", "UserID" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 11, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9447), 50, new DateTime(2024, 5, 18, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9450), 4, 1 },
-                    { 2, new DateTime(2024, 2, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9453), 100, new DateTime(2024, 5, 20, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9455), 5, 2 }
+                    { 1, new DateTime(2023, 11, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5221), 50, new DateTime(2024, 5, 20, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5225), 4, 1 },
+                    { 2, new DateTime(2024, 2, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5227), 100, new DateTime(2024, 5, 22, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5230), 5, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -286,19 +267,19 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "ShoppingCartID", "FechaCreacion", "Total", "UserID" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9483), 0m, 1 },
-                    { 2, new DateTime(2024, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9485), 0m, 2 }
+                    { 1, new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5259), 0m, 1 },
+                    { 2, new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5261), 0m, 2 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Communities",
                 columns: new[] { "MessageID", "ActiveMember", "GameID", "LikesCount", "Message", "PublicationDate", "UserID" },
-                values: new object[] { 1, true, 1, 100, "Community1", new DateTime(2023, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9468), 1 });
+                values: new object[] { 1, true, 1, 100, "Community1", new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5243), 1 });
 
             migrationBuilder.InsertData(
                 table: "Communities",
                 columns: new[] { "MessageID", "ActiveMember", "GameID", "LikesCount", "Message", "PublicationDate", "UserID" },
-                values: new object[] { 2, true, 1, 150, "Community2", new DateTime(2022, 5, 25, 14, 2, 18, 196, DateTimeKind.Local).AddTicks(9471), 2 });
+                values: new object[] { 2, true, 1, 150, "Community2", new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5247), 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Communities_GameID",
@@ -311,14 +292,14 @@ namespace FlashGamingHub.Data.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GameGameShop_GamesGameID",
-                table: "GameGameShop",
-                column: "GamesGameID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_GameLibraryGameUser_LibraryGameUserId",
                 table: "GameLibraryGameUser",
                 column: "LibraryGameUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Games_StoreID",
+                table: "Games",
+                column: "StoreID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Games_StudioID",
@@ -350,16 +331,10 @@ namespace FlashGamingHub.Data.Migrations
                 name: "Communities");
 
             migrationBuilder.DropTable(
-                name: "GameGameShop");
-
-            migrationBuilder.DropTable(
                 name: "GameLibraryGameUser");
 
             migrationBuilder.DropTable(
                 name: "GameShoppingCart");
-
-            migrationBuilder.DropTable(
-                name: "GameShops");
 
             migrationBuilder.DropTable(
                 name: "LibraryGameUsers");
@@ -369,6 +344,9 @@ namespace FlashGamingHub.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "ShoppingCarts");
+
+            migrationBuilder.DropTable(
+                name: "GameShops");
 
             migrationBuilder.DropTable(
                 name: "Studios");

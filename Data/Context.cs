@@ -26,10 +26,16 @@ public class Context : DbContext
             .WithMany(s => s.Games)
             .HasForeignKey(g => g.StudioID);
 
-        //Game con GameShop muchos a muchos
+        //GameShop con Game una a muchos
         modelBuilder.Entity<Game>()
-            .HasMany(g => g.StoresAvailableAt)
+            .HasOne(g => g.StoreAvaidable)
             .WithMany(gs => gs.Games);
+
+            //GameShop con Game una a muchos
+        modelBuilder.Entity<GameShop>()
+            .HasMany(g => g.Games)
+            .WithOne(gs => gs.StoreAvaidable)
+            .HasForeignKey(g=>g.StoreID);
 
         // Relación de LibraryGameUser con User uno a uno
         modelBuilder.Entity<LibraryGameUser>()
@@ -108,7 +114,6 @@ public class Context : DbContext
         new GameShop
         {
             StoreID = 1,
-            GameID=1,
             Event = "",
             Stock = 100,
             AnnualSales = 1000,
@@ -118,7 +123,6 @@ public class Context : DbContext
         new GameShop
         {
             StoreID = 2,
-            GameID=2,
             Event = "",
             Stock = 150,
             AnnualSales = 1200,
