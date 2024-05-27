@@ -8,7 +8,6 @@ namespace FlashGamingHub.Models
         [Key]
         public int StoreID { get; set; }
 
-        public int GameID { get; set; }
 
         [Column(TypeName = "nvarchar(80)")]
         public string Event { get; set; }
@@ -21,8 +20,9 @@ namespace FlashGamingHub.Models
 
         [Column(TypeName = "nvarchar(80)")]
         public string Origin { get; set; }
-
+        //este id de juego fuera, es un lista de juegos en la tienda
         [ForeignKey("GameID")]
+        public int GameID { get; set; }
 
         public List<Game> Games { get; set; }
     }
