@@ -150,26 +150,28 @@ public class Context : DbContext
         new Game
         {
             GameID = 1,
-            Name = "Game1",
-            Description = "Description1",
-            Synopsis = "Short description about game's history",
+            Name = "Tekken 8",
+            Description = "32 fighters with next-gen visuals will collide in Tekken 8! Both new and returning characters are stunningly portrayed in high-detailed character models built from the ground up - featuring every drop of sweat and ripped muscles for an immersive experience. The roster includes iconic fighters like Paul Phoenix, King, Marshall Law, and Nina Williams, and sees the return of Raven after last being part of the story of Tekken 6, 15 years ago! Jun Kazama returns to the story for the first time in 25 years since her disappearance in Tekken 2, and Tekken 8 also introduces a new Peruvian character Azucena! Players will be able to challenge their opponents on 16 battle stages with intense destruction and interactive stage elements.",
+            Synopsis = "TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world.",
             Price = 59.99m,
+            Discount = 0,
             ReleaseDate = DateTime.Now.AddYears(-1),
-            Categories = "Races, Multiplayer, One Person",
+            Categories = "Fighting, Action, Violent",
             StudioID = 1,
             StoreID = 1
         },
         new Game
         {
             GameID = 2,
-            Name = "Game2",
-            Description = "Description2",
-            Synopsis = "Short description about game's history",
-            Price = 49.99m,
+            Name = "Elden Ring",
+            Description = "Journey through the Lands Between, a new fantasy world created by Hidetaka Miyazaki, creator of the influential DARK SOULS video game series, and George R. R. Martin, author of The New York Times best-selling fantasy series, A Song of Ice and Fire.Unravel the mysteries of the Elden Ring’s power. Encounter adversaries with profound backgrounds, characters with their own unique motivations for helping or hindering your progress, and fearsome creatures.Create your character in FromSoftware's refined action-RPG and define your playstyle by experimenting with a wide variety of weapons, magical abilities, and skills found throughout the world. Charge into battle, pick off enemies one-by-one using stealth, or even call upon allies for aid. Many options are at your disposal as you decide how to approach exploration and combat.",
+            Synopsis = "Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will.",
+            Price = 59.99m,
+            Discount = 0,
             ReleaseDate = DateTime.Now.AddYears(-2),
-            Categories = "Races, Multiplayer, Shooting",
-            StudioID = 2,
-            StoreID = 2
+            Categories = "Role-Playing (RPG), Open World, Graphic Adventure",
+            StudioID = 1,
+            StoreID = 1
         }
     );
 
