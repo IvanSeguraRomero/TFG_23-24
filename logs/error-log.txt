@@ -96,3 +96,12 @@
 26/05/2024 15:15:42 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 8
 26/05/2024 15:17:48 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 10
 28/05/2024 17:23:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 2
+28/05/2024 17:30:36 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+28/05/2024 17:30:36 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+28/05/2024 17:30:50 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+28/05/2024 17:30:56 - Error al crear una nueva comunidad: An error occurred while saving the entity changes. See the inner exception for details.
+28/05/2024 17:51:34 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 17:53:58 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 18:13:20 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+28/05/2024 18:13:32 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+28/05/2024 18:13:58 - Error al añadir el juego a la biblioteca del usuario con ID 2: Game already in library.

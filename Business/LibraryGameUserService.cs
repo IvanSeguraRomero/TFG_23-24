@@ -44,4 +44,7 @@ public class LibraryGameUserService : ILibraryGameUserService{
     {
         _repository.UpdateLibraryGameUser(libraryGameUser);
     }
+    public void AddGameToLibrary(int libraryId, int gameId){
+        _repository.AddGameToLibrary(libraryId,gameId);
+    }
 }

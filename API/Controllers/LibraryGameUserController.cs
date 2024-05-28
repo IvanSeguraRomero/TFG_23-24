@@ -182,4 +182,33 @@ public class LibraryGameUserController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
+
+    [HttpPost("{id}/games/{gameId}")]
+    public IActionResult AddGameToLibrary(int id, int gameId)
+    {
+        if (!_authService.HasAccessToResource(id, HttpContext.User))
+        {
+            return Forbid();
+        }
+        try
+        {
+            _libraryGameUserService.AddGameToLibrary(id, gameId);
+            return Ok("Game added to library");
+        }
+        catch (KeyNotFoundException ex)
+        {
+            _logError.LogErrorMethod(ex, $"Error al añadir el juego a la biblioteca del usuario con ID {id}");
+            return NotFound(ex.Message);
+        }
+        catch (InvalidOperationException ex)
+        {
+            _logError.LogErrorMethod(ex, $"Error al añadir el juego a la biblioteca del usuario con ID {id}");
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            _logError.LogErrorMethod(ex, "Error al añadir el juego a la biblioteca");
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }

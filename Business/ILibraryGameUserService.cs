@@ -8,4 +8,5 @@ namespace FlashGamingHub.Business;
         void DeleteLibraryGameUser(int id);
         List<LibraryGameUserDTO> GetAll();
         List<GameDTO> GetLibraryGameUserGames(int id);
+        void AddGameToLibrary(int libraryId, int gameId);
     }
