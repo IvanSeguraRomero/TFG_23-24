@@ -172,7 +172,47 @@ public class Context : DbContext
             Categories = "Role-Playing (RPG), Open World, Graphic Adventure",
             StudioID = 1,
             StoreID = 1
+        },
+        new Game
+        {
+            GameID = 3,
+            Name = "Ciberpunk 2077",
+            Description = "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you.",
+            Synopsis = "Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City. Night City is packed to the brim with things to do, places to see, and people to meet. And it’s up to you where to go, when to go, and how to get there.",
+            Price = 59.99m,
+            Discount = 50,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Role-Playing (RPG), Open World, Graphic Adventure, Action",
+            StudioID = 1,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 4,
+            Name = "The Witcher 3: The Wild Hunt",
+            Description = "Built for endless adventure, the massive open world of The Witcher sets new standards in terms of size, depth, and complexity. - Traverse a fantastical open world: explore forgotten ruins, caves, and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across the open plains, mountains, and seas. - Deal with treasonous generals, devious witches, and corrupt royalty to provide dark and dangerous services. - Make choices that go beyond good & evil, and face their far-reaching consequences.",
+            Synopsis = "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world.",
+            Price = 62.97m,
+            Discount = 20,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Role-Playing (RPG), Open World, Graphic Adventure, Fantasy",
+            StudioID = 1,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 5,
+            Name = "Dragon Ball Z: Kakarot",
+            Description = "Experience the story of DRAGON BALL Z from epic events to light-hearted side quests, including never-before-seen story moments that answer some burning questions of Dragon Ball lore for the first time! Play through iconic DRAGON BALL Z battles on a scale unlike any other. Fight across vast battlefields with destructible environments and experience epic boss battles that will test the limits of your combat abilities. Increase your power level and rise to the challenge!",
+            Synopsis = "Relive the story of Goku in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes.",
+            Price = 59.99m,
+            Discount = 40,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Open World, Adventure, Anime, Fighting",
+            StudioID = 1,
+            StoreID = 1
         }
+        
     );
 
     // Relación de User con LibraryGameUser
