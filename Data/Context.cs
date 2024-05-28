@@ -88,25 +88,48 @@ public class Context : DbContext
         new Studio
         {
             StudioID = 1,
-            Name = "Studio1",
+            Name = "Bandai Namco Entertainment",
             Fundation = DateTime.Now.AddYears(-10),
-            Country = "Country1",
-            EmailContact = "studio1@example.com",
-            EmailLogin = "studio1login@example.com",
-            Password = "studio1password",
-            Website = "www.studio1.com"
+            Country = "Japan",
+            EmailContact = "bandaisupport@gmail.com",
+            EmailLogin = "bandainamco@gmail.com",
+            Password = "Dq61uGd16mtsRoJ.",
+            Website = "www.bandai.com"
         },
         new Studio
         {
             StudioID = 2,
-            Name = "Studio2",
+            Name = "Ubisoft",
             Fundation = DateTime.Now.AddYears(-5),
-            Country = "Country2",
-            EmailContact = "studio2@example.com",
-            EmailLogin = "studio2login@example.com",
-            Password = "studio2password",
-            Website = "www.studio2.com"
+            Country = "France",
+            EmailContact = "ubisoftsupport@gmail.com",
+            EmailLogin = "ubisoft@gmail.com",
+            Password = "4F1Gb7P72SHlwos",
+            Website = "www.ubisoft.com"
+        },
+        new Studio
+        {
+            StudioID = 3,
+            Name = "Sony Interactive Entertainment",
+            Fundation = DateTime.Now.AddYears(-5),
+            Country = "Tokyo",
+            EmailContact = "sonysupport@gmail.com",
+            EmailLogin = "sony@gmail.com",
+            Password = "7Z94eudXHZLVYYC",
+            Website = "www.sony.com"
+        },
+        new Studio
+        {
+            StudioID = 4,
+            Name = "Activision",
+            Fundation = DateTime.Now.AddYears(-5),
+            Country = "USA",
+            EmailContact = "activisionsupport@gmail.com",
+            EmailLogin = "activision@gmail.com",
+            Password = "2z1K7Fjdno23one",
+            Website = "www.activision.com"
         }
+        
     );
 
     // Relación de GameShop con Game
@@ -114,20 +137,11 @@ public class Context : DbContext
         new GameShop
         {
             StoreID = 1,
-            Event = "",
+            Event = "Summer Discounts",
             Stock = 100,
-            AnnualSales = 1000,
+            AnnualSales = 0,
             LastUpdated = DateTime.Now.AddDays(-30),
-            Origin = "Origin1"
-        },
-        new GameShop
-        {
-            StoreID = 2,
-            Event = "",
-            Stock = 150,
-            AnnualSales = 1200,
-            LastUpdated = DateTime.Now.AddDays(-20),
-            Origin = "Origin2"
+            Origin = "Europe"
         }
     );
 
