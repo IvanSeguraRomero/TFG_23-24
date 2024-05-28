@@ -3,21 +3,21 @@ namespace FlashGamingHub.Models;
 
 public class StudioUpdateDTO{
 
-    [StringLength(100, ErrorMessage = "El nombre debe ser mas largo")]
+    [StringLength(100, ErrorMessage = "El nombre debe ser mas corto")]
     public string? Name { get; set; }
 
     public DateTime? Fundation { get; set; }
 
-    [StringLength(50, ErrorMessage = "El nombre del país debe ser mas largo")]
+    [StringLength(50, ErrorMessage = "El nombre del país debe ser mas corto")]
     public string? Country { get; set; }
 
-    [StringLength(100, ErrorMessage = "Email demasiado largo")]
+    [StringLength(100, ErrorMessage = "Email demasiado corto")]
     public string? EmailContact { get; set; }
 
-    [StringLength(100, ErrorMessage = "Email demasiado largo")]
+    [StringLength(100, ErrorMessage = "Email demasiado corto")]
     public string? EmailLogin { get; set; }
 
-    [StringLength(20, ErrorMessage = "Contraseña demasiada larga")]
+    [StringLength(20, ErrorMessage = "Contraseña demasiada corta")]
     public string? Password { get; set; }
 
     [StringLength(100, ErrorMessage = "Website demasiado corta")]
