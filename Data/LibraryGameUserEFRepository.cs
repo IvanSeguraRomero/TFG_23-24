@@ -116,5 +116,26 @@ namespace FlashGamingHub.Data
             libraryGameUser.Games.Add(game);
             SaveChanges();
         }
-    }
+
+    public void RemoveGameFromLibrary(int libraryId, int gameId)
+    {
+            var libraryGameUser = _context.LibraryGameUsers
+                .Include(l => l.Games)
+                .FirstOrDefault(l => l.LibraryGameUserId == libraryId);
+
+            if (libraryGameUser == null)
+            {
+                throw new KeyNotFoundException("LibraryGameUser not found.");
+            }
+
+            var game = libraryGameUser.Games.FirstOrDefault(g => g.GameID == gameId);
+            if (game == null)
+            {
+                throw new KeyNotFoundException("Game not found in library.");
+            }
+
+            libraryGameUser.Games.Remove(game);
+            SaveChanges();
+        }
+}
 }

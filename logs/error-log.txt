@@ -105,3 +105,13 @@
 28/05/2024 18:13:20 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
 28/05/2024 18:13:32 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
 28/05/2024 18:13:58 - Error al añadir el juego a la biblioteca del usuario con ID 2: Game already in library.
+28/05/2024 18:26:56 - Error al añadir el juego a la biblioteca del usuario con ID 1: Game already in library.
+28/05/2024 18:28:07 - Error al añadir el juego a la biblioteca del usuario con ID 1: Game already in library.
+28/05/2024 18:31:29 - Error al añadir el juego a la biblioteca del usuario con ID 1: Game already in library.
+28/05/2024 18:35:10 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:35:10 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:35:16 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:37:19 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:37:39 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:37:50 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 18:38:31 - Error al añadir el juego a la biblioteca: Game already in library.
