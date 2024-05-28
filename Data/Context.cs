@@ -211,6 +211,45 @@ public class Context : DbContext
             Categories = "Action, Open World, Adventure, Anime, Fighting",
             StudioID = 1,
             StoreID = 1
+        },
+        new Game
+        {
+            GameID = 6,
+            Name = "Assasins Creed III Remastered",
+            Description = "FIGHT FOR FREEDOM 1775: The American Colonies are about to revolt. As Connor, a Native American Assassin, secure liberty for your people and your nation. From bustling city streets to the chaotic battlefields, assassinate your foes in a variety of deadly ways with a vast array of weaponry. A NEW VISUAL AND GAMEPLAY EXPERIENCE Play the iconic Assassin's Creed III with enhanced graphics, now featuring 4K resolution, new character models, polished environment rendering and more. The gameplay mechanics have been revamped as well, improving your experience and your immersion.",
+            Synopsis = "Relive the American Revolution or experience it for the first time in Assassin's Creed III Remastered, with enhanced graphics and improved gameplay mechanics.",
+            Price = 39.99m,
+            Discount = 7,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Adventure, Violent, Stealth",
+            StudioID = 2,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 7,
+            Name = "For Honor",
+            Description = "When the Cataclysm wreaked havoc on the world, all was lost. The once great order of Knights, whose tales of heroism and gallantry abounded, was razed to the ground. In the wastelands, what survivors remained were hopeless. All scavenged for food and water. And the strong preyed on the weak. But in the gloom of ash, there came a beacon of light: the Unsung Knight. A lone Warden, who made it her mission to help those in need. To use Valor’s Edge, the sword bequeathed unto her, to fight back against pillagers and invaders – and to bring hope to her people. For it was said this legendary sword would one day, in the bleakest of times, unite the Knights once more…",
+            Synopsis = "After a great cataclysm, 4 of the fiercest warrior factions in history clash in an epic battle for survival. Join the war as a bold Knight, brutal Viking, deadly Samurai or fearsome Wu Lin and fight for your faction’s honor.",
+            Price = 29.99m,
+            Discount = 5,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Violent, Gore, Multiplayer",
+            StudioID = 2,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 8,
+            Name = "Rainbow Six Siege",
+            Description = "Siege is an entry in the Rainbow Six series and the successor to Tom Clancy's Rainbow 6: Patriots, a tactical shooter that had a larger focus on narrative. After Patriots was eventually cancelled due to its technical shortcomings, Ubisoft decided to reboot the franchise. The team evaluated the core of the Rainbow Six franchise and believed that letting players impersonate the top counter-terrorist operatives around the world suited the game most. To create authentic siege situations, the team consulted actual counter-terrorism units and looked at real-life examples of sieges such as the 1980 Iranian Embassy siege.",
+            Synopsis = "Tom Clancy's Rainbow Six® Siege is an elite, realistic, tactical team-based shooter where superior planning and execution triumph. It features 5v5 attack vs.",
+            Price = 19.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Tactical, Shooter, Violent, Multiplayer",
+            StudioID = 2,
+            StoreID = 1
         }
         
     );
