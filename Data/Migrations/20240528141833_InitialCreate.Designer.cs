@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlashGamingHub.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240527142203_InitialCreate")]
+    [Migration("20240528141833_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace FlashGamingHub.Data.Migrations
                             GameID = 1,
                             LikesCount = 100,
                             Message = "Community1",
-                            PublicationDate = new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5243),
+                            PublicationDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1171),
                             UserID = 1
                         },
                         new
@@ -77,7 +77,7 @@ namespace FlashGamingHub.Data.Migrations
                             GameID = 1,
                             LikesCount = 150,
                             Message = "Community2",
-                            PublicationDate = new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5247),
+                            PublicationDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1175),
                             UserID = 2
                         });
                 });
@@ -133,28 +133,106 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             GameID = 1,
-                            Categories = "Races, Multiplayer, One Person",
-                            Description = "Description1",
+                            Categories = "Fighting, Action, Violent",
+                            Description = "32 fighters with next-gen visuals will collide in Tekken 8! Both new and returning characters are stunningly portrayed in high-detailed character models built from the ground up - featuring every drop of sweat and ripped muscles for an immersive experience. The roster includes iconic fighters like Paul Phoenix, King, Marshall Law, and Nina Williams, and sees the return of Raven after last being part of the story of Tekken 6, 15 years ago! Jun Kazama returns to the story for the first time in 25 years since her disappearance in Tekken 2, and Tekken 8 also introduces a new Peruvian character Azucena! Players will be able to challenge their opponents on 16 battle stages with intense destruction and interactive stage elements.",
                             Discount = 0,
-                            Name = "Game1",
+                            Name = "Tekken 8",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5188),
+                            ReleaseDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1097),
                             StoreID = 1,
                             StudioID = 1,
-                            Synopsis = "Short description about game's history"
+                            Synopsis = "TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world."
                         },
                         new
                         {
                             GameID = 2,
-                            Categories = "Races, Multiplayer, Shooting",
-                            Description = "Description2",
+                            Categories = "Role-Playing (RPG), Open World, Graphic Adventure",
+                            Description = "Journey through the Lands Between, a new fantasy world created by Hidetaka Miyazaki, creator of the influential DARK SOULS video game series, and George R. R. Martin, author of The New York Times best-selling fantasy series, A Song of Ice and Fire.Unravel the mysteries of the Elden Ring’s power. Encounter adversaries with profound backgrounds, characters with their own unique motivations for helping or hindering your progress, and fearsome creatures.Create your character in FromSoftware's refined action-RPG and define your playstyle by experimenting with a wide variety of weapons, magical abilities, and skills found throughout the world. Charge into battle, pick off enemies one-by-one using stealth, or even call upon allies for aid. Many options are at your disposal as you decide how to approach exploration and combat.",
                             Discount = 0,
-                            Name = "Game2",
-                            Price = 49.99m,
-                            ReleaseDate = new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5192),
-                            StoreID = 2,
+                            Name = "Elden Ring",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1101),
+                            StoreID = 1,
+                            StudioID = 1,
+                            Synopsis = "Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will."
+                        },
+                        new
+                        {
+                            GameID = 3,
+                            Categories = "Role-Playing (RPG), Open World, Graphic Adventure, Action",
+                            Description = "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you.",
+                            Discount = 50,
+                            Name = "Ciberpunk 2077",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1104),
+                            StoreID = 1,
+                            StudioID = 1,
+                            Synopsis = "Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City. Night City is packed to the brim with things to do, places to see, and people to meet. And it’s up to you where to go, when to go, and how to get there."
+                        },
+                        new
+                        {
+                            GameID = 4,
+                            Categories = "Role-Playing (RPG), Open World, Graphic Adventure, Fantasy",
+                            Description = "Built for endless adventure, the massive open world of The Witcher sets new standards in terms of size, depth, and complexity. - Traverse a fantastical open world: explore forgotten ruins, caves, and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across the open plains, mountains, and seas. - Deal with treasonous generals, devious witches, and corrupt royalty to provide dark and dangerous services. - Make choices that go beyond good & evil, and face their far-reaching consequences.",
+                            Discount = 20,
+                            Name = "The Witcher 3: The Wild Hunt",
+                            Price = 62.97m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1107),
+                            StoreID = 1,
+                            StudioID = 1,
+                            Synopsis = "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world."
+                        },
+                        new
+                        {
+                            GameID = 5,
+                            Categories = "Action, Open World, Adventure, Anime, Fighting",
+                            Description = "Experience the story of DRAGON BALL Z from epic events to light-hearted side quests, including never-before-seen story moments that answer some burning questions of Dragon Ball lore for the first time! Play through iconic DRAGON BALL Z battles on a scale unlike any other. Fight across vast battlefields with destructible environments and experience epic boss battles that will test the limits of your combat abilities. Increase your power level and rise to the challenge!",
+                            Discount = 40,
+                            Name = "Dragon Ball Z: Kakarot",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1110),
+                            StoreID = 1,
+                            StudioID = 1,
+                            Synopsis = "Relive the story of Goku in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes."
+                        },
+                        new
+                        {
+                            GameID = 6,
+                            Categories = "Action, Adventure, Violent, Stealth",
+                            Description = "FIGHT FOR FREEDOM 1775: The American Colonies are about to revolt. As Connor, a Native American Assassin, secure liberty for your people and your nation. From bustling city streets to the chaotic battlefields, assassinate your foes in a variety of deadly ways with a vast array of weaponry. A NEW VISUAL AND GAMEPLAY EXPERIENCE Play the iconic Assassin's Creed III with enhanced graphics, now featuring 4K resolution, new character models, polished environment rendering and more. The gameplay mechanics have been revamped as well, improving your experience and your immersion.",
+                            Discount = 7,
+                            Name = "Assasins Creed III Remastered",
+                            Price = 39.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1113),
+                            StoreID = 1,
                             StudioID = 2,
-                            Synopsis = "Short description about game's history"
+                            Synopsis = "Relive the American Revolution or experience it for the first time in Assassin's Creed III Remastered, with enhanced graphics and improved gameplay mechanics."
+                        },
+                        new
+                        {
+                            GameID = 7,
+                            Categories = "Action, Violent, Gore, Multiplayer",
+                            Description = "When the Cataclysm wreaked havoc on the world, all was lost. The once great order of Knights, whose tales of heroism and gallantry abounded, was razed to the ground. In the wastelands, what survivors remained were hopeless. All scavenged for food and water. And the strong preyed on the weak. But in the gloom of ash, there came a beacon of light: the Unsung Knight. A lone Warden, who made it her mission to help those in need. To use Valor’s Edge, the sword bequeathed unto her, to fight back against pillagers and invaders – and to bring hope to her people. For it was said this legendary sword would one day, in the bleakest of times, unite the Knights once more…",
+                            Discount = 5,
+                            Name = "For Honor",
+                            Price = 29.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1116),
+                            StoreID = 1,
+                            StudioID = 2,
+                            Synopsis = "After a great cataclysm, 4 of the fiercest warrior factions in history clash in an epic battle for survival. Join the war as a bold Knight, brutal Viking, deadly Samurai or fearsome Wu Lin and fight for your faction’s honor."
+                        },
+                        new
+                        {
+                            GameID = 8,
+                            Categories = "Tactical, Shooter, Violent, Multiplayer",
+                            Description = "Siege is an entry in the Rainbow Six series and the successor to Tom Clancy's Rainbow 6: Patriots, a tactical shooter that had a larger focus on narrative. After Patriots was eventually cancelled due to its technical shortcomings, Ubisoft decided to reboot the franchise. The team evaluated the core of the Rainbow Six franchise and believed that letting players impersonate the top counter-terrorist operatives around the world suited the game most. To create authentic siege situations, the team consulted actual counter-terrorism units and looked at real-life examples of sieges such as the 1980 Iranian Embassy siege.",
+                            Discount = 0,
+                            Name = "Rainbow Six Siege",
+                            Price = 19.99m,
+                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1119),
+                            StoreID = 1,
+                            StudioID = 2,
+                            Synopsis = "Tom Clancy's Rainbow Six® Siege is an elite, realistic, tactical team-based shooter where superior planning and execution triumph. It features 5v5 attack vs."
                         });
                 });
 
@@ -191,20 +269,11 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             StoreID = 1,
-                            AnnualSales = 1000,
-                            Event = "",
-                            LastUpdated = new DateTime(2024, 4, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5167),
-                            Origin = "Origin1",
+                            AnnualSales = 0,
+                            Event = "Summer Discounts",
+                            LastUpdated = new DateTime(2024, 4, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1080),
+                            Origin = "Europe",
                             Stock = 100
-                        },
-                        new
-                        {
-                            StoreID = 2,
-                            AnnualSales = 1200,
-                            Event = "",
-                            LastUpdated = new DateTime(2024, 5, 7, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5171),
-                            Origin = "Origin2",
-                            Stock = 150
                         });
                 });
 
@@ -244,18 +313,18 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             LibraryGameUserId = 1,
-                            AddedDate = new DateTime(2023, 11, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5221),
+                            AddedDate = new DateTime(2023, 11, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1150),
                             HoursPlayed = 50,
-                            LastPlayed = new DateTime(2024, 5, 20, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5225),
+                            LastPlayed = new DateTime(2024, 5, 21, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1153),
                             Rating = 4,
                             UserID = 1
                         },
                         new
                         {
                             LibraryGameUserId = 2,
-                            AddedDate = new DateTime(2024, 2, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5227),
+                            AddedDate = new DateTime(2024, 2, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1156),
                             HoursPlayed = 100,
-                            LastPlayed = new DateTime(2024, 5, 22, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5230),
+                            LastPlayed = new DateTime(2024, 5, 23, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1158),
                             Rating = 5,
                             UserID = 2
                         });
@@ -289,14 +358,14 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             ShoppingCartID = 1,
-                            FechaCreacion = new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5259),
+                            FechaCreacion = new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1187),
                             Total = 0m,
                             UserID = 1
                         },
                         new
                         {
                             ShoppingCartID = 2,
-                            FechaCreacion = new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5261),
+                            FechaCreacion = new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1190),
                             Total = 0m,
                             UserID = 2
                         });
@@ -343,24 +412,46 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             StudioID = 1,
-                            Country = "Country1",
-                            EmailContact = "studio1@example.com",
-                            EmailLogin = "studio1login@example.com",
-                            Fundation = new DateTime(2014, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5033),
-                            Name = "Studio1",
-                            Password = "studio1password",
-                            Website = "www.studio1.com"
+                            Country = "Japan",
+                            EmailContact = "bandaisupport@gmail.com",
+                            EmailLogin = "bandainamco@gmail.com",
+                            Fundation = new DateTime(2014, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(920),
+                            Name = "Bandai Namco Entertainment",
+                            Password = "Dq61uGd16mtsRoJ.",
+                            Website = "www.bandai.com"
                         },
                         new
                         {
                             StudioID = 2,
-                            Country = "Country2",
-                            EmailContact = "studio2@example.com",
-                            EmailLogin = "studio2login@example.com",
-                            Fundation = new DateTime(2019, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5069),
-                            Name = "Studio2",
-                            Password = "studio2password",
-                            Website = "www.studio2.com"
+                            Country = "France",
+                            EmailContact = "ubisoftsupport@gmail.com",
+                            EmailLogin = "ubisoft@gmail.com",
+                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(960),
+                            Name = "Ubisoft",
+                            Password = "4F1Gb7P72SHlwos",
+                            Website = "www.ubisoft.com"
+                        },
+                        new
+                        {
+                            StudioID = 3,
+                            Country = "Tokyo",
+                            EmailContact = "sonysupport@gmail.com",
+                            EmailLogin = "sony@gmail.com",
+                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(963),
+                            Name = "Sony Interactive Entertainment",
+                            Password = "7Z94eudXHZLVYYC",
+                            Website = "www.sony.com"
+                        },
+                        new
+                        {
+                            StudioID = 4,
+                            Country = "USA",
+                            EmailContact = "activisionsupport@gmail.com",
+                            EmailLogin = "activision@gmail.com",
+                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(966),
+                            Name = "Activision",
+                            Password = "2z1K7Fjdno23one",
+                            Website = "www.activision.com"
                         });
                 });
 
@@ -410,25 +501,25 @@ namespace FlashGamingHub.Data.Migrations
                         {
                             UserID = 1,
                             Age = 30,
-                            Email = "user1@example.com",
+                            Email = "admin@gmail.com",
                             LibraryGameUserID = 1,
-                            Name = "User1",
-                            Password = "password1",
-                            RegisterDate = new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5206),
+                            Name = "userAdmin",
+                            Password = "L4Mf13z1E7YsU7N",
+                            RegisterDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1135),
                             Role = "admin",
-                            Surname = "Surname1"
+                            Surname = "surnameAdmin"
                         },
                         new
                         {
                             UserID = 2,
                             Age = 25,
-                            Email = "user2@example.com",
+                            Email = "user@gmail.com",
                             LibraryGameUserID = 2,
-                            Name = "User2",
-                            Password = "password2",
-                            RegisterDate = new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5210),
-                            Role = "admin",
-                            Surname = "Surname2"
+                            Name = "userName",
+                            Password = "R0f86GsPcN2tJQ3",
+                            RegisterDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1138),
+                            Role = "user",
+                            Surname = "userSurname"
                         });
                 });
 

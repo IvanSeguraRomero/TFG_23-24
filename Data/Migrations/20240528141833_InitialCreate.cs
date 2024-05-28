@@ -220,19 +220,17 @@ namespace FlashGamingHub.Data.Migrations
             migrationBuilder.InsertData(
                 table: "GameShops",
                 columns: new[] { "StoreID", "AnnualSales", "Event", "LastUpdated", "Origin", "Stock" },
-                values: new object[,]
-                {
-                    { 1, 1000, "", new DateTime(2024, 4, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5167), "Origin1", 100 },
-                    { 2, 1200, "", new DateTime(2024, 5, 7, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5171), "Origin2", 150 }
-                });
+                values: new object[] { 1, 0, "Summer Discounts", new DateTime(2024, 4, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1080), "Europe", 100 });
 
             migrationBuilder.InsertData(
                 table: "Studios",
                 columns: new[] { "StudioID", "Country", "EmailContact", "EmailLogin", "Fundation", "Name", "Password", "Website" },
                 values: new object[,]
                 {
-                    { 1, "Country1", "studio1@example.com", "studio1login@example.com", new DateTime(2014, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5033), "Studio1", "studio1password", "www.studio1.com" },
-                    { 2, "Country2", "studio2@example.com", "studio2login@example.com", new DateTime(2019, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5069), "Studio2", "studio2password", "www.studio2.com" }
+                    { 1, "Japan", "bandaisupport@gmail.com", "bandainamco@gmail.com", new DateTime(2014, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(920), "Bandai Namco Entertainment", "Dq61uGd16mtsRoJ.", "www.bandai.com" },
+                    { 2, "France", "ubisoftsupport@gmail.com", "ubisoft@gmail.com", new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(960), "Ubisoft", "4F1Gb7P72SHlwos", "www.ubisoft.com" },
+                    { 3, "Tokyo", "sonysupport@gmail.com", "sony@gmail.com", new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(963), "Sony Interactive Entertainment", "7Z94eudXHZLVYYC", "www.sony.com" },
+                    { 4, "USA", "activisionsupport@gmail.com", "activision@gmail.com", new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(966), "Activision", "2z1K7Fjdno23one", "www.activision.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -240,8 +238,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "UserID", "Age", "Email", "LibraryGameUserID", "Name", "Password", "RegisterDate", "Role", "Surname" },
                 values: new object[,]
                 {
-                    { 1, 30, "user1@example.com", 1, "User1", "password1", new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5206), "admin", "Surname1" },
-                    { 2, 25, "user2@example.com", 2, "User2", "password2", new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5210), "admin", "Surname2" }
+                    { 1, 30, "admin@gmail.com", 1, "userAdmin", "L4Mf13z1E7YsU7N", new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1135), "admin", "surnameAdmin" },
+                    { 2, 25, "user@gmail.com", 2, "userName", "R0f86GsPcN2tJQ3", new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1138), "user", "userSurname" }
                 });
 
             migrationBuilder.InsertData(
@@ -249,8 +247,14 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "GameID", "Categories", "Description", "Discount", "Name", "Price", "ReleaseDate", "StoreID", "StudioID", "Synopsis" },
                 values: new object[,]
                 {
-                    { 1, "Races, Multiplayer, One Person", "Description1", 0, "Game1", 59.99m, new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5188), 1, 1, "Short description about game's history" },
-                    { 2, "Races, Multiplayer, Shooting", "Description2", 0, "Game2", 49.99m, new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5192), 2, 2, "Short description about game's history" }
+                    { 1, "Fighting, Action, Violent", "32 fighters with next-gen visuals will collide in Tekken 8! Both new and returning characters are stunningly portrayed in high-detailed character models built from the ground up - featuring every drop of sweat and ripped muscles for an immersive experience. The roster includes iconic fighters like Paul Phoenix, King, Marshall Law, and Nina Williams, and sees the return of Raven after last being part of the story of Tekken 6, 15 years ago! Jun Kazama returns to the story for the first time in 25 years since her disappearance in Tekken 2, and Tekken 8 also introduces a new Peruvian character Azucena! Players will be able to challenge their opponents on 16 battle stages with intense destruction and interactive stage elements.", 0, "Tekken 8", 59.99m, new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1097), 1, 1, "TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world." },
+                    { 2, "Role-Playing (RPG), Open World, Graphic Adventure", "Journey through the Lands Between, a new fantasy world created by Hidetaka Miyazaki, creator of the influential DARK SOULS video game series, and George R. R. Martin, author of The New York Times best-selling fantasy series, A Song of Ice and Fire.Unravel the mysteries of the Elden Ring’s power. Encounter adversaries with profound backgrounds, characters with their own unique motivations for helping or hindering your progress, and fearsome creatures.Create your character in FromSoftware's refined action-RPG and define your playstyle by experimenting with a wide variety of weapons, magical abilities, and skills found throughout the world. Charge into battle, pick off enemies one-by-one using stealth, or even call upon allies for aid. Many options are at your disposal as you decide how to approach exploration and combat.", 0, "Elden Ring", 59.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1101), 1, 1, "Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will." },
+                    { 3, "Role-Playing (RPG), Open World, Graphic Adventure, Action", "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you.", 50, "Ciberpunk 2077", 59.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1104), 1, 1, "Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City. Night City is packed to the brim with things to do, places to see, and people to meet. And it’s up to you where to go, when to go, and how to get there." },
+                    { 4, "Role-Playing (RPG), Open World, Graphic Adventure, Fantasy", "Built for endless adventure, the massive open world of The Witcher sets new standards in terms of size, depth, and complexity. - Traverse a fantastical open world: explore forgotten ruins, caves, and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across the open plains, mountains, and seas. - Deal with treasonous generals, devious witches, and corrupt royalty to provide dark and dangerous services. - Make choices that go beyond good & evil, and face their far-reaching consequences.", 20, "The Witcher 3: The Wild Hunt", 62.97m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1107), 1, 1, "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world." },
+                    { 5, "Action, Open World, Adventure, Anime, Fighting", "Experience the story of DRAGON BALL Z from epic events to light-hearted side quests, including never-before-seen story moments that answer some burning questions of Dragon Ball lore for the first time! Play through iconic DRAGON BALL Z battles on a scale unlike any other. Fight across vast battlefields with destructible environments and experience epic boss battles that will test the limits of your combat abilities. Increase your power level and rise to the challenge!", 40, "Dragon Ball Z: Kakarot", 59.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1110), 1, 1, "Relive the story of Goku in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes." },
+                    { 6, "Action, Adventure, Violent, Stealth", "FIGHT FOR FREEDOM 1775: The American Colonies are about to revolt. As Connor, a Native American Assassin, secure liberty for your people and your nation. From bustling city streets to the chaotic battlefields, assassinate your foes in a variety of deadly ways with a vast array of weaponry. A NEW VISUAL AND GAMEPLAY EXPERIENCE Play the iconic Assassin's Creed III with enhanced graphics, now featuring 4K resolution, new character models, polished environment rendering and more. The gameplay mechanics have been revamped as well, improving your experience and your immersion.", 7, "Assasins Creed III Remastered", 39.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1113), 1, 2, "Relive the American Revolution or experience it for the first time in Assassin's Creed III Remastered, with enhanced graphics and improved gameplay mechanics." },
+                    { 7, "Action, Violent, Gore, Multiplayer", "When the Cataclysm wreaked havoc on the world, all was lost. The once great order of Knights, whose tales of heroism and gallantry abounded, was razed to the ground. In the wastelands, what survivors remained were hopeless. All scavenged for food and water. And the strong preyed on the weak. But in the gloom of ash, there came a beacon of light: the Unsung Knight. A lone Warden, who made it her mission to help those in need. To use Valor’s Edge, the sword bequeathed unto her, to fight back against pillagers and invaders – and to bring hope to her people. For it was said this legendary sword would one day, in the bleakest of times, unite the Knights once more…", 5, "For Honor", 29.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1116), 1, 2, "After a great cataclysm, 4 of the fiercest warrior factions in history clash in an epic battle for survival. Join the war as a bold Knight, brutal Viking, deadly Samurai or fearsome Wu Lin and fight for your faction’s honor." },
+                    { 8, "Tactical, Shooter, Violent, Multiplayer", "Siege is an entry in the Rainbow Six series and the successor to Tom Clancy's Rainbow 6: Patriots, a tactical shooter that had a larger focus on narrative. After Patriots was eventually cancelled due to its technical shortcomings, Ubisoft decided to reboot the franchise. The team evaluated the core of the Rainbow Six franchise and believed that letting players impersonate the top counter-terrorist operatives around the world suited the game most. To create authentic siege situations, the team consulted actual counter-terrorism units and looked at real-life examples of sieges such as the 1980 Iranian Embassy siege.", 0, "Rainbow Six Siege", 19.99m, new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1119), 1, 2, "Tom Clancy's Rainbow Six® Siege is an elite, realistic, tactical team-based shooter where superior planning and execution triumph. It features 5v5 attack vs." }
                 });
 
             migrationBuilder.InsertData(
@@ -258,8 +262,8 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "LibraryGameUserId", "AddedDate", "HoursPlayed", "LastPlayed", "Rating", "UserID" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 11, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5221), 50, new DateTime(2024, 5, 20, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5225), 4, 1 },
-                    { 2, new DateTime(2024, 2, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5227), 100, new DateTime(2024, 5, 22, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5230), 5, 2 }
+                    { 1, new DateTime(2023, 11, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1150), 50, new DateTime(2024, 5, 21, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1153), 4, 1 },
+                    { 2, new DateTime(2024, 2, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1156), 100, new DateTime(2024, 5, 23, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1158), 5, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -267,19 +271,19 @@ namespace FlashGamingHub.Data.Migrations
                 columns: new[] { "ShoppingCartID", "FechaCreacion", "Total", "UserID" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5259), 0m, 1 },
-                    { 2, new DateTime(2024, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5261), 0m, 2 }
+                    { 1, new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1187), 0m, 1 },
+                    { 2, new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1190), 0m, 2 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Communities",
                 columns: new[] { "MessageID", "ActiveMember", "GameID", "LikesCount", "Message", "PublicationDate", "UserID" },
-                values: new object[] { 1, true, 1, 100, "Community1", new DateTime(2023, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5243), 1 });
+                values: new object[] { 1, true, 1, 100, "Community1", new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1171), 1 });
 
             migrationBuilder.InsertData(
                 table: "Communities",
                 columns: new[] { "MessageID", "ActiveMember", "GameID", "LikesCount", "Message", "PublicationDate", "UserID" },
-                values: new object[] { 2, true, 1, 150, "Community2", new DateTime(2022, 5, 27, 16, 22, 3, 195, DateTimeKind.Local).AddTicks(5247), 2 });
+                values: new object[] { 2, true, 1, 150, "Community2", new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1175), 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Communities_GameID",

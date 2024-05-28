@@ -95,3 +95,4 @@
 26/05/2024 15:11:11 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 5
 26/05/2024 15:15:42 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 8
 26/05/2024 15:17:48 - Error al intentar obtener los mensajes: No se encontraron mensajes en el usuario con ID 10
+28/05/2024 17:23:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 2
