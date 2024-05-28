@@ -11,6 +11,11 @@ public class ShoppingCartService : IShoppingCartService{
         _repository = repository;
     }
 
+    public void AddGameToShoppingCart(int shoppingCartId, int gameId)
+    {
+        _repository.AddGameToShoppingCart(shoppingCartId,gameId);
+    }
+
     public void AddShoppingCart(ShoppingCart shoppingCart)
     {
         _repository.AddShoppingCart(shoppingCart);
@@ -24,6 +29,11 @@ public class ShoppingCartService : IShoppingCartService{
     public ShoppingCart GetShoppingCart(int id)
     {
         return _repository.GetShoppingCart(id);
+    }
+
+    public void RemoveGameFromShoppingCart(int shoppingCartId, int gameId)
+    {
+        _repository.RemoveGameFromShoppingCart(shoppingCartId,gameId);
     }
 
     public void UpdateShoppingCart(ShoppingCart shoppingCart)

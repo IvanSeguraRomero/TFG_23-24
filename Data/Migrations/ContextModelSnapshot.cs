@@ -65,7 +65,7 @@ namespace FlashGamingHub.Data.Migrations
                             GameID = 1,
                             LikesCount = 100,
                             Message = "Community1",
-                            PublicationDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1171),
+                            PublicationDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3640),
                             UserID = 1
                         },
                         new
@@ -75,7 +75,7 @@ namespace FlashGamingHub.Data.Migrations
                             GameID = 1,
                             LikesCount = 150,
                             Message = "Community2",
-                            PublicationDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1175),
+                            PublicationDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3643),
                             UserID = 2
                         });
                 });
@@ -136,7 +136,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Tekken 8",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1097),
+                            ReleaseDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3566),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world."
@@ -149,7 +149,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Elden Ring",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1101),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3570),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will."
@@ -162,7 +162,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 50,
                             Name = "Ciberpunk 2077",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1104),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3573),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City. Night City is packed to the brim with things to do, places to see, and people to meet. And it’s up to you where to go, when to go, and how to get there."
@@ -175,7 +175,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 20,
                             Name = "The Witcher 3: The Wild Hunt",
                             Price = 62.97m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1107),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3576),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world."
@@ -188,7 +188,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 40,
                             Name = "Dragon Ball Z: Kakarot",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1110),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3579),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Relive the story of Goku in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes."
@@ -201,7 +201,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 7,
                             Name = "Assasins Creed III Remastered",
                             Price = 39.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1113),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3582),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "Relive the American Revolution or experience it for the first time in Assassin's Creed III Remastered, with enhanced graphics and improved gameplay mechanics."
@@ -214,7 +214,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 5,
                             Name = "For Honor",
                             Price = 29.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1116),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3585),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "After a great cataclysm, 4 of the fiercest warrior factions in history clash in an epic battle for survival. Join the war as a bold Knight, brutal Viking, deadly Samurai or fearsome Wu Lin and fight for your faction’s honor."
@@ -227,7 +227,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Rainbow Six Siege",
                             Price = 19.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1119),
+                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3588),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "Tom Clancy's Rainbow Six® Siege is an elite, realistic, tactical team-based shooter where superior planning and execution triumph. It features 5v5 attack vs."
@@ -269,7 +269,7 @@ namespace FlashGamingHub.Data.Migrations
                             StoreID = 1,
                             AnnualSales = 0,
                             Event = "Summer Discounts",
-                            LastUpdated = new DateTime(2024, 4, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1080),
+                            LastUpdated = new DateTime(2024, 4, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3503),
                             Origin = "Europe",
                             Stock = 100
                         });
@@ -311,18 +311,18 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             LibraryGameUserId = 1,
-                            AddedDate = new DateTime(2023, 11, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1150),
+                            AddedDate = new DateTime(2023, 11, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3620),
                             HoursPlayed = 50,
-                            LastPlayed = new DateTime(2024, 5, 21, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1153),
+                            LastPlayed = new DateTime(2024, 5, 21, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3623),
                             Rating = 4,
                             UserID = 1
                         },
                         new
                         {
                             LibraryGameUserId = 2,
-                            AddedDate = new DateTime(2024, 2, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1156),
+                            AddedDate = new DateTime(2024, 2, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3625),
                             HoursPlayed = 100,
-                            LastPlayed = new DateTime(2024, 5, 23, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1158),
+                            LastPlayed = new DateTime(2024, 5, 23, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3628),
                             Rating = 5,
                             UserID = 2
                         });
@@ -356,14 +356,14 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             ShoppingCartID = 1,
-                            FechaCreacion = new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1187),
+                            FechaCreacion = new DateTime(2024, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3655),
                             Total = 0m,
                             UserID = 1
                         },
                         new
                         {
                             ShoppingCartID = 2,
-                            FechaCreacion = new DateTime(2024, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1190),
+                            FechaCreacion = new DateTime(2024, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3657),
                             Total = 0m,
                             UserID = 2
                         });
@@ -413,7 +413,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Japan",
                             EmailContact = "bandaisupport@gmail.com",
                             EmailLogin = "bandainamco@gmail.com",
-                            Fundation = new DateTime(2014, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(920),
+                            Fundation = new DateTime(2014, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3374),
                             Name = "Bandai Namco Entertainment",
                             Password = "Dq61uGd16mtsRoJ.",
                             Website = "www.bandai.com"
@@ -424,7 +424,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "France",
                             EmailContact = "ubisoftsupport@gmail.com",
                             EmailLogin = "ubisoft@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(960),
+                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3405),
                             Name = "Ubisoft",
                             Password = "4F1Gb7P72SHlwos",
                             Website = "www.ubisoft.com"
@@ -435,7 +435,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Tokyo",
                             EmailContact = "sonysupport@gmail.com",
                             EmailLogin = "sony@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(963),
+                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3408),
                             Name = "Sony Interactive Entertainment",
                             Password = "7Z94eudXHZLVYYC",
                             Website = "www.sony.com"
@@ -446,7 +446,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "USA",
                             EmailContact = "activisionsupport@gmail.com",
                             EmailLogin = "activision@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(966),
+                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3411),
                             Name = "Activision",
                             Password = "2z1K7Fjdno23one",
                             Website = "www.activision.com"
@@ -503,7 +503,7 @@ namespace FlashGamingHub.Data.Migrations
                             LibraryGameUserID = 1,
                             Name = "userAdmin",
                             Password = "L4Mf13z1E7YsU7N",
-                            RegisterDate = new DateTime(2022, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1135),
+                            RegisterDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3604),
                             Role = "admin",
                             Surname = "surnameAdmin"
                         },
@@ -515,7 +515,7 @@ namespace FlashGamingHub.Data.Migrations
                             LibraryGameUserID = 2,
                             Name = "userName",
                             Password = "R0f86GsPcN2tJQ3",
-                            RegisterDate = new DateTime(2023, 5, 28, 16, 18, 33, 501, DateTimeKind.Local).AddTicks(1138),
+                            RegisterDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3608),
                             Role = "user",
                             Surname = "userSurname"
                         });

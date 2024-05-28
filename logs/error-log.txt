@@ -115,3 +115,16 @@
 28/05/2024 18:37:39 - Error al añadir el juego a la biblioteca: Game already in library.
 28/05/2024 18:37:50 - Error al añadir el juego a la biblioteca: Game already in library.
 28/05/2024 18:38:31 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 19:07:42 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 19:08:45 - Intento de eliminar un juego que no existe en la biblioteca: Game not found in library.
+28/05/2024 19:13:05 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 19:13:21 - Error al añadir el juego a la biblioteca: Game already in library.
+28/05/2024 19:48:41 - Error al añadir el juego al carrito: Game already in ShoppingCart.
+28/05/2024 19:49:55 - Error al añadir el juego al carrito: An error occurred while saving the entity changes. See the inner exception for details.
+28/05/2024 19:49:55 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 19:49:59 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 19:52:14 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+28/05/2024 20:00:48 - Error al añadir el juego al carrito: Game already in ShoppingCart.
+28/05/2024 20:01:04 - Error al añadir el juego al carrito: Game already in ShoppingCart.
+28/05/2024 21:32:36 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3
+28/05/2024 21:32:43 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3

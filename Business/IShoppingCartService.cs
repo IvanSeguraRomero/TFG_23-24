@@ -9,6 +9,9 @@ namespace FlashGamingHub.Business
 
         void UpdateShoppingCart(ShoppingCart shoppingCart);
         void DeleteShoppingCart(int id);
-        // List<GameDTO> GetStudioGames(int id);
+
+        void AddGameToShoppingCart(int shoppingCartId, int gameId);
+
+        void RemoveGameFromShoppingCart(int shoppingCartId, int gameId);
     }
 }

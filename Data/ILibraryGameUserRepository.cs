@@ -10,8 +10,7 @@ namespace FlashGamingHub.Data
         void DeleteLibraryGameUser(int id);
         List<LibraryGameUserDTO> GetAll();
         List<GameDTO> GetLibraryGameUserGames(int id);
-        void AddGameToLibrary(int libraryId, int gameId);
-        void RemoveGameFromLibrary(int libraryId, int gameId);
+        void AddGameToLibraryGameUser(int libraryGameUserID, int gameId);
     }
     
 }

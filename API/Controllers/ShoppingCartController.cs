@@ -3,6 +3,7 @@ using FlashGamingHub.Business;
 using Microsoft.AspNetCore.Mvc;
 using FlashGamingHub.common;
 using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace FlashGamingHub.Controllers;
 
@@ -172,4 +173,96 @@ public class ShoppingCartController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
+
+    [HttpPost("{id}/games/{gameId}")]
+    public IActionResult AddGameShoppingCart(int id, int gameId)
+    {
+        if (!_authService.HasAccessToResource(id, HttpContext.User))
+        {
+            return Forbid();
+        }
+        try
+        {
+            _shoppingCartService.AddGameToShoppingCart(id, gameId);
+            return Ok("Game added to cart");
+        }
+        catch (DuplicateNameException ex)
+        {
+        _logError.LogErrorMethod(ex, "Intento de añadir un juego duplicado al carrito");
+        return Conflict("Game already added");
+        }
+         catch (Exception ex)
+        {
+        _logError.LogErrorMethod(ex, "Error al añadir el juego al carrito");
+        return StatusCode(500, "An unexpected error occurred");
+        }
+    }
+
+    [HttpDelete("{id}/games/{gameId}")]
+    public IActionResult RemoveGameShoppingCart(int id, int gameId)
+    {
+        
+        if (!_authService.HasAccessToResource(id, HttpContext.User))
+        {
+            return Forbid();
+        }
+        
+        try
+        {
+            _shoppingCartService.RemoveGameFromShoppingCart(id, gameId);
+            return Ok("Game removed from the shoppingCart");
+        }
+        catch (KeyNotFoundException ex)
+        {
+            _logError.LogErrorMethod(ex, "Intento de eliminar un juego que no existe en el carrito");
+            return NotFound("Game not found in shoppingCart");
+        }
+        catch (Exception ex)
+        {
+            _logError.LogErrorMethod(ex, "Error al eliminar el juego del carrito");
+            return StatusCode(500, "An unexpected error occurred");
+        }
+    }
+
+    [HttpGet("{id}/games")]
+    public IActionResult GetGamesInShoppingCart(int id)
+    {
+        if (!_authService.HasAccessToResource(id, HttpContext.User))
+        {
+            return Forbid();
+        }
+
+        try
+        {
+            var shoppingCart = _shoppingCartService.GetShoppingCart(id);
+
+            if (shoppingCart == null)
+            {
+                _logError.LogErrorMethod(new Exception($"No se encontró el carrito con ID {id}"), "Error al obtener los juegos del carrito");
+                return NotFound("Shopping cart not found");
+            }
+
+            var gamesInCart = shoppingCart.Games.Select(game => new GameDTO
+            {
+                GameID = game.GameID,
+                Name = game.Name,
+                Description = game.Description,
+                Synopsis = game.Synopsis,
+                Price = game.Price,
+                Discount = game.Discount,
+                ReleaseDate = game.ReleaseDate,
+                Categories = game.Categories,
+                StudioID = game.StudioID
+            }).ToList();
+
+            return Ok(gamesInCart);
+        }
+        catch (Exception ex)
+        {
+            _logError.LogErrorMethod(ex, $"Error al obtener los juegos del carrito con ID {id}");
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
+
 }

@@ -93,6 +93,30 @@ public class LibraryGameUserController : ControllerBase{
         }
     }
 
+    [HttpPost("{id}/games/{gameId}")]
+    public IActionResult AddGameLibraryGameUser(int id, int gameId)
+    {
+        if (!_authService.HasAccessToResource(id, HttpContext.User))
+        {
+            return Forbid();
+        }
+        try
+        {
+            _libraryGameUserService.AddGameToLibraryGameUser(id, gameId);
+            return Ok("Game added to library");
+        }
+        catch (DuplicateNameException ex)
+        {
+        _logError.LogErrorMethod(ex, "Intento de añadir un juego duplicado a la biblioteca");
+        return Conflict("Game already added");
+        }
+         catch (Exception ex)
+        {
+        _logError.LogErrorMethod(ex, "Error al añadir el juego la biblioteca");
+        return StatusCode(500, "An unexpected error occurred");
+        }
+    }
+
 
 
     // PUT action
@@ -183,55 +207,4 @@ public class LibraryGameUserController : ControllerBase{
                 return StatusCode(500, "Error interno del servidor");
         }
     }
-
-    [HttpPost("{id}/games/{gameId}")]
-    public IActionResult AddGameToLibrary(int id, int gameId)
-    {
-        if (!_authService.HasAccessToResource(id, HttpContext.User))
-        {
-            return Forbid();
-        }
-        try
-        {
-            _libraryGameUserService.AddGameToLibrary(id, gameId);
-            return Ok("Game added to library");
-        }
-        catch (DuplicateNameException ex)
-        {
-        _logError.LogErrorMethod(ex, "Intento de añadir un juego duplicado a la biblioteca");
-        return Conflict("Game already added");
-        }
-         catch (Exception ex)
-        {
-        _logError.LogErrorMethod(ex, "Error al añadir el juego a la biblioteca");
-        return StatusCode(500, "An unexpected error occurred");
-        }
-    }
-
-    [HttpDelete("{id}/games/{gameId}")]
-    public IActionResult RemoveGameFromLibrary(int id, int gameId)
-    {
-        
-        if (!_authService.HasAccessToResource(id, HttpContext.User))
-        {
-            return Forbid();
-        }
-        
-        try
-        {
-            _libraryGameUserService.RemoveGameFromLibrary(id, gameId);
-            return Ok("Game removed from library");
-        }
-        catch (KeyNotFoundException ex)
-        {
-            _logError.LogErrorMethod(ex, "Intento de eliminar un juego que no existe en la biblioteca");
-            return NotFound("Game not found in library");
-        }
-        catch (Exception ex)
-        {
-            _logError.LogErrorMethod(ex, "Error al eliminar el juego de la biblioteca");
-            return StatusCode(500, "An unexpected error occurred");
-        }
-    }
-
 }

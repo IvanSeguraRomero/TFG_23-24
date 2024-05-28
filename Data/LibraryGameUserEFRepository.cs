@@ -15,6 +15,31 @@ namespace FlashGamingHub.Data
             SaveChanges();
         }
 
+        public void AddGameToLibraryGameUser(int libraryGameUserID, int gameId)
+        {
+            var libraryGameUser = _context.LibraryGameUsers
+                .Include(lg => lg.Games)
+                .FirstOrDefault(l => l.UserID == libraryGameUserID);
+
+            if (libraryGameUser == null)
+            {
+                throw new KeyNotFoundException("LibraryGameUser not found.");
+            }
+
+            var game = _context.Games.Find(gameId);
+            if (game == null)
+            {
+                throw new KeyNotFoundException("Game not found.");
+            }
+
+            if (libraryGameUser.Games.Any(g => g.GameID == gameId))
+            {
+                throw new InvalidOperationException("Game already in ShoppingCart.");
+            }
+            libraryGameUser.Games.Add(game);
+            SaveChanges();
+        }
+
         public void DeleteLibraryGameUser(int id)
         {
             var libraryGameUser = _context.LibraryGameUsers.Find(id);
@@ -89,52 +114,6 @@ namespace FlashGamingHub.Data
         public void UpdateLibraryGameUser(LibraryGameUser libraryGameUser)
         {
              _context.Entry(libraryGameUser).State=EntityState.Modified;
-            SaveChanges();
-        }
-
-        public void AddGameToLibrary(int libraryId, int gameId)
-        {
-            var libraryGameUser = _context.LibraryGameUsers
-                .Include(l => l.Games)
-                .FirstOrDefault(l => l.UserID == libraryId);
-
-            if (libraryGameUser == null)
-            {
-                throw new KeyNotFoundException("LibraryGameUser not found.");
-            }
-
-            var game = _context.Games.Find(gameId);
-            if (game == null)
-            {
-                throw new KeyNotFoundException("Game not found.");
-            }
-
-            if (libraryGameUser.Games.Any(g => g.GameID == gameId))
-            {
-                throw new InvalidOperationException("Game already in library.");
-            }
-            libraryGameUser.Games.Add(game);
-            SaveChanges();
-        }
-
-    public void RemoveGameFromLibrary(int libraryId, int gameId)
-    {
-            var libraryGameUser = _context.LibraryGameUsers
-                .Include(l => l.Games)
-                .FirstOrDefault(l => l.LibraryGameUserId == libraryId);
-
-            if (libraryGameUser == null)
-            {
-                throw new KeyNotFoundException("LibraryGameUser not found.");
-            }
-
-            var game = libraryGameUser.Games.FirstOrDefault(g => g.GameID == gameId);
-            if (game == null)
-            {
-                throw new KeyNotFoundException("Game not found in library.");
-            }
-
-            libraryGameUser.Games.Remove(game);
             SaveChanges();
         }
 }

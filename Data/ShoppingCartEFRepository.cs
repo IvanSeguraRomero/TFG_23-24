@@ -44,4 +44,50 @@ namespace FlashGamingHub.Data;
             _context.SaveChanges();
         }
 
+        public void AddGameToShoppingCart(int shoppingCartId, int gameId)
+        {
+            var shoppingCart = _context.ShoppingCarts
+                .Include(sh => sh.Games)
+                .FirstOrDefault(l => l.UserID == shoppingCartId);
+
+            if (shoppingCart == null)
+            {
+                throw new KeyNotFoundException("ShoppingCart not found.");
+            }
+
+            var game = _context.Games.Find(gameId);
+            if (game == null)
+            {
+                throw new KeyNotFoundException("Game not found.");
+            }
+
+            if (shoppingCart.Games.Any(g => g.GameID == gameId))
+            {
+                throw new InvalidOperationException("Game already in ShoppingCart.");
+            }
+            shoppingCart.Games.Add(game);
+            SaveChanges();
+        }
+
+    public void RemoveGameFromShoppingCart(int shoppingCartId, int gameId)
+    {
+            var shoppingCart = _context.ShoppingCarts
+                .Include(l => l.Games)
+                .FirstOrDefault(l => l.ShoppingCartID == shoppingCartId);
+
+            if (shoppingCart == null)
+            {
+                throw new KeyNotFoundException("ShoppingCart not found.");
+            }
+
+            var game = shoppingCart.Games.FirstOrDefault(g => g.GameID == gameId);
+            if (game == null)
+            {
+                throw new KeyNotFoundException("Game not found in ShoppingCart.");
+            }
+
+            shoppingCart.Games.Remove(game);
+            SaveChanges();
+        }
+
     }
