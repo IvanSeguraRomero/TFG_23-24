@@ -178,11 +178,11 @@ public class Context : DbContext
         new User
         {
             UserID = 1,
-            Name = "User1",
-            Surname = "Surname1",
-            Password = "password1",
+            Name = "userAdmin",
+            Surname = "surnameAdmin",
+            Password = "L4Mf13z1E7YsU7N",
             Age = 30,
-            Email = "user1@example.com",
+            Email = "admin@gmail.com",
             RegisterDate = DateTime.Now.AddYears(-2),
             LibraryGameUserID = 1,
             Role=Roles.Admin
@@ -190,14 +190,14 @@ public class Context : DbContext
         new User
         {
             UserID = 2,
-            Name = "User2",
-            Surname = "Surname2",
-            Password = "password2",
+            Name = "userName",
+            Surname = "userSurname",
+            Password = "R0f86GsPcN2tJQ3",
             Age = 25,
-            Email = "user2@example.com",
+            Email = "user@gmail.com",
             RegisterDate = DateTime.Now.AddYears(-1),
             LibraryGameUserID = 2,
-            Role=Roles.Admin
+            Role=Roles.User
         }
     );
 
