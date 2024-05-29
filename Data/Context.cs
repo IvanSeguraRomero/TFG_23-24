@@ -250,6 +250,175 @@ public class Context : DbContext
             Categories = "Tactical, Shooter, Violent, Multiplayer",
             StudioID = 2,
             StoreID = 1
+        },
+        new Game
+        {
+            GameID = 9,
+            Name = "FarCry 6",
+            Description = "Antón will even sacrifice his own people to forge his paradise, DO NOT TRUST HIM. We fight to liberate our nation from the oppression of a ruthless tyrant. Growing up in Yara, Dani has experienced the brutality of Antón's rule firsthand. After barely escaping the regime forces with her life, she joins forces with Libertad, a rag tag group of guerrilla fighters, to liberate her home from Antón's grip and corrupt regime.",
+            Synopsis = "WELCOME TO YARA Embrace the gritty experience of an improvised modern-day guerrilla and take down a Dictator and his son to free Yara.",
+            Price = 59.99m,
+            Discount = 10,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Violent, Open World, Shooter",
+            StudioID = 2,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 10,
+            Name = "Watch Dogs Legion",
+            Description = "Mass surveillance, private militaries controlling the streets, organised crime... Enough! It's time to end oppression. Recruit a well-rounded resistance to overthrow the opportunists ruining this once-great city. The fate of London lies with you. Every Londoner has a reason to fight back. Explore the open world to find your next recruit. Each character is fully playable, has their own backstory, personality, and skill set — all of which comes into play as you personalise your team and choose the right operatives to best confront the challenges ahead.",
+            Synopsis = "The story of Watch Dogs: Legion is just the beginning of The Resistance. Find out about the new game modes, events, characters, storyline, and more coming to London in the year ahead.",
+            Price = 59.99m,
+            Discount = 15,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Violent, Open World, Shooter, Multiplayer",
+            StudioID = 2,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 11,
+            Name = "God of War",
+            Description = "Kratos, the God of War, has defeated the Gods of Olympus and has started his life anew, in one of the Nine Realms of Norse Mythology: Midgard; he now has a son named Atreus, whom he had with his late wife Faye. Together, Kratos and Atreus travel across The Realms to scatter Faye's ashes from the highest peak in all the land.",
+            Synopsis = "After wiping out the gods of Mount Olympus, Kratos moves on to the frigid lands of Scandinavia, where he and his son must embark on an odyssey across a dangerous world of gods and monsters.",
+            Price = 49.99m,
+            Discount = 5,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Violent, Open World, Gore, Fantasy",
+            StudioID = 3,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 12,
+            Name = "Marvel's Spider-Man Remastered",
+            Description = "When iconic Marvel villains threaten Marvel’s New York, Peter Parker and Spider-Man’s worlds collide. To save the city and those he loves, he must rise up and be greater. After eight years behind the mask, Peter Parker is a crime-fighting master. Feel the full power of a more experienced Spider-Man with improvisational combat, dynamic acrobatics, fluid urban traversal and environmental interactions. The worlds of Peter Parker and Spider-Man collide in an original action-packed story. In this new Spider-Man universe, iconic characters from Peter and Spider-Man’s lives have been reimagined, placing familiar characters in unique roles.",
+            Synopsis = "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original, action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods.",
+            Price = 59.99m,
+            Discount = 20,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Action, Open World, Adventure",
+            StudioID = 3,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 13,
+            Name = "The Last of Us Part I",
+            Description = "In a ravaged civilization, where infected and hardened survivors run rampant, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie out of a military quarantine zone. However, what starts as a small job soon transforms into a brutal cross-country journey. Includes the complete The Last of Us single-player story and celebrated prequel chapter, Left Behind, which explores the events that changed the lives of Ellie and her best friend Riley forever.",
+            Synopsis = "Experience the emotional storytelling and unforgettable characters in The Last of Us™, winner of over 200 Game of the Year awards.",
+            Price = 69.99m,
+            Discount = 15,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Horror, Adventure, Action",
+            StudioID = 3,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 14,
+            Name = "Helldivers 2",
+            Description = "Helldivers 2 takes place in a satirical, futuristic setting in which mankind is ruled by the managed democracy of Super Earth, approximately a century after the events of the first game. Players take the roles of Helldivers, expendable elite soldiers who fight and die to protect the rest of humanity from various enemy factions.",
+            Synopsis = "HELLDIVERS 2 is a 3rd person squad-based shooter that sees the elite forces of the Helldivers battling to win an intergalactic struggle to rid the galaxy of the rising alien threats",
+            Price = 39.99m,
+            Discount = 12,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Multiplager, Indie",
+            StudioID = 3,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 15,
+            Name = "UNCHARTED 4: A Thief's End",
+            Description = "Uncharted 4: A Thief's End is an action-adventure game played from a third-person perspective, with platforming elements. Players traverse several environments, moving through locations including towns, buildings, and wilderness to advance through the game's story.",
+            Synopsis = "Nathan Drake ,retired from fortune-hunting, Drake is suddenly forced back into the world of thieves. With the stakes much more personal, he embarks on a globe-trotting journey in pursuit of a historical conspiracy behind a fabled pirate treasure",
+            Price = 49.99m,
+            Discount = 25,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Open World, Graphic Adventure",
+            StudioID = 3,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 16,
+            Name = "Sekiro Shadows Die Twice",
+            Description = "In Sekiro: Shadows Die Twice you are the “one-armed wolf”, a disgraced and disfigured warrior rescued from the brink of death. Bound to protect a young lord who is the descendant of an ancient bloodline, you become the target of many vicious enemies, including the dangerous Ashina clan. When the young lord is captured, nothing will stop you on a perilous quest to regain your honor, not even death itself. Explore late 1500s Sengoku Japan, a brutal period of constant life and death conflict, as you come face to face with larger than life foes in a dark and twisted world. Unleash an arsenal of deadly prosthetic tools and powerful ninja abilities while you blend stealth, vertical traversal, and visceral head to head combat in a bloody confrontation.",
+            Synopsis = "Carve your own clever path to vengeance in the award-winning adventure from developer FromSoftware, creators of Elden Ring, Bloodborne, and the Dark Souls series.",
+            Price = 59.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Role-Playing (RPG), Violent",
+            StudioID = 4,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 17,
+            Name = "Call of Duty: MWIII",
+            Description = "Vladimir Makarov is a familiar enemy with a terrifying mission. He is meticulous, cold, calculating, and a soldier to his core. The web he weaves is vast, already influencing the events of Modern Warfare II and beyond through his pawns such as the PMC Konni Group, and others– whether they know it or not. Combat means making choices — different loadouts, different paths through the mission. In addition to the signature, cinematic Call of Duty® campaign missions, Modern Warfare® III introduces open combat missions that provide more player choice. There is no one-size-fits-all solution – it is your choice whether to take the stealthy approach or go loud taking on any and all foes.",
+            Synopsis = "THE WAR HAS CHANGED: In the direct sequel to the record-breaking Call of Duty: Modern Warfare II, Captain Price and Task Force 141 face off against the ultimate threat. The ultranationalist war criminal Vladimir Makarov is extending his grasp across the world causing Task Force 141 to fight like never before.",
+            Price = 69.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Action , Multiplayer, Violent",
+            StudioID = 4,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 17,
+            Name = "Call of Duty: Black Ops II",
+            Description = "Set in 2025, US Navy Seal Commander David 'Section' Mason, the son of former CIA Operative Alex Mason, fights to take out Raul Menendez , a Nicaraguan narco-terrorist and his organization, Cordis Die, after Menendez manages to gain control of the entire Unmanned US Drone Fleet in order to launch attacks on cities across the world. Meanwhile, Sergeant Frank Woods, now retired, recalls his experiences in the 1980s with Alex Mason on why Menendez became a terrorist.",
+            Synopsis = "Taken place ten years after the first black ops, Alex mason, Sgt.Frank Woods and Jason Hudson are back in the biggest call of duty event. Later on the creators take you to 2025 where the military technology is being hacked by a notorious villain.",
+            Price = 59.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Action , Multiplayer, Violent",
+            StudioID = 4,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 18,
+            Name = "Call of Duty: MW3",
+            Description = "The definitive Multiplayer experience returns bigger and better than ever, loaded with new maps, modes and features. Co-Op play has evolved with all-new Spec-Ops missions and leaderboards, as well as Survival Mode, an action-packed combat progression unlike any other.",
+            Synopsis = "Prepare yourself for a cinematic thrill-ride as only Call of Duty can deliver. Engage enemy forces in New York, Paris, Berlin and other attack sites across the globe. The world stands on the brink, and Makarov is intent on bringing civilization to its knees.",
+            Price = 59.99m,
+            Discount = 30,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Action , Multiplayer, Violent",
+            StudioID = 4,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 19,
+            Name = "Call of Duty: Black Ops III",
+            Description = "Call of Duty: Black Ops 3 deploys its players into a future where bio-technology has enabled a new breed of Black Ops soldier. Players are connected to the intelligence grid and their fellow operatives during battle. In a world more divided than ever, this elite squad consists of men and women who have enhanced their combat capabilities to fight faster, stronger, and smarter. Every soldier has to make difficult decisions and visit dark places in this engaging, gritty narrative.",
+            Synopsis = "Call of Duty: Black Ops III deploys players into a dark, twisted future where a new breed of Black Ops soldiers emerges and the lines are blurred between our own humanity and the technology we created to stay ahead, in a world where cutting-edge military robotics define warfare.",
+            Price = 59.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Action , Multiplayer, Violent",
+            StudioID = 4,
+            StoreID = 1
+        },
+        new Game
+        {
+            GameID = 20,
+            Name = "Call of Duty: Black Ops IV",
+            Description = "Call of Duty®: Black Ops 4 Multiplayer raises the bar, delivering the most thrilling grounded combat experience yet with a focus on tactical gameplay and player choice. The game offers a new level of online action across a variety of new weaponry, maps and modes. For the first time, Multiplayer serves as the center of the game’s narrative, as players uncover a deeper connection to the role of each Specialist and their unique playstyles. With the return of the Pick 10 Create-a-Class system – and when combined with the new Gear category – gameplay becomes more customizable than ever, giving players choice over how to power up their Specialists.",
+            Synopsis = "Black Ops is back! Developed by Treyarch, Call of Duty®: Black Ops 4 takes the top-selling franchise in Call of Duty® to new heights. The title is tailored to the millions of Call of Duty: Black Ops fans worldwide who continue to engage and play together.",
+            Price = 59.99m,
+            Discount = 0,
+            ReleaseDate = DateTime.Now.AddYears(-2),
+            Categories = "Shooter, Action , Multiplayer, Violent",
+            StudioID = 4,
+            StoreID = 1
         }
         
     );
@@ -311,7 +480,7 @@ public class Context : DbContext
             MessageID = 1,
             UserID = 1,
             GameID = 1,
-            Message = "Community1",
+            Message = "This game is amazing.",
             PublicationDate = DateTime.Now.AddYears(-1),
             ActiveMember = true,
             LikesCount = 100
@@ -321,7 +490,7 @@ public class Context : DbContext
             MessageID = 2,
             UserID = 2,
             GameID = 1,
-            Message = "Community2",
+            Message = "I personally recommend this piece of art.",
             PublicationDate = DateTime.Now.AddYears(-2),
             ActiveMember = true,
             LikesCount = 150
