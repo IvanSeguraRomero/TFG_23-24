@@ -64,8 +64,8 @@ namespace FlashGamingHub.Data.Migrations
                             ActiveMember = true,
                             GameID = 1,
                             LikesCount = 100,
-                            Message = "Community1",
-                            PublicationDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3640),
+                            Message = "This game is amazing.",
+                            PublicationDate = new DateTime(2023, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9644),
                             UserID = 1
                         },
                         new
@@ -74,8 +74,8 @@ namespace FlashGamingHub.Data.Migrations
                             ActiveMember = true,
                             GameID = 1,
                             LikesCount = 150,
-                            Message = "Community2",
-                            PublicationDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3643),
+                            Message = "I personally recommend this piece of art.",
+                            PublicationDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9648),
                             UserID = 2
                         });
                 });
@@ -136,7 +136,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Tekken 8",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3566),
+                            ReleaseDate = new DateTime(2023, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9469),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world."
@@ -149,7 +149,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Elden Ring",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3570),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9473),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will."
@@ -162,7 +162,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 50,
                             Name = "Ciberpunk 2077",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3573),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9476),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City. Night City is packed to the brim with things to do, places to see, and people to meet. And it’s up to you where to go, when to go, and how to get there."
@@ -175,7 +175,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 20,
                             Name = "The Witcher 3: The Wild Hunt",
                             Price = 62.97m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3576),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9479),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world."
@@ -188,7 +188,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 40,
                             Name = "Dragon Ball Z: Kakarot",
                             Price = 59.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3579),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9482),
                             StoreID = 1,
                             StudioID = 1,
                             Synopsis = "Relive the story of Goku in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes."
@@ -201,7 +201,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 7,
                             Name = "Assasins Creed III Remastered",
                             Price = 39.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3582),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9485),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "Relive the American Revolution or experience it for the first time in Assassin's Creed III Remastered, with enhanced graphics and improved gameplay mechanics."
@@ -214,7 +214,7 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 5,
                             Name = "For Honor",
                             Price = 29.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3585),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9488),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "After a great cataclysm, 4 of the fiercest warrior factions in history clash in an epic battle for survival. Join the war as a bold Knight, brutal Viking, deadly Samurai or fearsome Wu Lin and fight for your faction’s honor."
@@ -227,10 +227,166 @@ namespace FlashGamingHub.Data.Migrations
                             Discount = 0,
                             Name = "Rainbow Six Siege",
                             Price = 19.99m,
-                            ReleaseDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3588),
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9491),
                             StoreID = 1,
                             StudioID = 2,
                             Synopsis = "Tom Clancy's Rainbow Six® Siege is an elite, realistic, tactical team-based shooter where superior planning and execution triumph. It features 5v5 attack vs."
+                        },
+                        new
+                        {
+                            GameID = 9,
+                            Categories = "Action, Violent, Open World, Shooter",
+                            Description = "Antón will even sacrifice his own people to forge his paradise, DO NOT TRUST HIM. We fight to liberate our nation from the oppression of a ruthless tyrant. Growing up in Yara, Dani has experienced the brutality of Antón's rule firsthand. After barely escaping the regime forces with her life, she joins forces with Libertad, a rag tag group of guerrilla fighters, to liberate her home from Antón's grip and corrupt regime.",
+                            Discount = 10,
+                            Name = "FarCry 6",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9494),
+                            StoreID = 1,
+                            StudioID = 2,
+                            Synopsis = "WELCOME TO YARA Embrace the gritty experience of an improvised modern-day guerrilla and take down a Dictator and his son to free Yara."
+                        },
+                        new
+                        {
+                            GameID = 10,
+                            Categories = "Action, Violent, Open World, Shooter, Multiplayer",
+                            Description = "Mass surveillance, private militaries controlling the streets, organised crime... Enough! It's time to end oppression. Recruit a well-rounded resistance to overthrow the opportunists ruining this once-great city. The fate of London lies with you. Every Londoner has a reason to fight back. Explore the open world to find your next recruit. Each character is fully playable, has their own backstory, personality, and skill set — all of which comes into play as you personalise your team and choose the right operatives to best confront the challenges ahead.",
+                            Discount = 15,
+                            Name = "Watch Dogs Legion",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9497),
+                            StoreID = 1,
+                            StudioID = 2,
+                            Synopsis = "The story of Watch Dogs: Legion is just the beginning of The Resistance. Find out about the new game modes, events, characters, storyline, and more coming to London in the year ahead."
+                        },
+                        new
+                        {
+                            GameID = 11,
+                            Categories = "Action, Violent, Open World, Gore, Fantasy",
+                            Description = "Kratos, the God of War, has defeated the Gods of Olympus and has started his life anew, in one of the Nine Realms of Norse Mythology: Midgard; he now has a son named Atreus, whom he had with his late wife Faye. Together, Kratos and Atreus travel across The Realms to scatter Faye's ashes from the highest peak in all the land.",
+                            Discount = 5,
+                            Name = "God of War",
+                            Price = 49.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9500),
+                            StoreID = 1,
+                            StudioID = 3,
+                            Synopsis = "After wiping out the gods of Mount Olympus, Kratos moves on to the frigid lands of Scandinavia, where he and his son must embark on an odyssey across a dangerous world of gods and monsters."
+                        },
+                        new
+                        {
+                            GameID = 12,
+                            Categories = "Action, Open World, Adventure",
+                            Description = "When iconic Marvel villains threaten Marvel’s New York, Peter Parker and Spider-Man’s worlds collide. To save the city and those he loves, he must rise up and be greater. After eight years behind the mask, Peter Parker is a crime-fighting master. Feel the full power of a more experienced Spider-Man with improvisational combat, dynamic acrobatics, fluid urban traversal and environmental interactions. The worlds of Peter Parker and Spider-Man collide in an original action-packed story. In this new Spider-Man universe, iconic characters from Peter and Spider-Man’s lives have been reimagined, placing familiar characters in unique roles.",
+                            Discount = 20,
+                            Name = "Marvel's Spider-Man Remastered",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9503),
+                            StoreID = 1,
+                            StudioID = 3,
+                            Synopsis = "In Marvel’s Spider-Man Remastered, the worlds of Peter Parker and Spider-Man collide in an original, action-packed story. Play as an experienced Peter Parker, fighting big crime and iconic villains in Marvel’s New York. Web-swing through vibrant neighborhoods."
+                        },
+                        new
+                        {
+                            GameID = 13,
+                            Categories = "Horror, Adventure, Action",
+                            Description = "In a ravaged civilization, where infected and hardened survivors run rampant, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie out of a military quarantine zone. However, what starts as a small job soon transforms into a brutal cross-country journey. Includes the complete The Last of Us single-player story and celebrated prequel chapter, Left Behind, which explores the events that changed the lives of Ellie and her best friend Riley forever.",
+                            Discount = 15,
+                            Name = "The Last of Us Part I",
+                            Price = 69.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9506),
+                            StoreID = 1,
+                            StudioID = 3,
+                            Synopsis = "Experience the emotional storytelling and unforgettable characters in The Last of Us™, winner of over 200 Game of the Year awards."
+                        },
+                        new
+                        {
+                            GameID = 14,
+                            Categories = "Shooter, Multiplager, Indie",
+                            Description = "Helldivers 2 takes place in a satirical, futuristic setting in which mankind is ruled by the managed democracy of Super Earth, approximately a century after the events of the first game. Players take the roles of Helldivers, expendable elite soldiers who fight and die to protect the rest of humanity from various enemy factions.",
+                            Discount = 12,
+                            Name = "Helldivers 2",
+                            Price = 39.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9508),
+                            StoreID = 1,
+                            StudioID = 3,
+                            Synopsis = "HELLDIVERS 2 is a 3rd person squad-based shooter that sees the elite forces of the Helldivers battling to win an intergalactic struggle to rid the galaxy of the rising alien threats"
+                        },
+                        new
+                        {
+                            GameID = 15,
+                            Categories = "Open World, Graphic Adventure",
+                            Description = "Uncharted 4: A Thief's End is an action-adventure game played from a third-person perspective, with platforming elements. Players traverse several environments, moving through locations including towns, buildings, and wilderness to advance through the game's story.",
+                            Discount = 25,
+                            Name = "UNCHARTED 4: A Thief's End",
+                            Price = 49.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9511),
+                            StoreID = 1,
+                            StudioID = 3,
+                            Synopsis = "Nathan Drake ,retired from fortune-hunting, Drake is suddenly forced back into the world of thieves. With the stakes much more personal, he embarks on a globe-trotting journey in pursuit of a historical conspiracy behind a fabled pirate treasure"
+                        },
+                        new
+                        {
+                            GameID = 16,
+                            Categories = "Role-Playing (RPG), Violent",
+                            Description = "In Sekiro: Shadows Die Twice you are the “one-armed wolf”, a disgraced and disfigured warrior rescued from the brink of death. Bound to protect a young lord who is the descendant of an ancient bloodline, you become the target of many vicious enemies, including the dangerous Ashina clan. When the young lord is captured, nothing will stop you on a perilous quest to regain your honor, not even death itself. Explore late 1500s Sengoku Japan, a brutal period of constant life and death conflict, as you come face to face with larger than life foes in a dark and twisted world. Unleash an arsenal of deadly prosthetic tools and powerful ninja abilities while you blend stealth, vertical traversal, and visceral head to head combat in a bloody confrontation.",
+                            Discount = 0,
+                            Name = "Sekiro Shadows Die Twice",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9514),
+                            StoreID = 1,
+                            StudioID = 4,
+                            Synopsis = "Carve your own clever path to vengeance in the award-winning adventure from developer FromSoftware, creators of Elden Ring, Bloodborne, and the Dark Souls series."
+                        },
+                        new
+                        {
+                            GameID = 17,
+                            Categories = "Shooter, Action , Multiplayer, Violent",
+                            Description = "Vladimir Makarov is a familiar enemy with a terrifying mission. He is meticulous, cold, calculating, and a soldier to his core. The web he weaves is vast, already influencing the events of Modern Warfare II and beyond through his pawns such as the PMC Konni Group, and others– whether they know it or not. Combat means making choices — different loadouts, different paths through the mission. In addition to the signature, cinematic Call of Duty® campaign missions, Modern Warfare® III introduces open combat missions that provide more player choice. There is no one-size-fits-all solution it is your choice whether to take the stealthy approach or go loud taking on any and all foes.",
+                            Discount = 0,
+                            Name = "Call of Duty: MWIII",
+                            Price = 69.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9517),
+                            StoreID = 1,
+                            StudioID = 4,
+                            Synopsis = "In the direct sequel to the record-breaking Call of Duty: Modern Warfare II, Captain Price and Task Force 141 face off against the ultimate threat. The ultranationalist war criminal Vladimir Makarov is extending his grasp across the world causing Task Force 141 to fight like never before."
+                        },
+                        new
+                        {
+                            GameID = 18,
+                            Categories = "Shooter, Action , Multiplayer, Violent",
+                            Description = "Set in 2025, US Navy Seal Commander David 'Section' Mason, the son of former CIA Operative Alex Mason, fights to take out Raul Menendez , a Nicaraguan narco-terrorist and his organization, Cordis Die, after Menendez manages to gain control of the entire Unmanned US Drone Fleet in order to launch attacks on cities across the world. Meanwhile, Sergeant Frank Woods, now retired, recalls his experiences in the 1980s with Alex Mason on why Menendez became a terrorist.",
+                            Discount = 0,
+                            Name = "Call of Duty: Black Ops II",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9582),
+                            StoreID = 1,
+                            StudioID = 4,
+                            Synopsis = "Taken place ten years after the first black ops, Alex mason, Sgt.Frank Woods and Jason Hudson are back in the biggest call of duty event. Later on the creators take you to 2025 where the military technology is being hacked by a notorious villain."
+                        },
+                        new
+                        {
+                            GameID = 19,
+                            Categories = "Shooter, Action , Multiplayer, Violent",
+                            Description = "The definitive Multiplayer experience returns bigger and better than ever, loaded with new maps, modes and features. Co-Op play has evolved with all-new Spec-Ops missions and leaderboards, as well as Survival Mode, an action-packed combat progression unlike any other.",
+                            Discount = 30,
+                            Name = "Call of Duty: MW3",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9586),
+                            StoreID = 1,
+                            StudioID = 4,
+                            Synopsis = "Prepare yourself for a cinematic thrill-ride as only Call of Duty can deliver. Engage enemy forces in New York, Paris, Berlin and other attack sites across the globe. The world stands on the brink, and Makarov is intent on bringing civilization to its knees."
+                        },
+                        new
+                        {
+                            GameID = 20,
+                            Categories = "Shooter, Action , Multiplayer, Violent",
+                            Description = "Call of Duty: Black Ops 3 deploys its players into a future where bio-technology has enabled a new breed of Black Ops soldier. Players are connected to the intelligence grid and their fellow operatives during battle. In a world more divided than ever, this elite squad consists of men and women who have enhanced their combat capabilities to fight faster, stronger, and smarter. Every soldier has to make difficult decisions and visit dark places in this engaging, gritty narrative.",
+                            Discount = 0,
+                            Name = "Call of Duty: Black Ops III",
+                            Price = 59.99m,
+                            ReleaseDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9589),
+                            StoreID = 1,
+                            StudioID = 4,
+                            Synopsis = "Call of Duty: Black Ops III deploys players into a dark, twisted future where a new breed of Black Ops soldiers emerges and the lines are blurred between our own humanity and the technology we created to stay ahead, in a world where cutting-edge military robotics define warfare."
                         });
                 });
 
@@ -269,7 +425,7 @@ namespace FlashGamingHub.Data.Migrations
                             StoreID = 1,
                             AnnualSales = 0,
                             Event = "Summer Discounts",
-                            LastUpdated = new DateTime(2024, 4, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3503),
+                            LastUpdated = new DateTime(2024, 4, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9452),
                             Origin = "Europe",
                             Stock = 100
                         });
@@ -311,18 +467,18 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             LibraryGameUserId = 1,
-                            AddedDate = new DateTime(2023, 11, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3620),
+                            AddedDate = new DateTime(2023, 11, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9624),
                             HoursPlayed = 50,
-                            LastPlayed = new DateTime(2024, 5, 21, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3623),
+                            LastPlayed = new DateTime(2024, 5, 22, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9627),
                             Rating = 4,
                             UserID = 1
                         },
                         new
                         {
                             LibraryGameUserId = 2,
-                            AddedDate = new DateTime(2024, 2, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3625),
+                            AddedDate = new DateTime(2024, 2, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9630),
                             HoursPlayed = 100,
-                            LastPlayed = new DateTime(2024, 5, 23, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3628),
+                            LastPlayed = new DateTime(2024, 5, 24, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9632),
                             Rating = 5,
                             UserID = 2
                         });
@@ -356,14 +512,14 @@ namespace FlashGamingHub.Data.Migrations
                         new
                         {
                             ShoppingCartID = 1,
-                            FechaCreacion = new DateTime(2024, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3655),
+                            FechaCreacion = new DateTime(2024, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9659),
                             Total = 0m,
                             UserID = 1
                         },
                         new
                         {
                             ShoppingCartID = 2,
-                            FechaCreacion = new DateTime(2024, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3657),
+                            FechaCreacion = new DateTime(2024, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9662),
                             Total = 0m,
                             UserID = 2
                         });
@@ -413,7 +569,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Japan",
                             EmailContact = "bandaisupport@gmail.com",
                             EmailLogin = "bandainamco@gmail.com",
-                            Fundation = new DateTime(2014, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3374),
+                            Fundation = new DateTime(2014, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9303),
                             Name = "Bandai Namco Entertainment",
                             Password = "Dq61uGd16mtsRoJ.",
                             Website = "www.bandai.com"
@@ -424,7 +580,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "France",
                             EmailContact = "ubisoftsupport@gmail.com",
                             EmailLogin = "ubisoft@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3405),
+                            Fundation = new DateTime(2019, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9337),
                             Name = "Ubisoft",
                             Password = "4F1Gb7P72SHlwos",
                             Website = "www.ubisoft.com"
@@ -435,7 +591,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "Tokyo",
                             EmailContact = "sonysupport@gmail.com",
                             EmailLogin = "sony@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3408),
+                            Fundation = new DateTime(2019, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9340),
                             Name = "Sony Interactive Entertainment",
                             Password = "7Z94eudXHZLVYYC",
                             Website = "www.sony.com"
@@ -446,7 +602,7 @@ namespace FlashGamingHub.Data.Migrations
                             Country = "USA",
                             EmailContact = "activisionsupport@gmail.com",
                             EmailLogin = "activision@gmail.com",
-                            Fundation = new DateTime(2019, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3411),
+                            Fundation = new DateTime(2019, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9343),
                             Name = "Activision",
                             Password = "2z1K7Fjdno23one",
                             Website = "www.activision.com"
@@ -503,7 +659,7 @@ namespace FlashGamingHub.Data.Migrations
                             LibraryGameUserID = 1,
                             Name = "userAdmin",
                             Password = "L4Mf13z1E7YsU7N",
-                            RegisterDate = new DateTime(2022, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3604),
+                            RegisterDate = new DateTime(2022, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9609),
                             Role = "admin",
                             Surname = "surnameAdmin"
                         },
@@ -515,7 +671,7 @@ namespace FlashGamingHub.Data.Migrations
                             LibraryGameUserID = 2,
                             Name = "userName",
                             Password = "R0f86GsPcN2tJQ3",
-                            RegisterDate = new DateTime(2023, 5, 28, 20, 30, 2, 875, DateTimeKind.Local).AddTicks(3608),
+                            RegisterDate = new DateTime(2023, 5, 29, 16, 5, 8, 816, DateTimeKind.Local).AddTicks(9613),
                             Role = "user",
                             Surname = "userSurname"
                         });

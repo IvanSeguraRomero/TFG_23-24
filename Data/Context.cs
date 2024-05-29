@@ -359,8 +359,8 @@ public class Context : DbContext
         {
             GameID = 17,
             Name = "Call of Duty: MWIII",
-            Description = "Vladimir Makarov is a familiar enemy with a terrifying mission. He is meticulous, cold, calculating, and a soldier to his core. The web he weaves is vast, already influencing the events of Modern Warfare II and beyond through his pawns such as the PMC Konni Group, and others– whether they know it or not. Combat means making choices — different loadouts, different paths through the mission. In addition to the signature, cinematic Call of Duty® campaign missions, Modern Warfare® III introduces open combat missions that provide more player choice. There is no one-size-fits-all solution – it is your choice whether to take the stealthy approach or go loud taking on any and all foes.",
-            Synopsis = "THE WAR HAS CHANGED: In the direct sequel to the record-breaking Call of Duty: Modern Warfare II, Captain Price and Task Force 141 face off against the ultimate threat. The ultranationalist war criminal Vladimir Makarov is extending his grasp across the world causing Task Force 141 to fight like never before.",
+            Description = "Vladimir Makarov is a familiar enemy with a terrifying mission. He is meticulous, cold, calculating, and a soldier to his core. The web he weaves is vast, already influencing the events of Modern Warfare II and beyond through his pawns such as the PMC Konni Group, and others– whether they know it or not. Combat means making choices — different loadouts, different paths through the mission. In addition to the signature, cinematic Call of Duty® campaign missions, Modern Warfare® III introduces open combat missions that provide more player choice. There is no one-size-fits-all solution it is your choice whether to take the stealthy approach or go loud taking on any and all foes.",
+            Synopsis = "In the direct sequel to the record-breaking Call of Duty: Modern Warfare II, Captain Price and Task Force 141 face off against the ultimate threat. The ultranationalist war criminal Vladimir Makarov is extending his grasp across the world causing Task Force 141 to fight like never before.",
             Price = 69.99m,
             Discount = 0,
             ReleaseDate = DateTime.Now.AddYears(-2),
@@ -370,7 +370,7 @@ public class Context : DbContext
         },
         new Game
         {
-            GameID = 17,
+            GameID = 18,
             Name = "Call of Duty: Black Ops II",
             Description = "Set in 2025, US Navy Seal Commander David 'Section' Mason, the son of former CIA Operative Alex Mason, fights to take out Raul Menendez , a Nicaraguan narco-terrorist and his organization, Cordis Die, after Menendez manages to gain control of the entire Unmanned US Drone Fleet in order to launch attacks on cities across the world. Meanwhile, Sergeant Frank Woods, now retired, recalls his experiences in the 1980s with Alex Mason on why Menendez became a terrorist.",
             Synopsis = "Taken place ten years after the first black ops, Alex mason, Sgt.Frank Woods and Jason Hudson are back in the biggest call of duty event. Later on the creators take you to 2025 where the military technology is being hacked by a notorious villain.",
@@ -383,7 +383,7 @@ public class Context : DbContext
         },
         new Game
         {
-            GameID = 18,
+            GameID = 19,
             Name = "Call of Duty: MW3",
             Description = "The definitive Multiplayer experience returns bigger and better than ever, loaded with new maps, modes and features. Co-Op play has evolved with all-new Spec-Ops missions and leaderboards, as well as Survival Mode, an action-packed combat progression unlike any other.",
             Synopsis = "Prepare yourself for a cinematic thrill-ride as only Call of Duty can deliver. Engage enemy forces in New York, Paris, Berlin and other attack sites across the globe. The world stands on the brink, and Makarov is intent on bringing civilization to its knees.",
@@ -396,7 +396,7 @@ public class Context : DbContext
         },
         new Game
         {
-            GameID = 19,
+            GameID = 20,
             Name = "Call of Duty: Black Ops III",
             Description = "Call of Duty: Black Ops 3 deploys its players into a future where bio-technology has enabled a new breed of Black Ops soldier. Players are connected to the intelligence grid and their fellow operatives during battle. In a world more divided than ever, this elite squad consists of men and women who have enhanced their combat capabilities to fight faster, stronger, and smarter. Every soldier has to make difficult decisions and visit dark places in this engaging, gritty narrative.",
             Synopsis = "Call of Duty: Black Ops III deploys players into a dark, twisted future where a new breed of Black Ops soldiers emerges and the lines are blurred between our own humanity and the technology we created to stay ahead, in a world where cutting-edge military robotics define warfare.",
@@ -406,21 +406,7 @@ public class Context : DbContext
             Categories = "Shooter, Action , Multiplayer, Violent",
             StudioID = 4,
             StoreID = 1
-        },
-        new Game
-        {
-            GameID = 20,
-            Name = "Call of Duty: Black Ops IV",
-            Description = "Call of Duty®: Black Ops 4 Multiplayer raises the bar, delivering the most thrilling grounded combat experience yet with a focus on tactical gameplay and player choice. The game offers a new level of online action across a variety of new weaponry, maps and modes. For the first time, Multiplayer serves as the center of the game’s narrative, as players uncover a deeper connection to the role of each Specialist and their unique playstyles. With the return of the Pick 10 Create-a-Class system – and when combined with the new Gear category – gameplay becomes more customizable than ever, giving players choice over how to power up their Specialists.",
-            Synopsis = "Black Ops is back! Developed by Treyarch, Call of Duty®: Black Ops 4 takes the top-selling franchise in Call of Duty® to new heights. The title is tailored to the millions of Call of Duty: Black Ops fans worldwide who continue to engage and play together.",
-            Price = 59.99m,
-            Discount = 0,
-            ReleaseDate = DateTime.Now.AddYears(-2),
-            Categories = "Shooter, Action , Multiplayer, Violent",
-            StudioID = 4,
-            StoreID = 1
         }
-        
     );
 
     // Relación de User con LibraryGameUser

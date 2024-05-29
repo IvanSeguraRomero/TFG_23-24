@@ -128,3 +128,6 @@
 28/05/2024 20:01:04 - Error al añadir el juego al carrito: Game already in ShoppingCart.
 28/05/2024 21:32:36 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3
 28/05/2024 21:32:43 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3
+29/05/2024 17:07:44 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+29/05/2024 17:07:45 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+29/05/2024 17:07:49 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
