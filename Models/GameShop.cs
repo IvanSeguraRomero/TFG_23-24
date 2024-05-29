@@ -11,7 +11,7 @@ namespace FlashGamingHub.Models
 
         [Column(TypeName = "nvarchar(80)")]
         public string Event { get; set; }
-        //cuando se cree modifique o elimine un juego el estudio, el stock se actualizara, y lastupdated
+        //quitar stok y annualsales los juegos en el payment sumar la cantidad de juegos que se venden, y lastupdated cada vez que un estudio haga algun cambio en el juego
         public int Stock { get; set; }
 
         public int AnnualSales { get; set; }
