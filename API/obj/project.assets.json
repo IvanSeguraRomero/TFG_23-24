@@ -3077,19 +3077,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\peter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
+      "projectUniqueName": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj",
       "projectName": "FlashGamingHub.API",
-      "projectPath": "D:\\TFGDAW\\Backend\\API\\FlashGamingHub.API.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\TFGDAW\\Backend\\API\\obj\\",
+      "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\FlashGamingHub.API.csproj",
+      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+      "outputPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -3101,14 +3101,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\TFGDAW\\Backend\\Business\\FlashGamingHub.Business.csproj": {
-              "projectPath": "D:\\TFGDAW\\Backend\\Business\\FlashGamingHub.Business.csproj"
+            "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj": {
+              "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Business\\FlashGamingHub.Business.csproj"
             },
-            "D:\\TFGDAW\\Backend\\common\\FlashGamingHub.common.csproj": {
-              "projectPath": "D:\\TFGDAW\\Backend\\common\\FlashGamingHub.common.csproj"
+            "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\common\\FlashGamingHub.common.csproj": {
+              "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\common\\FlashGamingHub.common.csproj"
             },
-            "D:\\TFGDAW\\Backend\\Models\\FlashGamingHub.Models.csproj": {
-              "projectPath": "D:\\TFGDAW\\Backend\\Models\\FlashGamingHub.Models.csproj"
+            "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj": {
+              "projectPath": "D:\\2ºDAW\\IvanSegura_GuillermoGarcia_DAW\\BackEnd\\Models\\FlashGamingHub.Models.csproj"
             }
           }
         }
@@ -3157,7 +3157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }

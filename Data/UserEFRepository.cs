@@ -99,6 +99,7 @@ namespace FlashGamingHub.Data
                     {
                         MessageID = c.MessageID,
                         UserID = c.UserID,
+                        GameID = c.GameID,
                         Message = c.Message,
                         PublicationDate = c.PublicationDate,
                         LikesCount=c.LikesCount

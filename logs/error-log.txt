@@ -131,3 +131,13 @@
 29/05/2024 17:07:44 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
 29/05/2024 17:07:45 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
 29/05/2024 17:07:49 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+30/05/2024 20:31:12 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:34:15 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:34:26 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:35:06 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:35:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:35:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:35:52 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:36:26 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+30/05/2024 20:36:49 - Error al obtener los juegos: Object reference not set to an instance of an object.
+30/05/2024 20:37:34 - Error al obtener los juegos: Object reference not set to an instance of an object.

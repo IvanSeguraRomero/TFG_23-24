@@ -176,15 +176,48 @@ public class GameShopController : ControllerBase{
     }
 
     [HttpGet("{id}/games")]
-    public ActionResult<List<GameDTO>> GetGameShopGames(int id){
+    public ActionResult<List<GameDTO>> GetGameShopGames(int id, string? category, decimal? price, string? orderDate, string? orderPrice, string? orderName){
         try{
-            var games = _gameShopService.GetGameShopGames(id);
+            var query = _gameShopService.GetGameShopGames(id).AsQueryable();
+            if(!string.IsNullOrEmpty(category) && category.ToLower()!="ninguna"){
+                query = query.Where(game => game.Categories.ToLower().Contains(category.ToLower()));
+            }
+            if(price.HasValue && price.Value>0){
+                query = query.Where(game => game.Price<price.Value);
+            }
+            if(!string.IsNullOrEmpty(orderDate)){
+                if(orderDate.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.ReleaseDate);
+                }else if(orderDate.ToLower() == "desc" ){
+                    query = query.OrderByDescending(game => game.ReleaseDate);
+                }
+            }
+            if(!string.IsNullOrEmpty(orderPrice)){
+                //Del más barato al más caro
+                if(orderPrice.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.Price);
+                } 
+                //Del más caro al más barato
+                else if(orderPrice.ToLower() == "desc"){
+                    query = query.OrderByDescending(game => game.Price);
+                }
+            }
+            if(!string.IsNullOrEmpty(orderName)){
+                //De la A a la Z
+                if(orderName.ToLower() == "asc"){
+                    query = query.OrderBy(game => game.Name);
+                } 
+                //De la Z a la A
+                else if(orderName.ToLower() == "desc"){
+                    query = query.OrderByDescending(game => game.Name);
+                }
+            }
+            var games = query.ToList();
             if(games == null || games.Count == 0){
                 _logError.LogErrorMethod(new Exception($"No se encontraron juegos en la tienda con ID {id}"), "Error al intentar obtener los juegos");
                 return NotFound();
-            }else{
-                return games;
             }
+            return games;
         }catch(Exception ex){
                  _logError.LogErrorMethod(ex, "Error al obtener los juegos");
                 return StatusCode(500, "Error interno del servidor");
