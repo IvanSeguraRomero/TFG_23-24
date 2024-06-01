@@ -11,8 +11,6 @@ namespace FlashGamingHub.Models
 
         [Column(TypeName = "nvarchar(80)")]
         public string Event { get; set; }
-        //quitar stok y annualsales los juegos en el payment sumar la cantidad de juegos que se venden, y lastupdated cada vez que un estudio haga algun cambio en el juego
-        public int Stock { get; set; }
 
         public int AnnualSales { get; set; }
 
@@ -24,17 +22,13 @@ namespace FlashGamingHub.Models
         public List<Game> Games { get; set; }
 
         
-    // [Column(TypeName = "nvarchar(100)")]
-    // public string Location { get; set; } // Ubicación física de la tienda
+        [Column(TypeName = "nvarchar(100)")]
+        public string Location { get; set; }
 
-    // public int ContactNumber { get; set; } // Número de contacto
-    //     [Column(TypeName = "nvarchar(50)")]
-    // public string OpeningHours { get; set; } // Horario de apertura
+        [Column(TypeName = "nvarchar(20)")]
+        public string ContactNumber { get; set; }
 
-    // [Column(TypeName = "nvarchar(80)")]
-    // public string ManagerName { get; set; } // Nombre del gerente
-
-    // [Column(TypeName = "nvarchar(100)")]
-    // public string Email { get; set; } // Dirección de correo electrónico
+        [Column(TypeName = "nvarchar(100)")]
+        public string Email { get; set; }
     }
 }

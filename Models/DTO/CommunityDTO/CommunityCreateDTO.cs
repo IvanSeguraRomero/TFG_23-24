@@ -9,9 +9,6 @@ public class CommunityCreateDTO{
     public DateTime PublicationDate { get; set; }
 
     [Required]
-    public bool ActiveMember { get; set; }
-
-    [Required]
     public int LikesCount { get; set; }
 
     [Required]

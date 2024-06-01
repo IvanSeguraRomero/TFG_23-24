@@ -12,10 +12,8 @@ namespace FlashGamingHub.Models
         public string Message { get; set; }
 
         public DateTime PublicationDate { get; set; }
-        //Reemplazar por activemember , pner a true cuando lo edite en el perfil, que aparezca en los coments como editado.
-        //public bool Edited { get; set; }
 
-        public bool ActiveMember { get; set; }
+        public bool Edited { get; set; }
 
         public int LikesCount { get; set; }
 

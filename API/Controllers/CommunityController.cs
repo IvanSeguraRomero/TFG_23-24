@@ -80,7 +80,7 @@ public class CommunityController : ControllerBase{
         {
             Message= communityCreateDTO.Message,
             PublicationDate= communityCreateDTO.PublicationDate,
-            ActiveMember= communityCreateDTO.ActiveMember,
+            Edited= false,
             LikesCount= communityCreateDTO.LikesCount,
             UserID=communityCreateDTO.UserID,
             GameID =communityCreateDTO.GameID,
@@ -116,13 +116,13 @@ public class CommunityController : ControllerBase{
             if(communityUpdateDTO.PublicationDate!=null){
                 existingCommunity.PublicationDate=(DateTime)communityUpdateDTO.PublicationDate;
             }
-            if(communityUpdateDTO.ActiveMember!=null){
-                existingCommunity.ActiveMember= (bool)communityUpdateDTO.ActiveMember;
+            if(communityUpdateDTO.Edited!=null){
+                existingCommunity.Edited= (bool)communityUpdateDTO.Edited;
             }
             if(communityUpdateDTO.LikesCount!=null){
                 existingCommunity.LikesCount= (int)communityUpdateDTO.LikesCount;
             }
-            
+            Console.WriteLine(communityUpdateDTO.Edited);
             _communityService.UpdateCommunity(existingCommunity);
 
             return NoContent();

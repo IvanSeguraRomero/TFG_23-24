@@ -12,7 +12,7 @@ namespace FlashGamingHub.Models
 
         public DateTime PublicationDate { get; set; }
 
-        public bool ActiveMember { get; set; }
+        public bool Edited { get; set; }
 
         public int LikesCount { get; set; }
     }

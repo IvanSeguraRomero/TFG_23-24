@@ -34,7 +34,7 @@ namespace FlashGamingHub.Data
                 GameID=c.GameID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
-                ActiveMember=c.ActiveMember,
+                Edited=c.Edited,
                 LikesCount=c.LikesCount
             }).ToList();
             return communitiesDTO;
@@ -55,7 +55,7 @@ namespace FlashGamingHub.Data
                 GameID=c.GameID,
                 Message=c.Message,
                 PublicationDate=c.PublicationDate,
-                ActiveMember=c.ActiveMember,
+                Edited=c.Edited,
                 LikesCount=c.LikesCount
             }).FirstOrDefault(community=>community.MessageID == id);
             Console.WriteLine(communitieDTO);
@@ -75,7 +75,7 @@ namespace FlashGamingHub.Data
                     GameID = c.GameID,
                     Message = c.Message,
                     PublicationDate = c.PublicationDate,
-                    ActiveMember = c.ActiveMember,
+                    Edited = c.Edited,
                     LikesCount = c.LikesCount
                 }).ToList();
                 return communitieDTO;

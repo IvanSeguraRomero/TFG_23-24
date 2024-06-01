@@ -86,10 +86,12 @@ public class GameShopController : ControllerBase{
         var gameShopDTO = new GameShop
         {
             Event= gameShopCreateDTO.Event,
-            Stock= gameShopCreateDTO.Stock,
             AnnualSales= gameShopCreateDTO.AnnualSales,
             LastUpdated=gameShopCreateDTO.LastUpdated,
-            Origin=gameShopCreateDTO.Origin
+            Origin=gameShopCreateDTO.Origin,
+            Location = gameShopCreateDTO.Location,
+            ContactNumber = gameShopCreateDTO.ContactNumber,
+            Email = gameShopCreateDTO.Email
         };
 
         _gameShopService.AddGameShop(gameShopDTO);
@@ -106,13 +108,8 @@ public class GameShopController : ControllerBase{
 
     // PUT action
         [HttpPut("{id}")]
-        [Authorize]
         public IActionResult Update(int id,[FromBody] GameShopUpdateDTO gameShopUpdateDTO)
         {
-            if (!_authService.IsAdmin(HttpContext.User))
-        {
-            return Forbid();
-        }
             try{
             var existingGameShop = _gameShopService.GetGameShop(id);
 
@@ -125,9 +122,6 @@ public class GameShopController : ControllerBase{
             if(gameShopUpdateDTO.Event!=null){
                 existingGameShop.Event=gameShopUpdateDTO.Event;
             }
-            if(gameShopUpdateDTO.Stock!=null){
-                existingGameShop.Stock=(int)gameShopUpdateDTO.Stock;
-            }
             if(gameShopUpdateDTO.AnnualSales!=null){
                 existingGameShop.AnnualSales=(int)gameShopUpdateDTO.AnnualSales;
             }
@@ -136,6 +130,15 @@ public class GameShopController : ControllerBase{
             }
             if(gameShopUpdateDTO.Origin!=null){
                 existingGameShop.Origin=gameShopUpdateDTO.Origin;
+            }
+            if(gameShopUpdateDTO.Location!=null){
+                existingGameShop.Location=gameShopUpdateDTO.Location;
+            }
+            if(gameShopUpdateDTO.ContactNumber!=null){
+                existingGameShop.ContactNumber=gameShopUpdateDTO.ContactNumber;
+            }
+            if(gameShopUpdateDTO.Email!=null){
+                existingGameShop.Email=gameShopUpdateDTO.Email;
             }
             
             _gameShopService.UpdateGameShop(existingGameShop);

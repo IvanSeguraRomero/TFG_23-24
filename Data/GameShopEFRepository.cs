@@ -32,10 +32,12 @@ namespace FlashGamingHub.Data
                 StoreID=gs.StoreID,
                 // GameID=gs.GameID,
                 Event=gs.Event,
-                Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
-                Origin=gs.Origin
+                Origin=gs.Origin,
+                Location=gs.Location,
+                ContactNumber=gs.ContactNumber,
+                Email=gs.Email
             }).ToList();
             return gameShopDTO;
         }
@@ -54,10 +56,12 @@ namespace FlashGamingHub.Data
                 StoreID=gs.StoreID,
                 // GameID=gs.GameID,
                 Event=gs.Event,
-                Stock=gs.Stock,
                 AnnualSales=gs.AnnualSales,
                 LastUpdated=gs.LastUpdated,
-                Origin=gs.Origin
+                Origin=gs.Origin,
+                Location=gs.Location,
+                ContactNumber=gs.ContactNumber,
+                Email=gs.Email
             }).FirstOrDefault(gs=>gs.StoreID==id);
             return gameShopDTO;
         }

@@ -138,10 +138,12 @@ public class Context : DbContext
         {
             StoreID = 1,
             Event = "Summer Discounts",
-            Stock = 100,
             AnnualSales = 0,
             LastUpdated = DateTime.Now.AddDays(-30),
-            Origin = "Europe"
+            Origin = "Europe",
+            Location = "45 High Street, London, EC1A 1BB, United Kingdom",
+            ContactNumber = "+44 20 7946 0958",
+            Email = "flashGamingHubSupport@gmail.com",
         }
     );
 
@@ -468,7 +470,7 @@ public class Context : DbContext
             GameID = 1,
             Message = "This game is amazing.",
             PublicationDate = DateTime.Now.AddYears(-1),
-            ActiveMember = true,
+            Edited = false,
             LikesCount = 100
         },
         new Community
@@ -478,7 +480,7 @@ public class Context : DbContext
             GameID = 1,
             Message = "I personally recommend this piece of art.",
             PublicationDate = DateTime.Now.AddYears(-2),
-            ActiveMember = true,
+            Edited = false,
             LikesCount = 150
         }
     );

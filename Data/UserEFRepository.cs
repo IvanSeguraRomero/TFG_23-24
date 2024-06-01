@@ -102,7 +102,8 @@ namespace FlashGamingHub.Data
                         GameID = c.GameID,
                         Message = c.Message,
                         PublicationDate = c.PublicationDate,
-                        LikesCount=c.LikesCount
+                        LikesCount=c.LikesCount,
+                        Edited = c.Edited
                         }).ToList();
                 return messagesDTO;
             }

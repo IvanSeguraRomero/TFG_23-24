@@ -7,12 +7,16 @@ namespace FlashGamingHub.Models;
 
         public string? Event { get; set; }
 
-        public int Stock { get; set; }
-
         public int AnnualSales { get; set; }
 
         public DateTime LastUpdated { get; set; }
 
         public string Origin { get; set; }
+        
+        public string Location { get; set; }
+
+        public string ContactNumber { get; set; }
+
+        public string Email { get; set; }
 
     }

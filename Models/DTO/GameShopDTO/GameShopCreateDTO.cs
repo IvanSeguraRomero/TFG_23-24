@@ -10,9 +10,6 @@ public class GameShopCreateDTO{
     public string Event { get; set; }
 
     [Required]
-    public int Stock { get; set; }
-
-    [Required]
     public int AnnualSales { get; set; }
 
     [Required]
@@ -20,4 +17,14 @@ public class GameShopCreateDTO{
 
     [Required]
     public string Origin { get; set; }
+
+
+    [Required]
+    public string Location { get; set; }
+
+    [Required]
+    public string ContactNumber { get; set; }
+
+    [Required]
+    public string Email { get; set; }
 }
