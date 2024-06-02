@@ -151,3 +151,134 @@
 01/06/2024 12:37:11 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 3
 01/06/2024 12:37:11 - Error al añadir el juego al carrito: Game already in ShoppingCart.
 01/06/2024 12:37:34 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 3
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:34 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:35 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:35:35 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 13:46:36 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:47:47 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:48:11 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:48:32 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3
+01/06/2024 13:48:40 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:49:01 - Error al obtener los juegos del carrito: No se encontró el carrito con ID 3
+01/06/2024 13:49:13 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:53:36 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:53:48 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:55:42 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:55:44 - Error al obtener la información del usuario con ID 3: No se encontró el usuario
+01/06/2024 13:56:16 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 3
+01/06/2024 13:56:16 - Error al añadir el juego al carrito: ShoppingCart not found.
+01/06/2024 13:56:21 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 3
+01/06/2024 13:56:21 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 3
+01/06/2024 13:57:10 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+01/06/2024 13:57:10 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+01/06/2024 13:57:18 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 2
+01/06/2024 19:57:46 - Error al intentar obtener los juegos: No se encontraron juegos en el estudio con ID 5
+01/06/2024 19:57:46 - Error al obtener la información del estudio con ID 5: No se encontró el estudio
+01/06/2024 20:44:57 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+01/06/2024 20:45:33 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+01/06/2024 20:46:44 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+01/06/2024 20:46:44 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:14 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 21:06:19 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:26 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:31 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:31 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:31 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:32 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:45 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:46 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:46 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:46 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:10:46 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:11:15 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:11:15 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:11:15 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+01/06/2024 22:11:15 - Error al intentar obtener los juegos: No se encontraron juegos en la tienda con ID 1
+02/06/2024 12:11:46 - Error al obtener los juegos: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+02/06/2024 12:11:48 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:11:48 - Error al obtener la información de los estudios: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:11:48 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:11:48 - Error al obtener la información de los estudios: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:11:48 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener la información de la tienda con el id 1: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:12:14 - Error al obtener la información de los estudios: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:03 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:10 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:19 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:22 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:22 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:22 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:23 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:23 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:13:23 - Error al obtener los juegos: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+02/06/2024 12:19:39 - Error al intentar obtener los juegos: No se encontraron juegos en el usuario con ID 1
