@@ -118,12 +118,12 @@ using Microsoft.OpenApi.Models;
     // app.UseHttpsRedirection();
     
     app.UseCors(options =>
-        {
-        options.WithOrigins("http://localhost:5173")
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials();
-        });
+{
+    options
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+});
 
     app.UseAuthentication();
     app.UseAuthorization();
